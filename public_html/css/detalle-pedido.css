@@ -1,0 +1,46 @@
+/* DETALLE DE PEDIDO */
+
+.estado {
+    color: darkorange;
+    font-weight: bold;
+}
+
+.total-detalle {
+    font-size: 20px;
+    color: darkcyan;
+}
+
+.seguimiento {
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.seguimiento h2 {
+    color: darkturquoise;
+}
+
+.seguimiento table {
+    width: 100%;
+}
+
+.seguimiento td {
+    width: 25%;
+    padding: 20px;
+    border: 1px solid deepskyblue;
+    background-color: lightcyan;
+}
+
+.seguimiento td b {
+    font-size: 24px;
+    color: darkturquoise;
+}
+
+.seguimiento .paso-activo {
+    background-color: deepskyblue;
+    color: white;
+}
+
+.seguimiento .paso-activo b {
+    color: white;
+}

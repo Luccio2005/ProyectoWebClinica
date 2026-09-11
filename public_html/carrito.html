@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Carrito de compras de la farmacia del Hospital Raíz.">
+    <meta name="keywords"
+        content="carrito, farmacia, productos de salud, Hospital Raíz">
+    <meta name="author" content="Hospital Raíz">
+    <title>Carrito - Hospital Raíz</title>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/carrito.css">
+</head>
+<body>
+    <header>
+    <div class="encabezado">
+        <table class="menu">
+            <tr>
+                <td class="logo">
+                    <b>Hospital Raíz</b>
+                </td>
+                <td>
+                    <a href="index.html">Inicio</a>
+                </td>
+                <td>
+                    <a href="citas.html">Reservar cita</a>
+                </td>
+                <td>
+                    <a href="farmacia.html">Farmacia</a>
+                </td>
+                <td>
+                    <a href="consultas.html">
+                        Consulta de salud
+                    </a>
+                </td>
+                <td>
+                    <a href="carrito.html">
+                        Ver carrito
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </header>
+
+    <div class="titulo">
+        <h1>Mi carrito</h1>
+        <p>
+            Revisa los productos seleccionados
+            antes de continuar con tu compra.
+        </p>
+    </div>
+
+    <div class="contenedor-carrito">
+        <h2>Productos seleccionados</h2>
+        <table class="tabla-carrito">
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Acción</th>
+            </tr>
+            
+            <tr>
+                <td>
+                    <div class="producto">
+                        <img src="Imagenes/producto1.webp"
+                            alt="Protector solar">
+                        <div>
+                            <b>Protector Solar FPS 50</b>
+                            <p>
+                                Producto de cuidado de la piel
+                            </p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    S/ 35.00
+                </td>
+                <td>
+                    <input type="number"
+                        value="2"
+                        min="1">
+                </td>
+                <td>
+                    S/ 70.00
+                </td>
+                <td>
+                    <button class="eliminar">
+                        Eliminar
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="producto">
+                        <img src="Imagenes/producto3.webp"
+                            alt="Gel antibacterial">
+                        <div>
+                            <b>Gel Antibacterial</b>
+                            <p>
+                                Producto de higiene
+                            </p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    S/ 12.00
+                </td>
+                <td>
+                    <input type="number"
+                        value="1"
+                        min="1">
+                </td>
+                <td>
+                    S/ 12.00
+                </td>
+                <td>
+                    <button class="eliminar">
+                        Eliminar
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="producto">
+                        <img src="Imagenes/producto7.jpg"
+                            alt="Vendas elásticas">
+                        <div>
+                            <b>Vendas Elásticas</b>
+                            <p>
+                                Producto de primeros auxilios
+                            </p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    S/ 15.00
+                </td>
+                <td>
+                    <input type="number"
+                        value="1"
+                        min="1">
+                </td>
+                <td>
+                    S/ 15.00
+                </td>
+                <td>
+                    <button class="eliminar">
+                        Eliminar
+                    </button>
+                </td>
+            </tr>
+        </table>
+
+        <div class="resumen">
+            <h2>Resumen de compra</h2>
+            <table>
+                <tr>
+                    <td>
+                        Productos:
+                    </td>
+                    <td>
+                        4 unidades
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Subtotal:
+                    </td>
+                    <td>
+                        S/ 97.00
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Costo de envío:
+                    </td>
+                    <td>
+                        S/ 10.00
+                    </td>
+                </tr>
+                <tr class="total">
+                    <td>
+                        Total:
+                    </td>
+                    <td>
+                        S/ 107.00
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="acciones acciones-carrito">
+            <a href="farmacia.html"
+                class="boton-secundario">
+                Seguir comprando
+            </a>
+            <a href="confirmar-pedido.html"
+                class="boton-principal">
+                Continuar con la compra
+            </a>
+        </div>
+    </div>
+
+    <div class="informacion informacion-carrito">
+        <h2>Información importante</h2>
+        <p>
+            Los productos que requieren receta médica
+            deben haber sido previamente autorizados
+            por la clínica.
+        </p>
+        <p>
+            Antes de confirmar el pedido, verifica que
+            los productos y cantidades sean correctos.
+        </p>
+    </div>
+
+    <footer>
+    <div class="pie">
+        <p>
+            Hospital Raíz - Av. Daniel Alcides Carreón 240,
+            Arequipa - (01) 0012121
+        </p>
+        <p>
+            <a href="index.html">Inicio</a> |
+            <a href="farmacia.html">Farmacia</a> |
+            <a href="citas.html">
+                Reservar cita
+            </a>
+        </p>
+        <p>
+            © Hospital Raíz - Salud y bienestar
+        </p>
+    </div>
+    </footer>
+</body>
+</html>

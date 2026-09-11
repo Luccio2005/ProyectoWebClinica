@@ -1,0 +1,104 @@
+/* FARMACIA */
+
+.destacado {
+    width: 80%;
+    margin: 10px auto 30px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: lightcyan;
+    border: 1px solid deepskyblue;
+}
+
+.destacado h2 {
+    color: darkturquoise;
+}
+
+.titulo-productos {
+    text-align: center;
+    color: darkturquoise;
+    margin: 30px;
+}
+
+.productos-farmacia {
+    width: 95%;
+    margin: auto;
+}
+
+.productos-farmacia td {
+    width: 25%;
+    padding: 20px;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid deepskyblue;
+}
+
+.productos-farmacia img {
+    width: 150px;
+    height: 150px;
+}
+
+.productos-farmacia h3 {
+    color: darkturquoise;
+}
+
+.precio {
+    font-size: 20px;
+    font-weight: bold;
+    color: darkcyan;
+}
+
+.tipo {
+    color: seagreen;
+    font-weight: bold;
+}
+
+.receta {
+    color: crimson;
+    font-weight: bold;
+}
+
+.productos-farmacia input {
+    width: 50px;
+    padding: 6px;
+    text-align: center;
+}
+
+.productos-farmacia button {
+    background-color: deepskyblue;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.productos-farmacia button:hover {
+    background-color: darkcyan;
+}
+
+.ver-carrito {
+    text-align: center;
+    margin: 30px;
+}
+
+.ver-carrito a {
+    display: inline-block;
+    background-color: deepskyblue;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+}
+
+.ver-carrito a:hover {
+    background-color: darkcyan;
+}
+
+.boton-producto {
+    display: inline-block;
+    background-color: deepskyblue;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+.boton-producto:hover {
+    background-color: darkcyan;
+}

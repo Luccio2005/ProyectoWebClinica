@@ -1,0 +1,427 @@
+/* SUBIR RECETA - */
+
+
+/* CABECERA */
+
+.cabecera-receta {
+    background-color: lightcyan;
+    text-align: center;
+    padding: 55px 20px 45px;
+    border-bottom: 1px solid lightgray;
+}
+
+.etiqueta-receta {
+    color: darkcyan;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.cabecera-receta h1 {
+    color: darkcyan;
+    font-size: 38px;
+    margin: 0 0 12px;
+}
+
+.cabecera-receta p:last-child {
+    color: slategray;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* PASOS */
+
+.pasos-receta {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.pasos-receta table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pasos-receta td {
+    width: 25%;
+    text-align: center;
+    padding: 14px 8px;
+    border-bottom: 3px solid lightgray;
+    color: gray;
+    font-size: 13px;
+}
+
+.pasos-receta td span {
+    display: block;
+    color: gray;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.pasos-receta td strong {
+    display: block;
+}
+
+.pasos-receta .paso-activo {
+    color: darkcyan;
+    border-bottom-color: darkcyan;
+}
+
+.pasos-receta .paso-activo span {
+    color: darkcyan;
+}
+
+
+/* CONTENEDOR */
+
+.contenedor-receta {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 70px;
+}
+
+
+/* DATOS DEL PACIENTE */
+
+.paciente-receta {
+    padding: 28px;
+    margin-bottom: 25px;
+    background-color: azure;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+.titulo-bloque {
+    margin-bottom: 20px;
+}
+
+.titulo-bloque span {
+    color: darkcyan;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.titulo-bloque h2 {
+    color: darkcyan;
+    font-size: 22px;
+    margin: 5px 0 0;
+}
+
+.paciente-receta table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 15px 5px;
+    margin-left: -15px;
+}
+
+.paciente-receta td {
+    width: 50%;
+    vertical-align: top;
+}
+
+.paciente-receta label,
+.contenido-bloque label {
+    display: block;
+    color: darkslategray;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.paciente-receta input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    background-color: white;
+    color: slategray;
+}
+
+.mensaje-seguridad {
+    color: darkcyan;
+    font-size: 13px;
+    margin: 15px 0 0;
+}
+
+
+/* BLOQUES */
+
+.bloque-receta {
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 30px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+.numero-bloque {
+    display: table-cell;
+    width: 55px;
+    vertical-align: top;
+    color: darkcyan;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.contenido-bloque {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.contenido-bloque h2 {
+    color: darkcyan;
+    font-size: 21px;
+    margin: 0 0 7px;
+}
+
+.contenido-bloque p {
+    color: slategray;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 22px;
+}
+
+
+/* ARCHIVO */
+
+.contenido-bloque input[type="file"] {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    border: 1px dashed lightgray;
+    border-radius: 7px;
+    background-color: azure;
+    color: slategray;
+    font-size: 14px;
+}
+
+.contenido-bloque input[type="file"]:hover {
+    border-color: darkcyan;
+    background-color: lightcyan;
+}
+
+.contenido-bloque small {
+    display: block;
+    color: gray;
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+
+/* DATOS DE RECETA */
+
+.datos-receta {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 15px 0;
+    margin-left: -15px;
+}
+
+.datos-receta td {
+    width: 50%;
+    vertical-align: top;
+}
+
+.datos-receta input,
+.datos-receta select {
+    width: 100%;
+    height: 45px;
+    box-sizing: border-box;
+    padding: 10px 13px;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    background-color: white;
+    color: slategray;
+    font-size: 15px;
+}
+
+.datos-receta input:focus,
+.datos-receta select:focus {
+    outline: none;
+    border-color: darkcyan;
+}
+
+
+/* OBSERVACIONES */
+
+.contenido-bloque textarea {
+    width: 100%;
+    min-height: 130px;
+    box-sizing: border-box;
+    padding: 13px;
+    resize: vertical;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    background-color: white;
+    color: slategray;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+.contenido-bloque textarea:focus {
+    outline: none;
+    border-color: darkcyan;
+}
+
+.opcional {
+    color: gray;
+    font-weight: normal;
+}
+
+
+/* AVISO DE VALIDACIÓN */
+
+.aviso-validacion {
+    padding: 25px;
+    margin: 5px 0 20px;
+    background-color: azure;
+    border: 1px solid lightgray;
+    border-left: 4px solid darkcyan;
+    border-radius: 7px;
+}
+
+.aviso-validacion h2 {
+    color: darkcyan;
+    font-size: 19px;
+    margin: 0 0 10px;
+}
+
+.aviso-validacion p {
+    color: slategray;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 7px 0;
+}
+
+
+/* CONFIRMACIÓN */
+
+.confirmar-receta {
+    padding: 16px;
+    margin-bottom: 22px;
+    background-color: azure;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+}
+
+.confirmar-receta label {
+    color: slategray;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.confirmar-receta input {
+    vertical-align: middle;
+    margin-right: 7px;
+}
+
+
+/* BOTÓN */
+
+.boton-subir {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    background-color: darkcyan;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-subir:hover {
+    background-color: darkcyan;
+}
+
+
+/* AYUDA */
+
+.ayuda-receta {
+    padding: 25px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+.ayuda-receta h2 {
+    color: darkcyan;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.ayuda-receta table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ayuda-receta td {
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+    color: slategray;
+    font-size: 13px;
+    line-height: 1.5;
+    vertical-align: top;
+}
+
+.ayuda-receta td:first-child {
+    width: 35px;
+    color: darkcyan;
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 700px) {
+
+    .cabecera-receta h1 {
+        font-size: 30px;
+    }
+
+    .contenedor-receta,
+    .pasos-receta {
+        width: 94%;
+    }
+
+    .paciente-receta {
+        padding: 20px;
+    }
+
+    .paciente-receta table,
+    .datos-receta {
+        border-spacing: 0;
+        margin-left: 0;
+    }
+
+    .paciente-receta td,
+    .datos-receta td {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .bloque-receta {
+        padding: 22px;
+    }
+
+    .numero-bloque,
+    .contenido-bloque {
+        display: block;
+        width: auto;
+    }
+
+    .numero-bloque {
+        margin-bottom: 10px;
+    }
+
+}

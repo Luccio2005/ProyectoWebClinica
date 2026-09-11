@@ -1,0 +1,116 @@
+/* CARRITO */
+
+.contenedor-carrito {
+    width: 90%;
+    margin: auto;
+}
+
+.contenedor-carrito h2 {
+    color: darkturquoise;
+}
+
+.tabla-carrito {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid deepskyblue;
+}
+
+.tabla-carrito th {
+    background-color: lightcyan;
+    color: darkcyan;
+    padding: 15px;
+    border: 1px solid deepskyblue;
+}
+
+.tabla-carrito td {
+    padding: 15px;
+    border: 1px solid deepskyblue;
+    text-align: center;
+}
+
+.producto {
+    text-align: left;
+}
+
+.producto img {
+    width: 80px;
+    height: 80px;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+.producto b {
+    color: darkturquoise;
+}
+
+.producto p {
+    color: cadetblue;
+    font-size: 13px;
+}
+
+.tabla-carrito input {
+    width: 50px;
+    padding: 7px;
+    text-align: center;
+    border: 1px solid cadetblue;
+}
+
+.eliminar {
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.eliminar:hover {
+    background-color: darkred;
+}
+
+.resumen {
+    width: 40%;
+    margin-top: 30px;
+    margin-left: auto;
+    border: 1px solid deepskyblue;
+    padding: 20px;
+    background-color: lightcyan;
+}
+
+.resumen h2 {
+    text-align: center;
+    color: darkturquoise;
+}
+
+.resumen table {
+    width: 100%;
+}
+
+.resumen td {
+    padding: 10px;
+    border-bottom: 1px solid cadetblue;
+}
+
+.resumen td:last-child {
+    text-align: right;
+}
+
+.resumen .total {
+    font-size: 20px;
+    font-weight: bold;
+    color: darkcyan;
+}
+
+
+.acciones-carrito {
+    text-align: right;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.acciones-carrito .boton-principal {
+    margin-left: 10px;
+}
+
+.informacion-carrito {
+    width: 80%;
+}

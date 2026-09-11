@@ -1,0 +1,456 @@
+.hero {
+    background-color: azure;
+    border-bottom: 1px solid paleturquoise;
+}
+.hero-contenido {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 0;
+    text-align: center;
+}
+.hero-texto {
+    width: 55%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+}
+.hero-imagen {
+    width: 38%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+.hero-imagen img {
+    width: 260px;
+    max-width: 90%;
+    border-radius: 20px;
+}
+.hero-etiqueta {
+    color: darkcyan;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+.hero h1 {
+    color: darkcyan;
+    font-size: 48px;
+    line-height: 1.15;
+    margin: 0 0 20px 0;
+}
+.hero-descripcion {
+    color: slategray;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 600px;
+}
+.hero-botones {
+    margin-top: 30px;
+}
+/* ACCESOS RÁPIDOS */
+.accesos {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+    text-align: center;
+}
+.accesos h2 {
+    color: darkcyan;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.subtitulo {
+    color: slategray;
+    margin-bottom: 35px;
+}
+.tabla-accesos {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 20px;
+}
+.tabla-accesos td {
+    width: 33.33%;
+    padding: 35px 25px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    vertical-align: top;
+}
+.tabla-accesos h3 {
+    color: darkcyan;
+    font-size: 21px;
+    margin: 15px 0 10px;
+}
+.tabla-accesos p {
+    color: slategray;
+    line-height: 1.6;
+}
+.acceso-icono {
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: lightcyan;
+    color: darkcyan;
+    font-size: 25px;
+    font-weight: bold;
+}
+.enlace-servicio {
+    color: cadetblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+.enlace-servicio:hover {
+    color: darkcyan;
+    text-decoration: underline;
+}
+
+/* SECCIONES */
+.seccion {
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto;
+}
+.etiqueta-seccion {
+    color: darkcyan;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+.titulo-seccion {
+    color: darkcyan;
+    text-align: center;
+    font-size: 34px;
+    margin: 10px 0;
+}
+.descripcion-seccion {
+    width: 65%;
+    margin: 0 auto 35px;
+    text-align: center;
+    color: slategray;
+    line-height: 1.7;
+}
+
+/* NOSOTROS */
+.nosotros {
+    background-color: azure;
+    padding: 50px;
+    box-sizing: border-box;
+}
+.tabla-nosotros {
+    width: 100%;
+}
+.nosotros-imagen {
+    width: 40%;
+    text-align: center;
+    vertical-align: middle;
+}
+.nosotros-imagen img {
+    width: 230px;
+    max-width: 90%;
+    border-radius: 15px;
+}
+.nosotros-texto {
+    width: 60%;
+    padding: 20px 40px;
+    vertical-align: middle;
+}
+.nosotros-texto h2 {
+    color: darkcyan;
+    font-size: 34px;
+    margin-top: 10px;
+}
+.nosotros-texto p {
+    color: slategray;
+    line-height: 1.7;
+}
+
+/* ESPECIALIDADES */
+.tabla-especialidades {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 15px;
+}
+.tabla-especialidades td {
+    width: 25%;
+    padding: 28px 20px;
+    vertical-align: top;
+    border-top: 4px solid darkturquoise;
+    background-color: azure;
+}
+.tabla-especialidades h3 {
+    color: darkcyan;
+    margin-top: 0;
+}
+.tabla-especialidades p {
+    color: slategray;
+    line-height: 1.6;
+}
+.tabla-especialidades a,
+.tabla-blog a {
+    color: cadetblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+.tabla-especialidades a:hover,
+.tabla-blog a:hover {
+    text-decoration: underline;
+}
+
+/* EQUIPO MÉDICO */
+.seccion-equipo {
+    background-color: azure;
+    padding: 50px;
+    box-sizing: border-box;
+}
+.tabla-equipo {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 20px;
+}
+.tabla-equipo td {
+    width: 25%;
+    text-align: center;
+    vertical-align: top;
+    background-color: white;
+    padding: 25px 15px;
+    border: 1px solid lightgray;
+}
+.tabla-equipo img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid lightcyan;
+}
+.tabla-equipo h3 {
+    color: darkcyan;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.tabla-equipo p {
+    color: slategray;
+    margin-top: 5px;
+}
+
+/* SERVICIOS DESTACADOS */
+.servicios {
+    text-align: center;
+}
+.tabla-servicios {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 18px;
+}
+.tabla-servicios td {
+    width: 33.33%;
+    padding: 35px 25px;
+    text-align: left;
+    vertical-align: top;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+}
+.servicio-numero {
+    color: darkturquoise;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.tabla-servicios h3 {
+    color: darkcyan;
+    font-size: 22px;
+}
+.tabla-servicios p {
+    color: slategray;
+    line-height: 1.7;
+    min-height: 80px;
+}
+
+/* BLOG */
+.blog {
+    background-color: azure;
+    padding: 50px;
+    box-sizing: border-box;
+}
+.tabla-blog {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 20px;
+}
+.tabla-blog td {
+    width: 33.33%;
+    padding: 30px;
+    background-color: white;
+    border: 1px solid lightgray;
+    vertical-align: top;
+}
+.blog-fecha {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: lightcyan;
+    color: cadetblue;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.tabla-blog h3 {
+    color: darkcyan;
+    font-size: 20px;
+}
+.tabla-blog p {
+    color: slategray;
+    line-height: 1.7;
+}
+
+/* CONTACTO */
+.contacto {
+    background-color: darkcyan;
+    padding: 65px 5%;
+    text-align: center;
+}
+.contacto-contenido {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.contacto .etiqueta-seccion {
+    color: paleturquoise;
+}
+.contacto h2 {
+    color: white;
+    font-size: 34px;
+    margin: 10px 0;
+}
+.contacto p {
+    color: lightcyan;
+    line-height: 1.7;
+}
+.tabla-contacto {
+    width: 100%;
+    margin-top: 35px;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+.tabla-contacto td {
+    width: 33.33%;
+    padding: 20px;
+    color: white;    border: 1px solid lightgray;
+    vertical-align: top;
+}
+.tabla-contacto strong {
+    color: paleturquoise;
+}
+.redes {
+    margin-top: 30px;
+}
+.redes a {
+    display: inline-block;
+    margin: 5px;
+    padding: 9px 18px;
+    border: 1px solid paleturquoise;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+}
+.redes a:hover {
+    background-color: white;
+    color: darkcyan;
+}
+
+/* FOOTER ESPECÍFICO DEL INDEX */
+
+.footer-tabla {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.footer-tabla td {
+    width: 33.33%;
+    vertical-align: top;
+    padding: 10px 30px;
+}
+.footer-tabla h3,
+.footer-tabla h4 {
+    color: white;
+}
+.footer-tabla p {
+    color: lightcyan;
+    line-height: 1.6;
+}
+.footer-tabla a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 8px 0;
+}
+.footer-tabla a:hover {
+    text-decoration: underline;
+}
+.footer-final {    border-top: 1px solid lightgray;
+    margin-top: 30px;
+    padding-top: 15px;
+    text-align: center;
+}
+.footer-final p {
+    color: white;
+    font-size: 13px;
+}
+
+/* AJUSTES */
+@media screen and (max-width: 850px) {
+    .hero-texto,
+    .hero-imagen {
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .hero-texto {
+        margin-bottom: 35px;
+    }
+    .hero h1 {
+        font-size: 38px;
+    }
+    .tabla-accesos,
+    .tabla-especialidades,
+    .tabla-equipo,
+    .tabla-servicios,
+    .tabla-blog,
+    .tabla-contacto {
+        border-spacing: 8px;
+    }
+    .tabla-accesos td,
+    .tabla-especialidades td,
+    .tabla-equipo td,
+    .tabla-servicios td,
+    .tabla-blog td,
+    .tabla-contacto td {
+        display: block;
+        width: auto;
+        margin-bottom: 15px;
+    }
+    .nosotros {
+        padding: 30px 20px;
+    }
+    .nosotros-imagen,
+    .nosotros-texto {
+        display: block;
+        width: auto;
+        text-align: center;
+    }
+    .nosotros-texto {
+        padding: 20px;
+    }
+    .descripcion-seccion {
+        width: 90%;
+    }
+    .footer-tabla td {
+        display: block;
+        width: auto;
+        text-align: center;
+        padding: 15px;
+    }
+}

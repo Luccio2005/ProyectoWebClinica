@@ -1,0 +1,76 @@
+/* CONFIRMAR PEDIDO */
+
+.datos input[type="text"],
+.datos select {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid cadetblue;
+}
+
+.total-confirmar {
+    width: 35%;
+    margin: 30px 10% 30px auto;
+    padding: 20px;
+    background-color: lightcyan;
+    border: 1px solid deepskyblue;
+}
+
+.total-confirmar table {
+    width: 100%;
+}
+
+.total-confirmar td {
+    padding: 10px;
+    border-bottom: 1px solid cadetblue;
+}
+
+.total-confirmar td:last-child {
+    text-align: right;
+}
+
+.total-final {
+    font-size: 20px;
+    font-weight: bold;
+    color: darkcyan;
+}
+
+.confirmacion {
+    width: 70%;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: lightcyan;
+    border: 1px solid deepskyblue;
+}
+
+.confirmacion p,
+.confirmacion label {
+    color: darkcyan;
+}
+
+.boton-confirmar {
+    background-color: deepskyblue;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.boton-confirmar:hover {
+    background-color: darkcyan;
+}
+
+.navegacion {
+    text-align: center;
+    margin: 30px;
+}
+
+.navegacion a {
+    color: cadetblue;
+    text-decoration: none;
+}
+
+.navegacion a:hover {
+    text-decoration: underline;
+}

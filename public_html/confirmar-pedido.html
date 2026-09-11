@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Confirmación de pedido de la farmacia del Hospital Raíz.">
+    <meta name="keywords"
+        content="pedido, farmacia, compra, salud, Hospital Raíz">
+    <meta name="author" content="Hospital Raíz">
+    <title>Confirmar pedido - Hospital Raíz</title>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/confirmar-pedido.css">
+</head>
+
+<body>
+    <header>
+    <div class="encabezado">
+        <table class="menu">
+            <tr>
+                <td class="logo">
+                    <b>Hospital Raíz</b>
+                </td>
+                <td>
+                    <a href="index.html">Inicio</a>
+                </td>
+                <td>
+                    <a href="citas.html">
+                        Reservar cita
+                    </a>
+                </td>
+                <td>
+                    <a href="farmacia.html">
+                        Farmacia
+                    </a>
+                </td>
+                <td>
+                    <a href="consultas.html">
+                        Consulta de salud
+                    </a>
+                </td>
+                <td>
+                    <a href="carrito.html">
+                        Ver carrito
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </header>
+
+
+    <div class="titulo">
+        <h1>Confirmar pedido</h1>
+        <p>
+            Revisa la información de tu pedido antes
+            de confirmar la compra.
+        </p>
+    </div>
+
+
+    <div class="seccion">
+        <h2>Datos del cliente</h2>
+        <table class="datos">
+            <tr>
+                <td>
+                    <b>Nombre completo:</b>
+                </td>
+                <td>
+                    Luis Pérez
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Correo electrónico:</b>
+                </td>
+                <td>
+                    usuario@correo.com
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Teléfono:</b>
+                </td>
+                <td>
+                    987 654 321
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="seccion">
+        <h2>Información de entrega</h2>
+        <form>
+            <table class="datos">
+                <tr>
+                    <td>
+                        <b>Modalidad de entrega:</b>
+                    </td>
+                    <td>
+                        <select>
+                            <option>
+                                Seleccionar
+                            </option>
+                            <option>
+                                Recojo en la clínica
+                            </option>
+                            <option>
+                                Delivery
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Dirección:</b>
+                    </td>
+                    <td>
+                        <input type="text"
+                            placeholder="Ingrese su dirección">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Referencia:</b>
+                    </td>
+                    <td>
+                        <input type="text"
+                            placeholder="Referencia de la dirección">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+
+    <div class="seccion">
+        <h2>Resumen de productos</h2>
+        <table class="tabla-productos">
+            <tr>
+                <th>
+                    Producto
+                </th>
+                <th>
+                    Precio
+                </th>
+                <th>
+                    Cantidad
+                </th>
+                <th>
+                    Subtotal
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Protector Solar FPS 50
+                </td>
+                <td>
+                    S/ 35.00
+                </td>
+                <td>
+                    2
+                </td>
+                <td>
+                    S/ 70.00
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Gel Antibacterial
+                </td>
+                <td>
+                    S/ 12.00
+                </td>
+                <td>
+                    1
+                </td>
+                <td>
+                    S/ 12.00
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Vendas Elásticas
+                </td>
+                <td>
+                    S/ 15.00
+                </td>
+                <td>
+                    1
+                </td>
+                <td>
+                    S/ 15.00
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="seccion">
+        <h2>Método de pago</h2>
+        <table class="datos">
+            <tr>
+                <td>
+                    <b>Seleccionar método:</b>
+                </td>
+                <td>
+                    <select>
+                        <option>
+                            Seleccionar
+                        </option>
+                        <option>
+                            Pago en clínica
+                        </option>
+                        <option>
+                            Tarjeta de crédito o débito
+                        </option>
+                        <option>
+                            Yape
+                        </option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="total-confirmar">
+        <table>
+            <tr>
+                <td>
+                    Subtotal:
+                </td>
+                <td>
+                    S/ 97.00
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Envío:
+                </td>
+                <td>
+                    S/ 10.00
+                </td>
+            </tr>
+            <tr class="total-final">
+                <td>
+                    Total a pagar:
+                </td>
+                <td>
+                    S/ 107.00
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="confirmacion">
+        <p>
+            Al confirmar el pedido, aceptas que la información
+            proporcionada sea utilizada para procesar tu compra.
+        </p>
+        <p>
+            Los productos que requieren receta médica deberán
+            contar con la autorización correspondiente.
+        </p>
+        <label>
+            <input type="checkbox">
+            Confirmo que los datos de mi pedido son correctos.
+        </label>
+        <br><br>
+        <a href="confirmacion.html">
+        <button class="boton-confirmar">
+            Confirmar pedido
+        </button>
+        </a>
+    </div>
+
+
+    <div class="navegacion">
+        <a href="carrito.html">
+            Volver al carrito
+        </a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="farmacia.html">
+            Volver a farmacia
+        </a>
+    </div>
+
+
+    <footer>
+    <div class="pie">
+        <p>
+            Hospital Raíz - Av. Daniel Alcides Carreón 240,
+            Arequipa - (01) 0012121
+        </p>
+        <p>
+            <a href="index.html">Inicio</a> |
+            <a href="farmacia.html">Farmacia</a> |
+            <a href="carrito.html">Carrito</a>
+        </p>
+        <p>
+            © Hospital Raíz - Salud y bienestar
+        </p>
+    </div>
+    </footer>
+</body>
+</html>

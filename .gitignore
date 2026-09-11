@@ -1,0 +1,10 @@
+# Archivos temporales de NetBeans
+build/
+dist/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# Archivos temporales
+*.log
+*.tmp

@@ -1,0 +1,60 @@
+/* MIS PEDIDOS */
+
+.contenedor {
+    width: 90%;
+    margin: 30px auto;
+}
+
+.contenedor h2 {
+    color: darkturquoise;
+    margin-bottom: 20px;
+}
+
+.tabla-pedidos {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid deepskyblue;
+}
+
+.tabla-pedidos th {
+    background-color: lightcyan;
+    color: darkcyan;
+    padding: 15px;
+    border: 1px solid deepskyblue;
+}
+
+.tabla-pedidos td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid deepskyblue;
+}
+
+.recibido,
+.entregado,
+.cancelado {
+    font-weight: bold;
+}
+
+.recibido {
+    color: darkorange;
+}
+
+.entregado {
+    color: seagreen;
+}
+
+.cancelado {
+    color: crimson;
+}
+
+.boton-detalle {
+    display: inline-block;
+    background-color: deepskyblue;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+}
+
+.boton-detalle:hover {
+    background-color: darkcyan;
+}

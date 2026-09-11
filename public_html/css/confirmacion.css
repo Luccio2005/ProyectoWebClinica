@@ -1,0 +1,103 @@
+/* CONFIRMACIÓN DE PEDIDO */
+
+.confirmacion-principal {
+    width: 70%;
+    margin: 40px auto;
+    padding: 30px;
+    text-align: center;
+    background-color: lightcyan;
+    border: 1px solid deepskyblue;
+}
+
+.icono {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    background-color: seagreen;
+    color: white;
+    border-radius: 50%;
+    font-size: 35px;
+    line-height: 50px;
+    font-weight: bold;
+}
+
+.confirmacion-principal h1 {
+    color: darkturquoise;
+}
+
+.confirmacion-principal p {
+    color: darkcyan;
+}
+
+.informacion-pedido {
+    width: 75%;
+    margin: 30px auto;
+}
+
+.informacion-pedido h2,
+.productos-confirmacion h2,
+.siguientes-pasos h2 {
+    color: darkturquoise;
+}
+
+.informacion-pedido table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid deepskyblue;
+}
+
+.informacion-pedido td {
+    padding: 15px;
+    border: 1px solid deepskyblue;
+}
+
+.informacion-pedido td:first-child {
+    width: 35%;
+    background-color: lightcyan;
+}
+
+.estado {
+    color: seagreen;
+    font-weight: bold;
+}
+
+.productos-confirmacion {
+    width: 75%;
+    margin: 30px auto;
+}
+
+.total-confirmacion {
+    width: 35%;
+    margin: 30px 12.5% 30px auto;
+    padding: 20px;
+    background-color: lightcyan;
+    border: 1px solid deepskyblue;
+}
+
+.total-confirmacion table {
+    width: 100%;
+}
+
+.total-confirmacion td {
+    padding: 10px;
+    border-bottom: 1px solid cadetblue;
+}
+
+.total-confirmacion td:last-child {
+    text-align: right;
+}
+
+.total-final {
+    font-size: 20px;
+    font-weight: bold;
+    color: darkcyan;
+}
+
+.siguientes-pasos {
+    width: 70%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: lightcyan;
+    border: 1px solid deepskyblue;
+    text-align: center;
+}

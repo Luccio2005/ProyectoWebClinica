@@ -1,0 +1,150 @@
+b{
+    color: darkcyan;
+    padding: 2px;
+}
+body {
+    margin: 0;
+    background-color: white;
+    color: darkcyan;
+    font-family: Arial, sans-serif;
+}
+table {
+    border-collapse: collapse;
+}
+h1,
+h2,
+h3 {
+    color: darkturquoise;
+}
+a {
+    color: cadetblue;
+}
+.encabezado {
+    background-color: lightcyan;
+    padding: 15px;
+}
+.menu {
+    width: 100%;
+}
+.menu td {
+    text-align: center;
+    padding: 2px;
+}
+.menu a {
+    color: cadetblue;
+    text-decoration: none;
+}
+.menu a:hover {
+    text-decoration: underline;
+}
+.logo {
+    font-size: 20px;
+    color: darkcyan;
+}
+/* TÍTULOS GENERALES */
+.titulo {
+    text-align: center;
+    padding: 30px;
+}
+.titulo h1 {
+    color: darkturquoise;
+}
+.titulo p {
+    color: darkcyan;
+    font-size: 16px;
+}
+/* SECCIONES */
+.seccion {
+    width: 80%;
+    margin: 30px auto;
+}
+.seccion h2 {
+    color: darkturquoise;
+    border-bottom: 1px solid deepskyblue;
+    padding-bottom: 10px;
+}
+.datos {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid deepskyblue;
+}
+.datos td {
+    padding: 15px;
+    border: 1px solid deepskyblue;
+}
+.datos td:first-child {
+    width: 35%;
+    background-color: lightcyan;
+}
+/* PRODUCTOS */
+.tabla-productos {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid deepskyblue;
+}
+.tabla-productos th {
+    background-color: lightcyan;
+    color: darkcyan;
+    padding: 15px;
+    border: 1px solid deepskyblue;
+}
+.tabla-productos td {
+    padding: 15px;
+    border: 1px solid deepskyblue;
+    text-align: center;
+}
+/* ACCIONES Y BOTONES GENERALES */
+.acciones {
+    text-align: center;
+    margin: 30px;
+}
+.boton-principal,
+.boton-secundario {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    margin: 5px;
+}
+.boton-principal {
+    background-color: deepskyblue;
+    color: white;
+}
+.boton-principal:hover {
+    background-color: darkcyan;
+}
+.boton-secundario {
+    background-color: white;
+    color: cadetblue;
+    border: 1px solid deepskyblue;
+    padding: 11px 25px;
+}
+.boton-secundario:hover {
+    background-color: lightcyan;
+}
+/* INFORMACIÓN */
+.informacion {
+    width: 75%;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: lightcyan;
+    border: 1px solid deepskyblue;
+}
+.informacion h2 {
+    color: darkturquoise;
+}
+/* PIE DE PÁGINA */
+.pie {
+    background-color: deepskyblue;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+.pie a {
+    color: white;
+}
+/* UTILIDAD */
+.texto-centro {
+    text-align: center;
+}

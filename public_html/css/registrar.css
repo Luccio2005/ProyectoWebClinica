@@ -1,0 +1,217 @@
+.pagina-autenticacion {
+    background-color: lightcyan;
+    min-height: 100vh;
+}
+.contenedor-registro {
+    width: 90%;
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 40px 0 35px;
+}
+/* LOGO */
+.logo-registro {
+    text-align: center;
+    margin-bottom: 25px;
+}
+.logo-registro img {
+    width: 220px;
+    max-width: 80%;
+    border-radius: 12px;
+}
+/* TARJETA */
+.tarjeta-registro {
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 16px;
+    padding: 40px;
+}
+/* ENCABEZADO */
+.encabezado-registro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+.encabezado-registro h1 {
+    color: darkcyan;
+    font-size: 30px;
+    margin: 0 0 10px;
+}
+.encabezado-registro p {
+    color: slategray;
+    line-height: 1.6;
+    margin: 0;
+}
+/* TÍTULOS */
+.titulo-formulario {
+    display: table;
+    width: 100%;
+    margin: 30px 0 22px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid lightgray;
+}
+.titulo-formulario > span {
+    display: table-cell;
+    width: 42px;
+    vertical-align: top;
+    color: darkcyan;
+    font-size: 14px;
+    font-weight: bold;
+}
+.titulo-formulario > div {
+    display: table-cell;
+    vertical-align: top;
+}
+.titulo-formulario h2 {
+    color: darkcyan;
+    font-size: 19px;
+    margin: 0 0 4px;
+}
+.titulo-formulario p {
+    color: slategray;
+    font-size: 13px;
+    margin: 0;
+}
+/* CAMPOS */
+.campo-registro {
+    margin-bottom: 20px;
+}
+.campo-registro label {
+    display: block;
+    color: darkslategray;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.campo-registro input,
+.campo-registro select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 14px;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    background-color: white;
+    color: darkslategray;
+    font-size: 15px;
+    outline: none;
+}
+.campo-registro input:focus,
+.campo-registro select:focus {
+    border-color: darkcyan;
+    background-color: white;
+}
+.campo-registro small {
+    display: block;
+    margin-top: 6px;
+    color: slategray;
+    font-size: 12px;
+    line-height: 1.4;
+}
+/* AUTORIZACIONES */
+.autorizaciones {
+    margin: 25px 0;
+    padding: 18px;
+    background-color: azure;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+}
+.autorizaciones label {
+    display: block;
+    color: slategray;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+.autorizaciones label:last-child {
+    margin-bottom: 0;
+}
+.autorizaciones input {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+.autorizaciones a {
+    color: cadetblue;
+    text-decoration: none;
+}
+.autorizaciones a:hover {
+    text-decoration: underline;
+}
+/* BOTÓN */
+.boton-registrar {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 25px;
+    background-color: darkcyan;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.boton-registrar:hover {
+    background-color: darkcyan;
+}
+/* LOGIN */
+.login-registro {
+    border-top: 1px solid lightgray;
+    margin-top: 30px;
+    padding-top: 25px;
+    text-align: center;
+}
+.login-registro p {
+    color: slategray;
+    margin: 0 0 10px;
+}
+.login-registro a {
+    color: cadetblue;
+    font-weight: bold;
+    text-decoration: none;
+}
+.login-registro a:hover {
+    text-decoration: underline;
+}
+/* VOLVER AL INICIO */
+.volver-registro {
+    text-align: center;
+    margin-top: 22px;
+}
+.volver-registro a {
+    color: darkcyan;
+    text-decoration: none;
+    font-size: 14px;
+}
+.volver-registro a:hover {
+    text-decoration: underline;
+}
+/* FOOTER */
+.pie-registro {
+    background-color: darkcyan;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+.pie-registro p {
+    margin: 0 0 10px;
+    font-size: 13px;
+}
+.pie-registro a {
+    color: lightcyan;
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 12px;
+}
+.pie-registro a:hover {
+    text-decoration: underline;
+}
+/* PANTALLAS PEQUEÑAS */
+@media screen and (max-width: 650px) {
+    .contenedor-registro {
+        width: 94%;
+        padding-top: 30px;
+    }
+    .tarjeta-registro {
+        padding: 30px 22px;
+    }
+    .encabezado-registro h1 {
+        font-size: 26px;
+    }
+}

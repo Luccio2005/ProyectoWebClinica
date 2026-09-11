@@ -1,0 +1,187 @@
+.pagina-autenticacion {
+    background-color: lightcyan;
+    min-height: 100vh;
+}
+/* CONTENEDOR DEL LOGIN */
+.contenedor-login {
+    width: 90%;
+    max-width: 470px;
+    margin: 0 auto;
+    padding: 45px 0 35px;
+}
+/* LOGO */
+.logo-login {
+    text-align: center;
+    margin-bottom: 25px;
+}
+.logo-login img {
+    width: 220px;
+    max-width: 80%;
+    border-radius: 12px;
+}
+/* TARJETA */
+.tarjeta-login {
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 16px;
+    padding: 40px;
+}
+/* ENCABEZADO */
+.encabezado-login {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.encabezado-login h1 {
+    color: darkcyan;
+    font-size: 30px;
+    margin: 0 0 10px;
+}
+.encabezado-login p {
+    color: slategray;
+    line-height: 1.6;
+    margin: 0;
+}
+/* CAMPOS */
+.campo-login {
+    margin-bottom: 22px;
+}
+.campo-login label {
+    display: block;
+    color: darkslategray;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.campo-login input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 14px;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    background-color: white;
+    color: darkslategray;
+    font-size: 15px;
+    outline: none;
+}
+.campo-login input:focus {
+    border-color: darkcyan;
+    background-color: white;
+}
+/* OPCIONES */
+.opciones-login {
+    margin: 5px 0 25px;
+    font-size: 13px;
+}
+.recordarme {
+    color: slategray;
+}
+.recordarme input {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.opciones-login a {
+    float: right;
+    color: cadetblue;
+    text-decoration: none;
+}
+.opciones-login a:hover {
+    text-decoration: underline;
+}
+/* BOTÓN LOGIN */
+.boton-login {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 25px;
+    background-color: darkcyan;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.boton-login:hover {
+    background-color: darkcyan;
+}
+/* REGISTRO */
+.registro-login {
+    border-top: 1px solid lightgray;
+    margin-top: 30px;
+    padding-top: 25px;
+    text-align: center;
+}
+.registro-login p {
+    color: slategray;
+    margin-bottom: 15px;
+}
+.boton-registro {
+    display: block;
+    padding: 12px;
+    border: 1px solid darkcyan;
+    border-radius: 25px;
+    color: cadetblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+.boton-registro:hover {
+    background-color: lightcyan;
+}
+/* VOLVER AL INICIO */
+.volver-inicio {
+    text-align: center;
+    margin-top: 22px;
+}
+.volver-inicio a {
+    color: darkcyan;
+    text-decoration: none;
+    font-size: 14px;
+}
+.volver-inicio a:hover {
+    text-decoration: underline;
+}
+/* AYUDA */
+.ayuda-login {
+    text-align: center;
+    color: slategray;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 25px;
+}
+/* FOOTER */
+.pie-login {
+    background-color: darkcyan;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+.pie-login p {
+    margin: 0 0 10px;
+    font-size: 13px;
+}
+.pie-login a {
+    color: lightcyan;
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 12px;
+}
+.pie-login a:hover {
+    text-decoration: underline;
+}
+/* PANTALLAS PEQUEÑAS */
+@media screen and (max-width: 500px) {
+    .contenedor-login {
+        width: 94%;
+        padding-top: 30px;
+    }
+    .tarjeta-login {
+        padding: 30px 22px;
+    }
+    .encabezado-login h1 {
+        font-size: 26px;
+    }
+    .opciones-login a {
+        float: none;
+        display: block;
+        margin-top: 10px;
+    }
+}

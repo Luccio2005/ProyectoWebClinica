@@ -1,0 +1,464 @@
+/* CONSULTAS DE SALUD */
+
+
+/* CABECERA */
+
+.cabecera-consultas {
+    background-color: lightcyan;
+    text-align: center;
+    padding: 55px 20px 45px;
+    border-bottom: 1px solid lightgray;
+}
+
+.etiqueta-consulta {
+    color: darkcyan;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.cabecera-consultas h1 {
+    color: darkcyan;
+    font-size: 38px;
+    margin: 0 0 12px;
+}
+
+.cabecera-consultas p:last-child {
+    color: slategray;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* AVISO */
+
+.aviso-consulta {
+    width: 90%;
+    max-width: 1000px;
+    box-sizing: border-box;
+    margin: 25px auto;
+    padding: 16px 20px;
+    background-color: lightyellow;
+    border: 1px solid wheat;
+    border-left: 4px solid goldenrod;
+    border-radius: 6px;
+    color: darkgoldenrod;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.aviso-consulta strong {
+    color: darkgoldenrod;
+}
+
+.aviso-consulta a {
+    color: darkcyan;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.aviso-consulta a:hover {
+    text-decoration: underline;
+}
+
+
+/* CONTENEDOR */
+
+.contenedor-consultas {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 70px;
+}
+
+
+/* BLOQUES */
+
+.nueva-consulta,
+.mis-consultas {
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 32px;
+    margin-bottom: 25px;
+}
+
+
+/* ENCABEZADO DE BLOQUE */
+
+.encabezado-bloque {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+.encabezado-bloque > span {
+    color: darkcyan;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.encabezado-bloque h2 {
+    color: darkcyan;
+    font-size: 23px;
+    margin: 6px 0 7px;
+}
+
+.encabezado-bloque p {
+    color: slategray;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* CAMPOS */
+
+.campo-consulta {
+    margin-bottom: 22px;
+}
+
+.campo-consulta label {
+    display: block;
+    color: darkslategray;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.campo-consulta input[type="text"],
+.campo-consulta select,
+.campo-consulta textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    background-color: white;
+    color: slategray;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+}
+
+.campo-consulta input[type="text"],
+.campo-consulta select {
+    height: 45px;
+    padding: 10px 13px;
+}
+
+.campo-consulta textarea {
+    min-height: 150px;
+    padding: 13px;
+    resize: vertical;
+}
+
+.campo-consulta input[type="text"]:focus,
+.campo-consulta select:focus,
+.campo-consulta textarea:focus {
+    outline: none;
+    border-color: darkcyan;
+    background-color: white;
+}
+
+.campo-consulta input[type="file"] {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px dashed lightgray;
+    border-radius: 6px;
+    background-color: azure;
+    color: slategray;
+}
+
+.campo-consulta small {
+    display: block;
+    margin-top: 6px;
+    color: gray;
+    font-size: 12px;
+}
+
+.opcional {
+    color: gray;
+    font-weight: normal;
+}
+
+
+/* CONFIRMACIÓN */
+
+.confirmar-consulta {
+    padding: 15px;
+    margin: 5px 0 22px;
+    background-color: azure;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+}
+
+.confirmar-consulta label {
+    color: slategray;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.confirmar-consulta input {
+    vertical-align: middle;
+    margin-right: 7px;
+}
+
+
+/* BOTÓN */
+
+.boton-enviar-consulta {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 25px;
+    background-color: darkcyan;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-enviar-consulta:hover {
+    background-color: darkcyan;
+}
+
+
+/* TARJETAS DE CONSULTA */
+
+.tarjeta-consulta {
+    padding: 24px;
+    margin-bottom: 18px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.tarjeta-consulta.respondida {
+    border-left: 4px solid seagreen;
+}
+
+.tarjeta-consulta.pendiente {
+    border-left: 4px solid goldenrod;
+}
+
+
+/* CABECERA DE TARJETA */
+
+.cabecera-tarjeta {
+    display: table;
+    width: 100%;
+}
+
+.cabecera-tarjeta > div {
+    display: table-cell;
+    width: 75%;
+    vertical-align: top;
+}
+
+.cabecera-tarjeta .estado {
+    display: table-cell;
+    width: 25%;
+    text-align: right;
+    vertical-align: top;
+}
+
+.numero-consulta {
+    color: darkcyan;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.cabecera-tarjeta h3 {
+    color: darkcyan;
+    font-size: 18px;
+    margin: 6px 0 0;
+}
+
+
+/* ESTADOS */
+
+.estado {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.estado.respondida {
+    background-color: honeydew;
+    color: seagreen;
+}
+
+.estado.pendiente {
+    background-color: lightyellow;
+    color: darkgoldenrod;
+}
+
+
+/* FECHA */
+
+.fecha-consulta {
+    color: gray;
+    font-size: 12px;
+    margin: 12px 0 20px;
+}
+
+
+/* MENSAJE DEL PACIENTE */
+
+.mensaje-paciente {
+    padding: 15px;
+    background-color: azure;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.mensaje-paciente strong {
+    color: slategray;
+    font-size: 13px;
+}
+
+.mensaje-paciente p {
+    color: slategray;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 8px 0 0;
+}
+
+
+/* RESPUESTA */
+
+.respuesta-profesional {
+    padding: 16px;
+    background-color: honeydew;
+    border: 1px solid honeydew;
+    border-radius: 6px;
+}
+
+.respuesta-profesional strong {
+    color: seagreen;
+    font-size: 13px;
+}
+
+.respuesta-profesional p {
+    color: slategray;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 8px 0;
+}
+
+.profesional {
+    color: slategray;
+    font-size: 12px;
+}
+
+
+/* MENSAJE DE ESPERA */
+
+.mensaje-espera {
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: lightyellow;
+    border: 1px solid wheat;
+    border-radius: 6px;
+}
+
+.mensaje-espera > span {
+    display: table-cell;
+    width: 40px;
+    vertical-align: top;
+    font-size: 20px;
+}
+
+.mensaje-espera > div {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.mensaje-espera strong {
+    color: darkgoldenrod;
+    font-size: 13px;
+}
+
+.mensaje-espera p {
+    color: darkgoldenrod;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 5px 0 0;
+}
+
+
+/* VER DETALLE */
+
+.ver-consulta {
+    display: inline-block;
+    margin-top: 17px;
+    color: cadetblue;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.ver-consulta:hover {
+    text-decoration: underline;
+}
+
+
+/* NOTA DEL HISTORIAL */
+
+.nota-historial {
+    padding: 20px;
+    background-color: azure;
+    border: 1px dashed lightgray;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.nota-historial strong {
+    color: darkcyan;
+    font-size: 14px;
+}
+
+.nota-historial p {
+    color: slategray;
+    font-size: 13px;
+    margin: 8px 0 0;
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 700px) {
+
+    .cabecera-consultas h1 {
+        font-size: 30px;
+    }
+
+    .contenedor-consultas,
+    .aviso-consulta {
+        width: 94%;
+    }
+
+    .nueva-consulta,
+    .mis-consultas {
+        padding: 22px;
+    }
+
+    .cabecera-tarjeta > div,
+    .cabecera-tarjeta .estado {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .cabecera-tarjeta .estado {
+        margin-top: 10px;
+    }
+
+}

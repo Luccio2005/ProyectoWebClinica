@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+          content="Registro de pacientes del Hospital Raíz">
+    <meta name="keywords"
+          content="Hospital Raíz, registro, cuenta, paciente">
+    <meta name="author"
+          content="Hospital Raíz">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Crear cuenta - Hospital Raíz</title>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/registrar.css">
+</head>
+
+<body class="pagina-autenticacion">
+    <main class="contenedor-registro">
+        <!-- LOGO -->
+        <div class="logo-registro">
+            <a href="index.html">
+                <img src="Imagenes/logohospital1.jpg"
+                     alt="Logo Hospital Raíz">
+            </a>
+        </div>
+        
+        <!-- TARJETA DE REGISTRO -->
+        <section class="tarjeta-registro">
+            <div class="encabezado-registro">
+                <h1>Crear una cuenta</h1>
+                <p>
+                    Regístrate para gestionar tus servicios
+                    de salud de manera segura.
+                </p>
+            </div>
+            <form action="#"
+                  method="post">
+                <!-- DATOS DE IDENTIFICACIÓN -->
+                <div class="titulo-formulario">
+                    <span>01</span>
+                    <div>
+                        <h2>Datos de identificación</h2>
+                        <p>
+                            Estos datos permitirán identificar
+                            correctamente tu cuenta.
+                        </p>
+                    </div>
+                </div>
+                <!-- TIPO DOCUMENTO -->
+                <div class="campo-registro">
+                    <label for="tipo-documento">
+                        Tipo de documento
+                    </label>
+                    <select
+                        id="tipo-documento"
+                        name="tipo-documento"
+                        required>
+                        <option value="">
+                            Selecciona una opción
+                        </option>
+                        <option value="dni">
+                            DNI
+                        </option>
+                        <option value="ce">
+                            Carné de extranjería
+                        </option>
+                    </select>
+                </div>
+                <!-- NÚMERO DOCUMENTO -->
+                <div class="campo-registro">
+                    <label for="documento">
+                        Número de documento
+                    </label>
+                    <input
+                        type="text"
+                        id="documento"
+                        name="documento"
+                        placeholder="Ingresa tu número de documento"
+                        maxlength="12"
+                        required>
+                    <small>
+                        Usaremos este documento para identificar
+                        tu cuenta.
+                    </small>
+                </div>
+                <!-- FECHA NACIMIENTO -->
+                <div class="campo-registro">
+                    <label for="fecha-nacimiento">
+                        Fecha de nacimiento
+                    </label>
+                    <input
+                        type="date"
+                        id="fecha-nacimiento"
+                        name="fecha-nacimiento"
+                        required>
+                </div>
+                <!-- DATOS DE CONTACTO -->
+                <div class="titulo-formulario">
+                    <span>02</span>
+                    <div>
+                        <h2>Datos de contacto</h2>
+                        <p>
+                            Necesarios para comunicarnos contigo.
+                        </p>
+                    </div>
+                </div>
+                <!-- CORREO -->
+                <div class="campo-registro">
+                    <label for="correo">
+                        Correo electrónico
+                    </label>
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        placeholder="ejemplo@correo.com"
+                        required>
+                </div>
+                <!-- CELULAR -->
+                <div class="campo-registro">
+                    <label for="celular">
+                        Número de celular
+                    </label>
+                    <input
+                        type="tel"
+                        id="celular"
+                        name="celular"
+                        placeholder="999 999 999"
+                        maxlength="9"
+                        required>
+                </div>
+                
+                <!-- SEGURIDAD -->
+                <div class="titulo-formulario">
+                    <span>03</span>
+                    <div>
+                        <h2>Seguridad de la cuenta</h2>
+                        <p>
+                            Crea una contraseña para proteger
+                            tu información.
+                        </p>
+                    </div>
+                </div>
+                <!-- CONTRASEÑA -->
+                <div class="campo-registro">
+                    <label for="password">
+                        Contraseña
+                    </label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Crea una contraseña"
+                        required>
+                </div>
+                <!-- CONFIRMAR CONTRASEÑA -->
+                <div class="campo-registro">
+                    <label for="confirmar-password">
+                        Confirmar contraseña
+                    </label>
+                    <input
+                        type="password"
+                        id="confirmar-password"
+                        name="confirmar-password"
+                        placeholder="Repite tu contraseña"
+                        required>
+                </div>
+                
+                <!-- AUTORIZACIONES -->
+                <div class="autorizaciones">
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="terminos"
+                            required>
+                        <span>
+                            Acepto los
+                            <a href="#">
+                                términos y condiciones de uso
+                            </a>.
+                        </span>
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="datos"
+                            required>
+                        <span>
+                            Autorizo el tratamiento de mis
+                            datos personales.
+                        </span>
+                    </label>
+                </div>
+
+                <!-- BOTÓN -->
+                <button
+                    type="submit"
+                    class="boton-registrar">
+                    Crear mi cuenta
+                </button>
+            </form>
+
+            <!-- LOGIN -->
+            <div class="login-registro">
+                <p>
+                    ¿Ya tienes una cuenta?
+                </p>
+                <a href="login.html">
+                    Iniciar sesión
+                </a>
+            </div>
+        </section>
+
+        <!-- VOLVER -->
+        <div class="volver-registro">
+            <a href="index.html">
+                ← Volver al inicio
+            </a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="pie-registro">
+        <p>
+            © 2026 Hospital Raíz. Todos los derechos reservados.
+        </p>
+        <a href="#">
+            Términos y condiciones
+        </a>
+        <a href="#">
+            Política de privacidad
+        </a>
+    </footer>
+</body>
+</html>
