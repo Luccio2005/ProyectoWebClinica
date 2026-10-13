@@ -1,58 +1,318 @@
-/* CONFIRMACIÓN DE PEDIDO */
+/* PÁGINA GENERAL */
+body {
+    margin: 0;
+    background-color: white;
+    color: darkcyan;
+}
 
+/* CABECERA */
+.cabecera-confirmacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 12px 4%;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+}
+
+/* LOGO Y NOMBRE */
+.marca-confirmacion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: darkcyan;
+    font-size: 21px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.marca-confirmacion img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.marca-confirmacion:hover img {
+    transform: scale(1.08);
+}
+
+/* NAVBAR CON FLEXBOX */
+.navbar-confirmacion {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.navbar-confirmacion > a,
+.menu-inicio > a,
+.menu-cuenta summary {
+    display: block;
+    padding: 10px 11px;
+    color: darkcyan;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-confirmacion > a:hover,
+.menu-inicio > a:hover,
+.menu-cuenta summary:hover {
+    background-color: lightcyan;
+    color: cadetblue;
+}
+
+/* DESPLEGABLE DE INICIO */
+.menu-inicio {
+    position: relative;
+}
+
+.submenu-inicio {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    min-width: 175px;
+    padding: 8px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    box-shadow: 0 5px 14px silver;
+}
+
+.submenu-inicio a {
+    display: block;
+    padding: 10px;
+    color: darkcyan;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.submenu-inicio a:hover {
+    background-color: lightcyan;
+}
+
+.menu-inicio:hover .submenu-inicio,
+.menu-inicio:focus-within .submenu-inicio {
+    display: block;
+}
+
+/* DESPLEGABLE DE CUENTA */
+.menu-cuenta {
+    position: relative;
+}
+
+.menu-cuenta details {
+    position: relative;
+}
+
+.menu-cuenta summary {
+    list-style: none;
+}
+
+.menu-cuenta summary::-webkit-details-marker {
+    display: none;
+}
+
+.menu-cuenta summary::after {
+    content: " ▾";
+    font-size: 11px;
+}
+
+.submenu-cuenta {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 10;
+    min-width: 145px;
+    padding: 8px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    box-shadow: 0 5px 14px silver;
+}
+
+.submenu-cuenta a {
+    display: block;
+    padding: 10px;
+    color: darkcyan;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.submenu-cuenta a:hover {
+    background-color: lightcyan;
+}
+
+/* CONTENIDO CON GRID */
+.pagina-confirmacion {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+/* MENSAJE PRINCIPAL */
 .confirmacion-principal {
-    width: 70%;
-    margin: 40px auto;
-    padding: 30px;
+    position: relative;
+    isolation: isolate;
+    grid-column: 1 / -1;
+    overflow: hidden;
+    width: auto;
+    margin: 0;
+    padding: 35px 25px;
     text-align: center;
     background-color: lightcyan;
     border: 1px solid deepskyblue;
-}
-
-.icono {
-    width: 50px;
-    height: 50px;
-    margin: auto;
-    background-color: seagreen;
-    color: white;
-    border-radius: 50%;
-    font-size: 35px;
-    line-height: 50px;
-    font-weight: bold;
+    border-radius: 14px;
+    animation: aparecer-confirmacion 0.7s ease both;
 }
 
 .confirmacion-principal h1 {
     color: darkturquoise;
+    font-size: 30px;
+    margin: 15px 0 12px;
 }
 
 .confirmacion-principal p {
     color: darkcyan;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 8px 0;
 }
 
-.informacion-pedido {
-    width: 75%;
-    margin: 30px auto;
+/* CÍRCULO DE CONFIRMACIÓN */
+.icono {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    margin: 0 auto;
+    background-color: seagreen;
+    color: white;
+    border-radius: 50%;
+    font-size: 35px;
+    line-height: 1;
+    font-weight: bold;
+    animation: pulso-icono 2s ease-in-out infinite alternate;
+}
+
+/* DESTELLOS ANIMADOS */
+.destellos {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.destellos span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: deepskyblue;
+    font-size: 22px;
+    opacity: 0;
+    animation: destello 2.8s ease-in-out infinite alternate;
+}
+
+.destellos span:nth-child(1) {
+    top: 12%;
+    left: 12%;
+    animation-delay: 0s;
+}
+
+.destellos span:nth-child(2) {
+    top: 20%;
+    left: 83%;
+    animation-delay: 0.4s;
+}
+
+.destellos span:nth-child(3) {
+    top: 75%;
+    left: 8%;
+    color: gold;
+    animation-delay: 0.8s;
+}
+
+.destellos span:nth-child(4) {
+    top: 78%;
+    left: 90%;
+    animation-delay: 1.2s;
+}
+
+.destellos span:nth-child(5) {
+    top: 8%;
+    left: 58%;
+    color: gold;
+    animation-delay: 0.6s;
+}
+
+.destellos span:nth-child(6) {
+    top: 65%;
+    left: 75%;
+    animation-delay: 1.5s;
+}
+
+.destellos span:nth-child(7) {
+    top: 45%;
+    left: 4%;
+    color: gold;
+    animation-delay: 1s;
+}
+
+.destellos span:nth-child(8) {
+    top: 40%;
+    left: 94%;
+    animation-delay: 1.8s;
+}
+
+/* INFORMACIÓN DEL PEDIDO */
+.informacion-pedido,
+.productos-confirmacion {
+    min-width: 0;
+    margin: 0;
 }
 
 .informacion-pedido h2,
 .productos-confirmacion h2,
 .siguientes-pasos h2 {
     color: darkturquoise;
+    font-size: 22px;
+    margin: 0 0 18px;
 }
 
-.informacion-pedido table {
+.informacion-pedido table,
+.productos-confirmacion table {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid deepskyblue;
+    background-color: white;
 }
 
-.informacion-pedido td {
-    padding: 15px;
+.informacion-pedido td,
+.productos-confirmacion td,
+.productos-confirmacion th {
+    padding: 13px;
     border: 1px solid deepskyblue;
+    text-align: left;
 }
 
 .informacion-pedido td:first-child {
-    width: 35%;
+    width: 40%;
     background-color: lightcyan;
 }
 
@@ -61,25 +321,41 @@
     font-weight: bold;
 }
 
-.productos-confirmacion {
-    width: 75%;
-    margin: 30px auto;
+/* TABLA DE PRODUCTOS */
+.productos-confirmacion th {
+    background-color: lightcyan;
+    color: darkcyan;
 }
 
+.productos-confirmacion td {
+    font-size: 14px;
+}
+
+/* DESPLAZAMIENTO HORIZONTAL DE TABLA EN MÓVILES */
+.tabla-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* TOTAL */
 .total-confirmacion {
-    width: 35%;
-    margin: 30px 12.5% 30px auto;
+    grid-column: 2;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
     padding: 20px;
     background-color: lightcyan;
     border: 1px solid deepskyblue;
+    border-radius: 8px;
 }
 
 .total-confirmacion table {
     width: 100%;
+    border-collapse: collapse;
 }
 
 .total-confirmacion td {
-    padding: 10px;
+    padding: 11px;
     border-bottom: 1px solid cadetblue;
 }
 
@@ -88,16 +364,266 @@
 }
 
 .total-final {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: bold;
     color: darkcyan;
 }
 
+/* SIGUIENTES PASOS */
 .siguientes-pasos {
-    width: 70%;
-    margin: 30px auto;
-    padding: 20px;
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 25px;
     background-color: lightcyan;
     border: 1px solid deepskyblue;
+    border-radius: 10px;
     text-align: center;
+}
+
+.siguientes-pasos p {
+    color: darkcyan;
+    line-height: 1.6;
+}
+
+/* BOTONES */
+.acciones {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0;
+}
+
+.acciones a {
+    border-radius: 25px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.acciones a:hover {
+    transform: translateY(-3px);
+}
+
+/* FOOTER */
+.pie-confirmacion {
+    background-color: darkcyan;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.pie-confirmacion p {
+    margin: 0 0 10px;
+    font-size: 13px;
+}
+
+.pie-confirmacion a {
+    color: lightcyan;
+    text-decoration: none;
+}
+
+.pie-confirmacion a:hover {
+    text-decoration: underline;
+}
+
+/* ANIMACIONES */
+@keyframes aparecer-confirmacion {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes destello {
+    0% {
+        opacity: 0.15;
+        transform: scale(0.6) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2) rotate(25deg);
+    }
+
+    100% {
+        opacity: 0.25;
+        transform: scale(0.8) rotate(-15deg);
+    }
+}
+
+@keyframes pulso-icono {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.06);
+    }
+}
+
+/* TABLETAS */
+@media screen and (max-width: 900px) {
+    .cabecera-confirmacion {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .navbar-confirmacion {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .pagina-confirmacion {
+        width: 94%;
+        gap: 22px;
+    }
+
+    .confirmacion-principal h1 {
+        font-size: 27px;
+    }
+
+    .informacion-pedido td,
+    .productos-confirmacion td,
+    .productos-confirmacion th {
+        padding: 10px;
+    }
+}
+
+/* CELULARES */
+@media screen and (max-width: 650px) {
+    body {
+        background-color: azure;
+    }
+
+    .cabecera-confirmacion {
+        padding: 12px 4%;
+    }
+
+    .marca-confirmacion {
+        font-size: 19px;
+    }
+
+    .marca-confirmacion img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .navbar-confirmacion {
+        gap: 3px;
+    }
+
+    .navbar-confirmacion > a,
+    .menu-inicio > a,
+    .menu-cuenta summary {
+        padding: 9px 8px;
+        font-size: 13px;
+    }
+
+    .pagina-confirmacion {
+        grid-template-columns: 1fr;
+        width: 92%;
+        margin: 25px auto;
+        gap: 22px;
+    }
+
+    .confirmacion-principal,
+    .informacion-pedido,
+    .productos-confirmacion,
+    .total-confirmacion,
+    .siguientes-pasos,
+    .acciones {
+        grid-column: 1;
+    }
+
+    .confirmacion-principal {
+        padding: 28px 16px;
+    }
+
+    .confirmacion-principal h1 {
+        font-size: 24px;
+    }
+
+    .confirmacion-principal p {
+        font-size: 14px;
+    }
+
+    .informacion-pedido h2,
+    .productos-confirmacion h2,
+    .siguientes-pasos h2 {
+        font-size: 20px;
+    }
+
+    .total-confirmacion {
+        padding: 15px;
+    }
+
+    .siguientes-pasos {
+        padding: 20px 15px;
+    }
+
+    .pie-confirmacion {
+        padding: 18px 10px;
+    }
+}
+
+/* CELULARES ESTRECHOS */
+@media screen and (max-width: 400px) {
+    .navbar-confirmacion {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .navbar-confirmacion > a,
+    .menu-inicio > a,
+    .menu-cuenta summary {
+        padding: 9px;
+    }
+
+    .submenu-inicio {
+        position: static;
+        width: auto;
+    }
+
+    .submenu-cuenta {
+        position: static;
+    }
+
+    .productos-confirmacion table {
+        min-width: 440px;
+    }
+
+    .acciones {
+        flex-direction: column;
+    }
+
+    .acciones a {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+}
+
+/* REDUCIR MOVIMIENTO */
+@media (prefers-reduced-motion: reduce) {
+    .confirmacion-principal,
+    .icono,
+    .destellos span {
+        animation: none;
+    }
+
+    .marca-confirmacion img,
+    .navbar-confirmacion a,
+    .menu-cuenta summary,
+    .submenu-inicio a,
+    .submenu-cuenta a,
+    .acciones a {
+        transition: none;
+    }
 }
