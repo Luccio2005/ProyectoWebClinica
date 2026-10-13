@@ -3,13 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Clínica Raíz: servicios médicos, especialidades y farmacia.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Raíz - Inicio</title>
+    <script>
+        /* Oculta los anuncios cuando la pantalla es estrecha. */
+        function adaptarMarcos() {
+            var estructura = document.getElementById("estructura-principal");
+            if (window.innerWidth <= 650) {
+                estructura.setAttribute("cols", "100%,0%");
+            } else {
+                estructura.setAttribute("cols", "82%,18%");
+            }
+        }
+
+        window.addEventListener("load", adaptarMarcos);
+        window.addEventListener("resize", adaptarMarcos);
+    </script>
 </head>
-<frameset cols="82%,18%" frameborder="0" border="0" framespacing="0">
+<frameset id="estructura-principal" cols="82%,18%" frameborder="0" border="0" framespacing="0">
     <frame src="inicio-clinica.html" name="contenido" title="Página principal de Clínica Raíz">
     <frameset rows="50%,50%" frameborder="0" border="0" framespacing="0">
-        <frame src="anuncio1.html" name="anuncioSuperior" title="Anuncio superior">
-        <frame src="anuncio2.html" name="anuncioInferior" title="Anuncio inferior">
+        <frame src="anuncio1.html" name="anuncioSuperior" title="Anuncio superior" scrolling="auto">
+        <frame src="anuncio2.html" name="anuncioInferior" title="Anuncio inferior" scrolling="auto">
     </frameset>
     <noframes>
         <body>

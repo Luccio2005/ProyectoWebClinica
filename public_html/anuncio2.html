@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anuncio de bienestar</title>
-<style>
-* { box-sizing: border-box; }
-body { margin: 0; padding: 10px; font-family: Arial, sans-serif; background: lightcyan; color: darkcyan; }
-a { display: block; text-decoration: none; color: inherit; }
-.anuncio { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: calc(100vh - 20px); padding: 12px; text-align: center; background: white; border: 1px solid paleturquoise; border-radius: 12px; overflow: hidden; transition: transform .3s ease, box-shadow .3s ease; }
-.anuncio:hover { transform: scale(1.02); box-shadow: 0 5px 14px silver; }
-.anuncio img { display: block; width: 100%; max-width: 220px; max-height: 38vh; object-fit: contain; border-radius: 8px; }
-h2 { font-size: clamp(16px, 2vw, 24px); margin: 12px 0 8px; }
-p { font-size: clamp(12px, 1.2vw, 15px); line-height: 1.5; margin: 0 0 12px; }
-.boton { display: inline-block; padding: 9px 12px; background: cadetblue; color: white; border-radius: 20px; font-size: 12px; }
-@media (max-width: 700px) { body { padding: 4px; } .anuncio { padding: 6px; } p { display: none; } .anuncio img { max-height: 28vh; } }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anuncio de bienestar</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 5px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .anuncio {
+            display: block;
+            width: 100%;
+        }
+
+        .anuncio img {
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            max-height: calc(50vh - 10px);
+            margin: 0 auto;
+            object-fit: contain;
+        }
+    </style>
 </head>
 <body>
-<a class="anuncio" href="inicio-clinica.html#videos" target="contenido">
-    <img src="Imagenes/anuncio2.jpg" alt="Imagen de campaña de bienestar y hábitos saludables">
-    <h2>Pequeños hábitos, grandes cambios</h2>
-    <p>Infórmate sobre actividad física, alimentación equilibrada y descanso.</p>
-    <span class="boton">Ver consejos de salud</span>
-</a>
+    <a class="anuncio" href="inicio-clinica.html#videos" target="contenido">
+        <img src="Imagenes/anuncio2.jfif" alt="Imagen de campaña de bienestar y hábitos saludables">
+    </a>
 </body>
 </html>
