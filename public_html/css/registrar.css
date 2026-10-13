@@ -1,79 +1,109 @@
+/* FONDO GENERAL */
 .pagina-autenticacion {
     background-color: lightcyan;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
+/* CONTENEDOR PRINCIPAL */
 .contenedor-registro {
+    display: grid;
+    grid-template-columns: 1fr;
     width: 90%;
-    max-width: 620px;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 40px 0 35px;
+    padding: 35px 0;
+    animation: entrada-registro 0.8s ease both;
 }
+
 /* LOGO */
 .logo-registro {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     margin-bottom: 25px;
 }
+
 .logo-registro img {
-    width: 220px;
+    display: block;
+    width: 100px;
     max-width: 80%;
+    height: auto;
     border-radius: 12px;
+    transition: transform 0.4s ease;
 }
+
+.logo-registro img:hover {
+    transform: rotate(45deg);
+}
+
 /* TARJETA */
 .tarjeta-registro {
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 16px;
-    padding: 40px;
+    padding: 35px;
+    box-shadow: 0 5px 18px lightgray;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.tarjeta-registro:hover {
+    transform: scale(1.015);
+    box-shadow: 0 9px 24px silver;
+}
+
 /* ENCABEZADO */
 .encabezado-registro {
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
+
 .encabezado-registro h1 {
     color: darkcyan;
     font-size: 30px;
     margin: 0 0 10px;
 }
+
 .encabezado-registro p {
     color: slategray;
+    font-size: 16px;
     line-height: 1.6;
     margin: 0;
 }
-/* TÍTULOS */
-.titulo-formulario {
-    display: table;
-    width: 100%;
-    margin: 30px 0 22px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid lightgray;
+
+/* GRUPOS DEL FORMULARIO */
+.grupo-registro {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 18px;
+    min-width: 0;
+    margin: 0 0 25px;
+    padding: 18px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
 }
-.titulo-formulario > span {
-    display: table-cell;
-    width: 42px;
-    vertical-align: top;
+
+.grupo-registro legend {
+    padding: 0 8px;
     color: darkcyan;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: bold;
 }
-.titulo-formulario > div {
-    display: table-cell;
-    vertical-align: top;
-}
-.titulo-formulario h2 {
-    color: darkcyan;
-    font-size: 19px;
-    margin: 0 0 4px;
-}
-.titulo-formulario p {
+
+.descripcion-grupo {
+    grid-column: 1 / -1;
     color: slategray;
     font-size: 13px;
-    margin: 0;
+    line-height: 1.5;
+    margin: 0 0 18px;
 }
+
 /* CAMPOS */
 .campo-registro {
-    margin-bottom: 20px;
+    min-width: 0;
+    margin-bottom: 18px;
 }
+
 .campo-registro label {
     display: block;
     color: darkslategray;
@@ -81,8 +111,10 @@
     font-size: 14px;
     margin-bottom: 8px;
 }
+
 .campo-registro input,
 .campo-registro select {
+    display: block;
     width: 100%;
     box-sizing: border-box;
     padding: 13px 14px;
@@ -92,51 +124,70 @@
     color: darkslategray;
     font-size: 15px;
     outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 .campo-registro input:focus,
 .campo-registro select:focus {
     border-color: darkcyan;
-    background-color: white;
+    box-shadow: 0 0 0 3px lightcyan;
 }
+
 .campo-registro small {
     display: block;
     margin-top: 6px;
     color: slategray;
     font-size: 12px;
-    line-height: 1.4;
+    line-height: 1.5;
 }
+
 /* AUTORIZACIONES */
 .autorizaciones {
-    margin: 25px 0;
+    margin: 0 0 25px;
     padding: 18px;
     background-color: azure;
     border: 1px solid lightgray;
     border-radius: 8px;
 }
+
+.autorizaciones legend {
+    padding: 0 8px;
+    color: darkcyan;
+    font-size: 16px;
+    font-weight: bold;
+}
+
 .autorizaciones label {
-    display: block;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
     color: slategray;
     font-size: 13px;
     line-height: 1.5;
     margin-bottom: 12px;
 }
+
 .autorizaciones label:last-child {
     margin-bottom: 0;
 }
+
 .autorizaciones input {
-    vertical-align: middle;
-    margin-right: 8px;
+    margin-top: 3px;
 }
+
 .autorizaciones a {
     color: cadetblue;
     text-decoration: none;
 }
+
 .autorizaciones a:hover {
     text-decoration: underline;
 }
+
 /* BOTÓN */
 .boton-registrar {
     width: 100%;
+    box-sizing: border-box;
     padding: 14px;
     border: none;
     border-radius: 25px;
@@ -145,42 +196,55 @@
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
 .boton-registrar:hover {
-    background-color: darkcyan;
+    background-color: cadetblue;
+    transform: translateY(-2px);
 }
-/* LOGIN */
+
+/* ENLACE AL LOGIN */
 .login-registro {
     border-top: 1px solid lightgray;
-    margin-top: 30px;
-    padding-top: 25px;
+    margin-top: 28px;
+    padding-top: 22px;
     text-align: center;
 }
+
 .login-registro p {
     color: slategray;
     margin: 0 0 10px;
 }
+
 .login-registro a {
     color: cadetblue;
     font-weight: bold;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
+
 .login-registro a:hover {
+    color: darkcyan;
     text-decoration: underline;
 }
+
 /* VOLVER AL INICIO */
 .volver-registro {
     text-align: center;
     margin-top: 22px;
 }
+
 .volver-registro a {
     color: darkcyan;
     text-decoration: none;
     font-size: 14px;
 }
+
 .volver-registro a:hover {
     text-decoration: underline;
 }
+
 /* FOOTER */
 .pie-registro {
     background-color: darkcyan;
@@ -189,29 +253,112 @@
     padding: 20px;
     margin-top: 20px;
 }
+
 .pie-registro p {
     margin: 0 0 10px;
     font-size: 13px;
 }
+
 .pie-registro a {
+    display: inline-block;
     color: lightcyan;
     text-decoration: none;
-    margin: 0 8px;
+    margin: 5px 8px;
     font-size: 12px;
 }
+
 .pie-registro a:hover {
     text-decoration: underline;
 }
-/* PANTALLAS PEQUEÑAS */
-@media screen and (max-width: 650px) {
+
+/* ANIMACIÓN DE ENTRADA */
+@keyframes entrada-registro {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* TABLETAS */
+@media screen and (max-width: 700px) {
     .contenedor-registro {
         width: 94%;
-        padding-top: 30px;
+        padding: 25px 0;
     }
+
     .tarjeta-registro {
-        padding: 30px 22px;
+        padding: 28px;
     }
+
+    .grupo-registro {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .pagina-autenticacion {
+        background-color: azure;
+    }
+
     .encabezado-registro h1 {
-        font-size: 26px;
+        font-size: 27px;
+    }
+}
+
+/* CELULARES */
+@media screen and (max-width: 450px) {
+    .tarjeta-registro {
+        padding: 22px 16px;
+        border-radius: 12px;
+    }
+
+    .logo-registro img {
+        width: 80px;
+    }
+
+    .encabezado-registro h1 {
+        font-size: 24px;
+    }
+
+    .encabezado-registro p {
+        font-size: 14px;
+    }
+
+    .grupo-registro legend {
+        font-size: 15px;
+    }
+
+    .campo-registro input,
+    .campo-registro select {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .pie-registro {
+        padding: 18px 10px;
+    }
+
+    .pie-registro a {
+        margin: 5px;
+    }
+}
+
+/* REDUCIR MOVIMIENTO */
+@media (prefers-reduced-motion: reduce) {
+    .contenedor-registro {
+        animation: none;
+    }
+
+    .tarjeta-registro,
+    .logo-registro img,
+    .campo-registro input,
+    .campo-registro select,
+    .boton-registrar,
+    .login-registro a {
+        transition: none;
     }
 }
