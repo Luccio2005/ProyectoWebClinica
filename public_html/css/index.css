@@ -337,7 +337,8 @@
 .tabla-contacto td {
     width: 33.33%;
     padding: 20px;
-    color: white;    border: 1px solid lightgray;
+    color: white;
+    border: 1px solid lightgray;
     vertical-align: top;
 }
 .tabla-contacto strong {
@@ -389,7 +390,8 @@
 .footer-tabla a:hover {
     text-decoration: underline;
 }
-.footer-final {    border-top: 1px solid lightgray;
+.footer-final {
+    border-top: 1px solid lightgray;
     margin-top: 30px;
     padding-top: 15px;
     text-align: center;
@@ -453,4 +455,201 @@
         text-align: center;
         padding: 15px;
     }
+}
+
+/* ENCABEZADO Y NAVBAR */
+.encabezado-index {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 12px 4%;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+}
+.marca-index {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: darkcyan;
+    font-size: 21px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.marca-index img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+.marca-index:hover img { transform: scale(1.08); }
+.navbar-index {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+.navbar-index .enlace-nav {
+    display: block;
+    padding: 10px 9px;
+    color: darkcyan;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.navbar-index .enlace-nav:hover,
+.navbar-index .enlace-nav:focus {
+    background-color: lightcyan;
+    color: cadetblue;
+}
+.grupo-nav { position: relative; }
+.submenu-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 20;
+    min-width: 175px;
+    padding: 7px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    box-shadow: 0 5px 14px silver;
+}
+.submenu-nav a {
+    display: block;
+    padding: 10px;
+    color: darkcyan;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.submenu-nav a:hover,
+.submenu-nav a:focus { background-color: lightcyan; }
+.grupo-nav:hover .submenu-nav,
+.grupo-nav:focus-within .submenu-nav { display: block; }
+.submenu-derecha { left: auto; right: 0; }
+
+/* TRANSICIONES EN TARJETAS Y BOTONES */
+.tabla-accesos td,
+.tabla-especialidades td,
+.tabla-equipo td,
+.tabla-servicios td,
+.tabla-blog td {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tabla-accesos td:hover,
+.tabla-especialidades td:hover,
+.tabla-equipo td:hover,
+.tabla-servicios td:hover,
+.tabla-blog td:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 18px lightgray;
+}
+.hero-imagen img,
+.nosotros-imagen img,
+.tabla-equipo img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.hero-imagen img:hover,
+.nosotros-imagen img:hover { transform: scale(1.03); }
+.tabla-equipo img { height: 130px; }
+.boton-principal,
+.boton-secundario { transition: background-color 0.3s ease, transform 0.3s ease; }
+.boton-principal:hover,
+.boton-secundario:hover { transform: translateY(-2px); }
+
+/* VIDEOS INFORMATIVOS: GRID Y FLEXBOX */
+.seccion-videos { text-align: center; }
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+.tarjeta-video {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 18px;
+    background-color: azure;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tarjeta-video:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px lightgray;
+}
+.tarjeta-video video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background-color: darkcyan;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tarjeta-video video:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 12px silver;
+}
+.tarjeta-video h3 { color: darkcyan; font-size: 19px; }
+.tarjeta-video p { color: slategray; line-height: 1.6; }
+
+/* MAPA DE UBICACIÓN */
+.ubicacion-clinica {
+    margin-top: 35px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid paleturquoise;
+    border-radius: 12px;
+}
+.ubicacion-clinica h3 { color: white; font-size: 22px; }
+.ubicacion-clinica iframe {
+    display: block;
+    width: 100%;
+    height: 320px;
+    border: 0;
+    border-radius: 10px;
+}
+
+/* FOOTER EN EL MISMO COLOR QUE LAS OTRAS PÁGINAS */
+.pie { background-color: darkcyan; }
+
+/* AJUSTES RESPONSIVOS ADICIONALES */
+@media screen and (max-width: 1000px) {
+    .encabezado-index { align-items: flex-start; flex-direction: column; }
+    .navbar-index { justify-content: flex-start; width: 100%; }
+    .navbar-index .enlace-nav { font-size: 13px; }
+    .videos-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media screen and (max-width: 650px) {
+    body { background-color: azure; }
+    .encabezado-index { padding: 12px 4%; }
+    .marca-index { font-size: 19px; }
+    .marca-index img { width: 42px; height: 42px; }
+    .navbar-index { gap: 2px; }
+    .navbar-index .enlace-nav { padding: 8px 7px; }
+    .submenu-nav { position: static; box-shadow: none; }
+    .videos-grid { grid-template-columns: 1fr; }
+    .hero-contenido { padding: 40px 0; }
+    .hero h1 { font-size: 32px; }
+    .hero-descripcion { font-size: 16px; }
+    .seccion { margin: 45px auto; }
+    .nosotros, .blog, .seccion-equipo { padding: 25px 15px; }
+    .contacto { padding: 40px 5%; }
+    .ubicacion-clinica { padding: 12px; }
+    .ubicacion-clinica iframe { height: 250px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
