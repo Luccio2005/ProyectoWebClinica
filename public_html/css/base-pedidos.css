@@ -1,0 +1,314 @@
+/* BASE COMPARTIDA: carrito, confirmar-pedido, mis-pedidos, detalle-pedido
+   Se carga después de general.css y antes del CSS de cada página. */
+
+body {
+    overflow-x: clip;
+}
+
+/* ---------- ANIMACIONES (fotogramas) ---------- */
+
+@keyframes deslizar-izquierda {
+    from {
+        opacity: 0;
+        transform: translateX(-70px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes deslizar-derecha {
+    from {
+        opacity: 0;
+        transform: translateX(70px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bajar {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación por desplazamiento de la página:
+   cada bloque se desliza cuando entra en pantalla al hacer scroll.
+   Si el navegador no lo soporta, se desliza una vez al cargar. */
+.revelar {
+    animation: deslizar-izquierda 0.8s ease-out both;
+}
+
+.revelar.derecha {
+    animation-name: deslizar-derecha;
+}
+
+@supports (animation-timeline: view()) {
+    .revelar {
+        animation-duration: auto;
+        animation-timing-function: linear;
+        animation-timeline: view();
+        animation-range: entry 0% entry 45%;
+    }
+}
+
+header {
+    animation: bajar 0.7s ease-out both;
+}
+
+/* ---------- HEADER CON NAVBAR (Flexbox) ---------- */
+
+.barra {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px 25px;
+}
+
+.barra .logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: darkcyan;
+}
+
+.barra ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 5px 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.barra li a {
+    position: relative;
+    display: block;
+    padding: 8px 14px;
+    color: darkcyan;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.barra li a::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 3px;
+    height: 2px;
+    background-color: deepskyblue;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.barra li a:hover,
+.barra li a:focus-visible {
+    background-color: white;
+    transform: translateY(-2px);
+}
+
+.barra li a:hover::after,
+.barra li a:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.barra li a.activo {
+    background-color: white;
+    font-weight: bold;
+}
+
+/* ---------- TRANSICIONES GENERALES ---------- */
+
+.boton-principal,
+.boton-secundario,
+.boton-detalle,
+.boton-confirmar,
+.eliminar,
+.boton-producto {
+    transition: background-color 0.3s ease, color 0.3s ease,
+        transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.boton-principal:hover,
+.boton-secundario:hover,
+.boton-detalle:hover,
+.boton-confirmar:hover,
+.eliminar:hover,
+.boton-producto:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 139, 139, 0.25);
+}
+
+.tabla-carrito tr,
+.tabla-pedidos tr,
+.tabla-productos tr,
+.datos tr {
+    transition: background-color 0.3s ease;
+}
+
+.tabla-carrito td,
+.tabla-pedidos td,
+.tabla-productos td {
+    transition: background-color 0.3s ease;
+}
+
+.tabla-carrito tr:hover td,
+.tabla-pedidos tr:hover td,
+.tabla-productos tr:hover td {
+    background-color: azure;
+}
+
+input,
+select {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: deepskyblue;
+    box-shadow: 0 0 0 3px lightcyan;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid deepskyblue;
+    outline-offset: 2px;
+}
+
+/* ---------- IMÁGENES RESPONSIVAS ---------- */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.miniatura {
+    flex: 0 0 auto;
+    width: 70px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 1px solid deepskyblue;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+tr:hover .miniatura {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+/* Celda con imagen + nombre (Flexbox) */
+.celda-producto {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+}
+
+/* ---------- TABLAS QUE SE ADAPTAN AL CELULAR ---------- */
+
+.tabla-adaptable {
+    width: 100%;
+}
+
+@media (max-width: 700px) {
+    .tabla-adaptable,
+    .tabla-adaptable tbody,
+    .tabla-adaptable tr,
+    .tabla-adaptable td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tabla-adaptable tr:first-child {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+    }
+
+    .tabla-adaptable tr {
+        margin-bottom: 15px;
+        border: 1px solid deepskyblue;
+    }
+
+    .tabla-adaptable td {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        border: none;
+        border-bottom: 1px solid lightcyan;
+        text-align: right;
+    }
+
+    .tabla-adaptable td::before {
+        content: attr(data-label);
+        flex: 0 0 auto;
+        font-weight: bold;
+        color: darkturquoise;
+        text-align: left;
+    }
+
+    .tabla-adaptable td.celda-imagen::before {
+        display: none;
+    }
+}
+
+/* ---------- PIE DE PÁGINA ---------- */
+
+.pie a {
+    transition: opacity 0.3s ease;
+}
+
+.pie a:hover {
+    opacity: 0.7;
+}
+
+/* ---------- RESPONSIVO GENERAL ---------- */
+
+@media (max-width: 700px) {
+    .barra {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .barra ul {
+        justify-content: center;
+    }
+
+    .titulo {
+        padding: 20px 15px;
+    }
+
+    .acciones {
+        display: flex;
+        flex-direction: column;
+        margin: 20px 15px;
+    }
+}
+
+/* Respeta a quienes prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

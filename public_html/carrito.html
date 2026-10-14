@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
         content="Carrito de compras de la farmacia del Hospital Raíz.">
     <meta name="keywords"
@@ -9,41 +10,26 @@
     <meta name="author" content="Hospital Raíz">
     <title>Carrito - Hospital Raíz</title>
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/base-pedidos.css">
     <link rel="stylesheet" href="css/carrito.css">
 </head>
 <body>
     <header>
-    <div class="encabezado">
-        <table class="menu">
-            <tr>
-                <td class="logo">
-                    <b>Hospital Raíz</b>
-                </td>
-                <td>
-                    <a href="index.html">Inicio</a>
-                </td>
-                <td>
-                    <a href="citas.html">Reservar cita</a>
-                </td>
-                <td>
-                    <a href="farmacia.html">Farmacia</a>
-                </td>
-                <td>
-                    <a href="consultas.html">
-                        Consulta de salud
-                    </a>
-                </td>
-                <td>
-                    <a href="carrito.html">
-                        Ver carrito
-                    </a>
-                </td>
-            </tr>
-        </table>
-    </div>
+        <div class="encabezado">
+            <nav class="barra" aria-label="Menú principal">
+                <span class="logo">Hospital Raíz</span>
+                <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="citas.html">Reservar cita</a></li>
+                <li><a href="farmacia.html">Farmacia</a></li>
+                <li><a href="consultas.html">Consulta de salud</a></li>
+                <li><a href="carrito.html" class="activo">Ver carrito</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <div class="titulo">
+    <div class="titulo revelar">
         <h1>Mi carrito</h1>
         <p>
             Revisa los productos seleccionados
@@ -51,9 +37,9 @@
         </p>
     </div>
 
-    <div class="contenedor-carrito">
-        <h2>Productos seleccionados</h2>
-        <table class="tabla-carrito">
+    <main class="contenedor-carrito">
+        <h2 class="revelar">Productos seleccionados</h2>
+        <table class="tabla-carrito tabla-adaptable revelar derecha">
             <tr>
                 <th>Producto</th>
                 <th>Precio</th>
@@ -61,181 +47,166 @@
                 <th>Subtotal</th>
                 <th>Acción</th>
             </tr>
-            
             <tr>
-                <td>
+                <td data-label="Producto">
                     <div class="producto">
-                        <img src="Imagenes/producto1.webp"
-                            alt="Protector solar">
+                        <img src="Imagenes/producto1.webp" alt="Protector solar">
                         <div>
                             <b>Protector Solar FPS 50</b>
-                            <p>
-                                Producto de cuidado de la piel
-                            </p>
+                            <p>Producto de cuidado de la piel</p>
                         </div>
                     </div>
                 </td>
-                <td>
-                    S/ 35.00
+                <td data-label="Precio">S/ 35.00</td>
+                <td data-label="Cantidad">
+                    <input type="number" value="2" min="1"
+                        aria-label="Cantidad de Protector Solar FPS 50">
                 </td>
-                <td>
-                    <input type="number"
-                        value="2"
-                        min="1">
-                </td>
-                <td>
-                    S/ 70.00
-                </td>
-                <td>
-                    <button class="eliminar">
-                        Eliminar
-                    </button>
+                <td data-label="Subtotal">S/ 70.00</td>
+                <td data-label="Acción">
+                    <button class="eliminar">Eliminar</button>
                 </td>
             </tr>
-
             <tr>
-                <td>
+                <td data-label="Producto">
                     <div class="producto">
-                        <img src="Imagenes/producto3.webp"
-                            alt="Gel antibacterial">
+                        <img src="Imagenes/producto3.webp" alt="Gel antibacterial">
                         <div>
                             <b>Gel Antibacterial</b>
-                            <p>
-                                Producto de higiene
-                            </p>
+                            <p>Producto de higiene</p>
                         </div>
                     </div>
                 </td>
-                <td>
-                    S/ 12.00
+                <td data-label="Precio">S/ 12.00</td>
+                <td data-label="Cantidad">
+                    <input type="number" value="1" min="1"
+                        aria-label="Cantidad de Gel Antibacterial">
                 </td>
-                <td>
-                    <input type="number"
-                        value="1"
-                        min="1">
-                </td>
-                <td>
-                    S/ 12.00
-                </td>
-                <td>
-                    <button class="eliminar">
-                        Eliminar
-                    </button>
+                <td data-label="Subtotal">S/ 12.00</td>
+                <td data-label="Acción">
+                    <button class="eliminar">Eliminar</button>
                 </td>
             </tr>
-
             <tr>
-                <td>
+                <td data-label="Producto">
                     <div class="producto">
-                        <img src="Imagenes/producto7.jpg"
-                            alt="Vendas elásticas">
+                        <img src="Imagenes/producto7.jpg" alt="Vendas elásticas">
                         <div>
                             <b>Vendas Elásticas</b>
-                            <p>
-                                Producto de primeros auxilios
-                            </p>
+                            <p>Producto de primeros auxilios</p>
                         </div>
                     </div>
                 </td>
-                <td>
-                    S/ 15.00
+                <td data-label="Precio">S/ 15.00</td>
+                <td data-label="Cantidad">
+                    <input type="number" value="1" min="1"
+                        aria-label="Cantidad de Vendas Elásticas">
                 </td>
-                <td>
-                    <input type="number"
-                        value="1"
-                        min="1">
-                </td>
-                <td>
-                    S/ 15.00
-                </td>
-                <td>
-                    <button class="eliminar">
-                        Eliminar
-                    </button>
+                <td data-label="Subtotal">S/ 15.00</td>
+                <td data-label="Acción">
+                    <button class="eliminar">Eliminar</button>
                 </td>
             </tr>
         </table>
 
-        <div class="resumen">
-            <h2>Resumen de compra</h2>
-            <table>
-                <tr>
-                    <td>
-                        Productos:
-                    </td>
-                    <td>
-                        4 unidades
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Subtotal:
-                    </td>
-                    <td>
-                        S/ 97.00
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Costo de envío:
-                    </td>
-                    <td>
-                        S/ 10.00
-                    </td>
-                </tr>
-                <tr class="total">
-                    <td>
-                        Total:
-                    </td>
-                    <td>
-                        S/ 107.00
-                    </td>
-                </tr>
-            </table>
+        <div class="carrito-grid">
+            <div class="informacion informacion-carrito revelar">
+                <h2>Información importante</h2>
+                <p>
+                    Los productos que requieren receta médica
+                    deben haber sido previamente autorizados
+                    por la clínica.
+                </p>
+                <p>
+                    Antes de confirmar el pedido, verifica que
+                    los productos y cantidades sean correctos.
+                </p>
+            </div>
+
+            <div class="resumen revelar derecha">
+                <h2>Resumen de compra</h2>
+                <table>
+                    <tr>
+                        <td>Productos:</td>
+                        <td>4 unidades</td>
+                    </tr>
+                    <tr>
+                        <td>Subtotal:</td>
+                        <td>S/ 97.00</td>
+                    </tr>
+                    <tr>
+                        <td>Costo de envío:</td>
+                        <td>S/ 10.00</td>
+                    </tr>
+                    <tr class="total">
+                        <td>Total:</td>
+                        <td>S/ 107.00</td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
-        <div class="acciones acciones-carrito">
-            <a href="farmacia.html"
-                class="boton-secundario">
+        <div class="acciones acciones-carrito revelar">
+            <a href="farmacia.html" class="boton-secundario">
                 Seguir comprando
             </a>
-            <a href="confirmar-pedido.html"
-                class="boton-principal">
+            <a href="confirmar-pedido.html" class="boton-principal">
                 Continuar con la compra
             </a>
         </div>
-    </div>
 
-    <div class="informacion informacion-carrito">
-        <h2>Información importante</h2>
-        <p>
-            Los productos que requieren receta médica
-            deben haber sido previamente autorizados
-            por la clínica.
-        </p>
-        <p>
-            Antes de confirmar el pedido, verifica que
-            los productos y cantidades sean correctos.
-        </p>
-    </div>
+        <h2 class="revelar">También te puede interesar</h2>
+        <section class="recomendados revelar">
+            <article class="tarjeta-producto">
+                <div class="marco-imagen">
+                    <img src="Imagenes/producto2.webp" alt="Crema hidratante">
+                </div>
+                <h3>Crema Hidratante</h3>
+                <p class="precio">S/ 28.00</p>
+                <a href="farmacia.html" class="boton-producto">Ver en farmacia</a>
+            </article>
+            <article class="tarjeta-producto">
+                <div class="marco-imagen">
+                    <img src="Imagenes/producto4.webp" alt="Termómetro digital">
+                </div>
+                <h3>Termómetro Digital</h3>
+                <p class="precio">S/ 25.00</p>
+                <a href="farmacia.html" class="boton-producto">Ver en farmacia</a>
+            </article>
+            <article class="tarjeta-producto">
+                <div class="marco-imagen">
+                    <img src="Imagenes/producto5.jpg" alt="Vitamina C">
+                </div>
+                <h3>Vitamina C</h3>
+                <p class="precio">S/ 18.00</p>
+                <a href="farmacia.html" class="boton-producto">Ver en farmacia</a>
+            </article>
+            <article class="tarjeta-producto">
+                <div class="marco-imagen">
+                    <img src="Imagenes/producto8.jpg" alt="Gasas estériles">
+                </div>
+                <h3>Gasas Estériles</h3>
+                <p class="precio">S/ 9.00</p>
+                <a href="farmacia.html" class="boton-producto">Ver en farmacia</a>
+            </article>
+        </section>
+    </main>
 
     <footer>
-    <div class="pie">
-        <p>
-            Hospital Raíz - Av. Daniel Alcides Carreón 240,
-            Arequipa - (01) 0012121
-        </p>
-        <p>
-            <a href="index.html">Inicio</a> |
-            <a href="farmacia.html">Farmacia</a> |
-            <a href="citas.html">
-                Reservar cita
-            </a>
-        </p>
-        <p>
-            © Hospital Raíz - Salud y bienestar
-        </p>
-    </div>
+        <div class="pie">
+            <p>
+                Hospital Raíz - Av. Daniel Alcides Carreón 240,
+                Arequipa - (01) 0012121
+            </p>
+            <p>
+                <a href="index.html">Inicio</a> |
+                <a href="farmacia.html">Farmacia</a> |
+                <a href="citas.html">Reservar cita</a>
+            </p>
+            <p>
+                © Hospital Raíz - Salud y bienestar
+            </p>
+        </div>
     </footer>
 </body>
 </html>

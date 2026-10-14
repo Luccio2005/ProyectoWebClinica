@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
         content="Detalle de pedido de la farmacia del Hospital Raíz.">
     <meta name="keywords"
@@ -9,278 +10,188 @@
     <meta name="author" content="Hospital Raíz">
     <title>Detalle del pedido - Hospital Raíz</title>
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/base-pedidos.css">
     <link rel="stylesheet" href="css/detalle-pedido.css">
 </head>
 <body>
     <header>
-    <div class="encabezado">
-        <table class="menu">
-            <tr>
-                <td class="logo">
-                    <b>Hospital Raíz</b>
-                </td>
-                <td>
-                    <a href="index.html">
-                        Inicio
-                    </a>
-                </td>
-                <td>
-                    <a href="citas.html">
-                        Reservar cita
-                    </a>
-                </td>
-                <td>
-                    <a href="farmacia.html">
-                        Farmacia
-                    </a>
-                </td>
-                <td>
-                    <a href="consultas.html">
-                        Consulta de salud
-                    </a>
-                </td>
-                <td>
-                    <a href="carrito.html">
-                        Ver carrito
-                    </a>
-                </td>
-            </tr>
-        </table>
-    </div>
+        <div class="encabezado">
+            <nav class="barra" aria-label="Menú principal">
+                <span class="logo">Hospital Raíz</span>
+                <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="citas.html">Reservar cita</a></li>
+                <li><a href="farmacia.html">Farmacia</a></li>
+                <li><a href="consultas.html">Consulta de salud</a></li>
+                <li><a href="carrito.html">Ver carrito</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    
-    <div class="titulo">
+    <div class="titulo revelar">
         <h1>Detalle del pedido</h1>
         <p>
             Información completa de tu compra.
         </p>
     </div>
 
+    <main class="detalle-contenido">
+        <div class="detalle-grid">
+            <div class="seccion revelar">
+                <h2>Información del pedido</h2>
+                <table class="datos">
+                    <tr>
+                        <td><b>Número de pedido:</b></td>
+                        <td>HR-000125</td>
+                    </tr>
+                    <tr>
+                        <td><b>Fecha:</b></td>
+                        <td>08/09/2026</td>
+                    </tr>
+                    <tr>
+                        <td><b>Estado:</b></td>
+                        <td class="estado">Pedido recibido</td>
+                    </tr>
+                    <tr>
+                        <td><b>Modalidad de entrega:</b></td>
+                        <td>Delivery</td>
+                    </tr>
+                </table>
+            </div>
 
-    <div class="seccion">
-        <h2>Información del pedido</h2>
-        <table class="datos">
-            <tr>
-                <td>
-                    <b>Número de pedido:</b>
-                </td>
-                <td>
-                    HR-000125
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <b>Fecha:</b>
-                </td>
-                <td>
-                    08/09/2026
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <b>Estado:</b>
-                </td>
-                <td class="estado">
-                    Pedido recibido
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <b>Modalidad de entrega:</b>
-                </td>
-                <td>
-                    Delivery
-                </td>
-            </tr>
-        </table>
-    </div>
+            <div class="seccion revelar derecha">
+                <h2>Información de entrega</h2>
+                <table class="datos">
+                    <tr>
+                        <td><b>Dirección:</b></td>
+                        <td>
+                            Av. Daniel Alcides Carreón 240,
+                            Arequipa
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Referencia:</b></td>
+                        <td>Frente a la entrada principal</td>
+                    </tr>
+                </table>
+            </div>
 
+            <div class="seccion revelar">
+                <h2>Información de pago</h2>
+                <table class="datos">
+                    <tr>
+                        <td><b>Método de pago:</b></td>
+                        <td>Tarjeta de crédito o débito</td>
+                    </tr>
+                    <tr>
+                        <td><b>Subtotal:</b></td>
+                        <td>S/ 97.00</td>
+                    </tr>
+                    <tr>
+                        <td><b>Costo de envío:</b></td>
+                        <td>S/ 10.00</td>
+                    </tr>
+                    <tr class="total-detalle">
+                        <td><b>Total:</b></td>
+                        <td><b>S/ 107.00</b></td>
+                    </tr>
+                </table>
+            </div>
 
-    <div class="seccion">
-        <h2>Productos del pedido</h2>
-        <table class="tabla-productos">
-            <tr>
-                <th>
-                    Producto
-                </th>
-                <th>
-                    Precio
-                </th>
-                <th>
-                    Cantidad
-                </th>
-                <th>
-                    Subtotal
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    Protector Solar FPS 50
-                </td>
-                <td>
-                    S/ 35.00
-                </td>
-                <td>
-                    2
-                </td>
-                <td>
-                    S/ 70.00
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Gel Antibacterial
-                </td>
-                <td>
-                    S/ 12.00
-                </td>
-                <td>
-                    1
-                </td>
-                <td>
-                    S/ 12.00
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Vendas Elásticas
-                </td>
-                <td>
-                    S/ 15.00
-                </td>
-                <td>
-                    1
-                </td>
-                <td>
-                    S/ 15.00
-                </td>
-            </tr>
-        </table>
-    </div>
+            <div class="seccion seccion-productos revelar derecha">
+                <h2>Productos del pedido</h2>
+                <table class="tabla-productos tabla-adaptable">
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                    </tr>
+                <tr>
+                    <td data-label="Producto">
+                        <div class="celda-producto">
+                            <img class="miniatura" src="Imagenes/producto1.webp" alt="Protector solar">
+                            <span>Protector Solar FPS 50</span>
+                        </div>
+                    </td>
+                    <td data-label="Precio">S/ 35.00</td>
+                    <td data-label="Cantidad">2</td>
+                    <td data-label="Subtotal">S/ 70.00</td>
+                </tr>
+                <tr>
+                    <td data-label="Producto">
+                        <div class="celda-producto">
+                            <img class="miniatura" src="Imagenes/producto3.webp" alt="Gel antibacterial">
+                            <span>Gel Antibacterial</span>
+                        </div>
+                    </td>
+                    <td data-label="Precio">S/ 12.00</td>
+                    <td data-label="Cantidad">1</td>
+                    <td data-label="Subtotal">S/ 12.00</td>
+                </tr>
+                <tr>
+                    <td data-label="Producto">
+                        <div class="celda-producto">
+                            <img class="miniatura" src="Imagenes/producto7.jpg" alt="Vendas elásticas">
+                            <span>Vendas Elásticas</span>
+                        </div>
+                    </td>
+                    <td data-label="Precio">S/ 15.00</td>
+                    <td data-label="Cantidad">1</td>
+                    <td data-label="Subtotal">S/ 15.00</td>
+                </tr>
+                </table>
+            </div>
+        </div>
 
-
-    <div class="seccion">
-        <h2>Información de entrega</h2>
-        <table class="datos">
-            <tr>
-                <td>
-                    <b>Dirección:</b>
-                </td>
-                <td>
-                    Av. Daniel Alcides Carreón 240,
-                    Arequipa
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <b>Referencia:</b>
-                </td>
-                <td>
-                    Frente a la entrada principal
-                </td>
-            </tr>
-        </table>
-    </div>
-
-
-    <div class="seccion">
-        <h2>Información de pago</h2>
-        <table class="datos">
-            <tr>
-                <td>
-                    <b>Método de pago:</b>
-                </td>
-                <td>
-                    Tarjeta de crédito o débito
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <b>Subtotal:</b>
-                </td>
-                <td>
-                    S/ 97.00
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <b>Costo de envío:</b>
-                </td>
-                <td>
-                    S/ 10.00
-                </td>
-            </tr>
-            <tr class="total-detalle">
-                <td>
-                    <b>Total:</b>
-                </td>
-                <td>
-                    <b>S/ 107.00</b>
-                </td>
-            </tr>
-        </table>
-    </div>
-
-
-    <div class="seguimiento">
-        <h2>Estado del pedido</h2>
-        <table>
-            <tr>
-                <td class="paso-activo">
+        <div class="seguimiento revelar">
+            <h2>Estado del pedido</h2>
+            <div class="pasos">
+                <div class="paso paso-activo">
                     <b>1</b>
-                    <br>
-                    Pedido recibido
-                </td>
-                <td>
+                    <span>Pedido recibido</span>
+                </div>
+                <div class="paso">
                     <b>2</b>
-                    <br>
-                    Preparando pedido
-                </td>
-                <td>
+                    <span>Preparando pedido</span>
+                </div>
+                <div class="paso">
                     <b>3</b>
-                    <br>
-                    En camino
-                </td>
-                <td>
+                    <span>En camino</span>
+                </div>
+                <div class="paso">
                     <b>4</b>
-                    <br>
-                    Entregado
-                </td>
-            </tr>
-        </table>
-    </div>
+                    <span>Entregado</span>
+                </div>
+            </div>
+        </div>
+    </main>
 
-
-    <div class="acciones">
-        <a href="mis-pedidos.html"
-            class="boton-principal">
+    <div class="acciones revelar">
+        <a href="mis-pedidos.html" class="boton-principal">
             Volver a mis pedidos
         </a>
-        <a href="farmacia.html"
-            class="boton-secundario">
+        <a href="farmacia.html" class="boton-secundario">
             Ir a farmacia
         </a>
     </div>
 
-
     <footer>
-    <div class="pie">
-        <p>
-            Hospital Raíz - Av. Daniel Alcides Carreón 240,
-            Arequipa - (01) 0012121
-        </p>
-        <p>
-            <a href="index.html">Inicio</a> |
-            <a href="farmacia.html">Farmacia</a> |
-            <a href="citas.html">
-                Reservar cita
-            </a>
-        </p>
-        <p>
-            © Hospital Raíz - Salud y bienestar
-        </p>
-    </div>
+        <div class="pie">
+            <p>
+                Hospital Raíz - Av. Daniel Alcides Carreón 240,
+                Arequipa - (01) 0012121
+            </p>
+            <p>
+                <a href="index.html">Inicio</a> |
+                <a href="farmacia.html">Farmacia</a> |
+                <a href="citas.html">Reservar cita</a>
+            </p>
+            <p>
+                © Hospital Raíz - Salud y bienestar
+            </p>
+        </div>
     </footer>
 </body>
 </html>

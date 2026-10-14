@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
         content="Historial de pedidos de la farmacia del Hospital Raíz.">
     <meta name="keywords"
@@ -9,47 +10,26 @@
     <meta name="author" content="Hospital Raíz">
     <title>Mis pedidos - Hospital Raíz</title>
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/base-pedidos.css">
     <link rel="stylesheet" href="css/mis-pedidos.css">
 </head>
 <body>
-
     <header>
-    <div class="encabezado">
-        <table class="menu">
-            <tr>
-                <td class="logo">
-                    <b>Hospital Raíz</b>
-                </td>
-                <td>
-                    <a href="index.html">Inicio</a>
-                </td>
-                <td>
-                    <a href="citas.html">
-                        Reservar cita
-                    </a>
-                </td>
-                <td>
-                    <a href="farmacia.html">
-                        Farmacia
-                    </a>
-                </td>
-                <td>
-                    <a href="consultas.html">
-                        Consulta de salud
-                    </a>
-                </td>
-                <td>
-                    <a href="carrito.html">
-                        Ver carrito
-                    </a>
-                </td>
-            </tr>
-        </table>
-    </div>
+        <div class="encabezado">
+            <nav class="barra" aria-label="Menú principal">
+                <span class="logo">Hospital Raíz</span>
+                <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="citas.html">Reservar cita</a></li>
+                <li><a href="farmacia.html">Farmacia</a></li>
+                <li><a href="consultas.html">Consulta de salud</a></li>
+                <li><a href="carrito.html">Ver carrito</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-
-    <div class="titulo">
+    <div class="titulo revelar">
         <h1>Mis pedidos</h1>
         <p>
             Consulta el historial de tus compras
@@ -57,131 +37,112 @@
         </p>
     </div>
 
+    <main class="contenedor">
+        <section class="estadisticas revelar">
+            <div class="dato-pedido">
+                <b>4</b>
+                <span>Pedidos realizados</span>
+            </div>
+            <div class="dato-pedido">
+                <b>2</b>
+                <span>Entregados</span>
+            </div>
+            <div class="dato-pedido">
+                <b>1</b>
+                <span>Pedido recibido</span>
+            </div>
+            <div class="dato-pedido">
+                <b>1</b>
+                <span>Cancelado</span>
+            </div>
+        </section>
 
-    <div class="contenedor">
-        <h2>Historial de pedidos</h2>
-        <table class="tabla-pedidos">
+        <section class="ultimo-pedido revelar derecha">
+            <h2>Tu último pedido: HR-000125</h2>
+            <div class="productos-ultimo">
+                <figure class="producto-ultimo">
+                    <div class="marco-imagen">
+                        <img src="Imagenes/producto1.webp" alt="Protector solar">
+                    </div>
+                    <figcaption>Protector Solar FPS 50 (x2)</figcaption>
+                </figure>
+                <figure class="producto-ultimo">
+                    <div class="marco-imagen">
+                        <img src="Imagenes/producto3.webp" alt="Gel antibacterial">
+                    </div>
+                    <figcaption>Gel Antibacterial (x1)</figcaption>
+                </figure>
+                <figure class="producto-ultimo">
+                    <div class="marco-imagen">
+                        <img src="Imagenes/producto7.jpg" alt="Vendas elásticas">
+                    </div>
+                    <figcaption>Vendas Elásticas (x1)</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <h2 class="revelar">Historial de pedidos</h2>
+        <table class="tabla-pedidos tabla-adaptable revelar">
             <tr>
-                <th>
-                    Pedido
-                </th>
-                <th>
-                    Fecha
-                </th>
-                <th>
-                    Productos
-                </th>
-                <th>
-                    Total
-                </th>
-                <th>
-                    Estado
-                </th>
-                <th>
-                    Detalle
-                </th>
+                <th>Pedido</th>
+                <th>Fecha</th>
+                <th>Productos</th>
+                <th>Total</th>
+                <th>Estado</th>
+                <th>Detalle</th>
             </tr>
-
             <tr>
-                <td>
-                    HR-000125
-                </td>
-                <td>
-                    08/09/2026
-                </td>
-                <td>
-                    4 productos
-                </td>
-                <td>
-                    S/ 107.00
-                </td>
-                <td class="recibido">
-                    Pedido recibido
-                </td>
-                <td>
-                    <a href="detalle-pedido.html"
-                        class="boton-detalle">
+                <td data-label="Pedido">HR-000125</td>
+                <td data-label="Fecha">08/09/2026</td>
+                <td data-label="Productos">4 productos</td>
+                <td data-label="Total">S/ 107.00</td>
+                <td data-label="Estado" class="recibido">Pedido recibido</td>
+                <td data-label="Detalle">
+                    <a href="detalle-pedido.html" class="boton-detalle">
                         Ver detalle
                     </a>
                 </td>
             </tr>
-
             <tr>
-                <td>
-                    HR-000108
-                </td>
-                <td>
-                    02/09/2026
-                </td>
-                <td>
-                    2 productos
-                </td>
-                <td>
-                    S/ 48.00
-                </td>
-                <td class="entregado">
-                    Entregado
-                </td>
-                <td>
-                    <a href="detalle-pedido.html"
-                        class="boton-detalle">
+                <td data-label="Pedido">HR-000108</td>
+                <td data-label="Fecha">02/09/2026</td>
+                <td data-label="Productos">2 productos</td>
+                <td data-label="Total">S/ 48.00</td>
+                <td data-label="Estado" class="entregado">Entregado</td>
+                <td data-label="Detalle">
+                    <a href="detalle-pedido.html" class="boton-detalle">
                         Ver detalle
                     </a>
                 </td>
             </tr>
-
             <tr>
-                <td>
-                    HR-000091
-                </td>
-                <td>
-                    25/08/2026
-                </td>
-                <td>
-                    3 productos
-                </td>
-                <td>
-                    S/ 72.00
-                </td>
-                <td class="entregado">
-                    Entregado
-                </td>
-                <td>
-                    <a href="detalle-pedido.html"
-                        class="boton-detalle">
+                <td data-label="Pedido">HR-000091</td>
+                <td data-label="Fecha">25/08/2026</td>
+                <td data-label="Productos">3 productos</td>
+                <td data-label="Total">S/ 72.00</td>
+                <td data-label="Estado" class="entregado">Entregado</td>
+                <td data-label="Detalle">
+                    <a href="detalle-pedido.html" class="boton-detalle">
                         Ver detalle
                     </a>
                 </td>
             </tr>
-
             <tr>
-                <td>
-                    HR-000075
-                </td>
-                <td>
-                    17/08/2026
-                </td>
-                <td>
-                    1 producto
-                </td>
-                <td>
-                    S/ 35.00
-                </td>
-                <td class="cancelado">
-                    Cancelado
-                </td>
-                <td>
-                    <a href="detalle-pedido.html"
-                        class="boton-detalle">
+                <td data-label="Pedido">HR-000075</td>
+                <td data-label="Fecha">17/08/2026</td>
+                <td data-label="Productos">1 producto</td>
+                <td data-label="Total">S/ 35.00</td>
+                <td data-label="Estado" class="cancelado">Cancelado</td>
+                <td data-label="Detalle">
+                    <a href="detalle-pedido.html" class="boton-detalle">
                         Ver detalle
                     </a>
                 </td>
             </tr>
         </table>
-    </div>
+    </main>
 
-
-    <div class="informacion">
+    <div class="informacion revelar">
         <h2>Seguimiento de pedidos</h2>
         <p>
             Desde esta sección podrás consultar el estado
@@ -194,36 +155,30 @@
         </p>
     </div>
 
-
-    <div class="acciones">
-        <a href="farmacia.html"
-            class="boton-principal">
+    <div class="acciones revelar">
+        <a href="farmacia.html" class="boton-principal">
             Ir a farmacia
         </a>
-        <a href="index.html"
-            class="boton-secundario">
+        <a href="index.html" class="boton-secundario">
             Volver al inicio
         </a>
     </div>
 
-
     <footer>
-    <div class="pie">
-        <p>
-            Hospital Raíz - Av. Daniel Alcides Carreón 240,
-            Arequipa - (01) 0012121
-        </p>
-        <p>
-            <a href="index.html">Inicio</a> |
-            <a href="farmacia.html">Farmacia</a> |
-            <a href="citas.html">
-                Reservar cita
-            </a>
-        </p>
-        <p>
-            © Hospital Raíz - Salud y bienestar
-        </p>
-    </div>
+        <div class="pie">
+            <p>
+                Hospital Raíz - Av. Daniel Alcides Carreón 240,
+                Arequipa - (01) 0012121
+            </p>
+            <p>
+                <a href="index.html">Inicio</a> |
+                <a href="farmacia.html">Farmacia</a> |
+                <a href="citas.html">Reservar cita</a>
+            </p>
+            <p>
+                © Hospital Raíz - Salud y bienestar
+            </p>
+        </div>
     </footer>
 </body>
 </html>
