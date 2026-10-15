@@ -1,104 +1,423 @@
-/* FARMACIA */
+/* ==========================================
+                FARMACIA 
+   ========================================== */
 
+/* 1. TRANSICIONES GLOBALES */
+a, button, .producto-card, input, .oferta-card {
+    transition: all 0.3s ease-in-out;
+}
+
+/* 2. ANIMACIÓN POR DESPLAZAMIENTO (SCROLL) */
+.animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. IMÁGENES RESPONSIVAS */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* --- MARQUEE MEJORADO (Barra superior) --- */
+.marquee-container {
+    background: darkcyan;
+    color: white;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.marquee-track {
+    display: inline-block;
+    animation: scrollMarquee 25s linear infinite;
+}
+
+.marquee-track span {
+    padding-right: 50px;
+}
+
+@keyframes scrollMarquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+
+/* --- ENCABEZADO Y NAVBAR (Flexbox) --- */
+.encabezado {
+    background-color: #ffffff;
+    border-bottom: 1px solid lightgray;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo b {
+    color: darkcyan;
+    font-size: 18px;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: slategray;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.navbar a:hover, .nav-link-activo {
+    color: darkcyan;
+}
+
+.btn-carrito {
+    background-color: darkcyan;
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+
+/* --- TÍTULO PRINCIPAL --- */
+.titulo {
+    background-color: lightcyan;
+    text-align: center;
+    padding: 50px 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+.titulo h1 {
+    color: darkcyan;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.titulo p {
+    color: slategray;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+
+/* --- BARRA DE CATEGORÍAS (Animación por repetición continua estilo Cuidafarma) --- */
+.categorias-ticker {
+    background-color: azure;
+    border-bottom: 1px solid lightgray;
+    padding: 15px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ticker-track {
+    display: inline-flex;
+    gap: 40px;
+    animation: tickerScroll 20s linear infinite;
+}
+
+.ticker-item {
+    background: white;
+    padding: 8px 20px;
+    border: 1px solid deepskyblue;
+    border-radius: 20px;
+    color: darkcyan;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+@keyframes tickerScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+
+/* --- CARRUSEL DE OFERTAS / PRODUCTOS DESTACADOS --- */
+.carrusel-ofertas {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.carrusel-ofertas h2 {
+    color: darkcyan;
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.carrusel-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    scroll-snap-type: x mandatory;
+}
+
+.oferta-card {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    background: white;
+    border: 1px solid deepskyblue;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.oferta-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.5s ease; /* Transición de evento / hover para imágenes */
+}
+
+/* Transición de evento (Hover Zoom en la imagen del carrusel) */
+.oferta-card:hover img {
+    transform: scale(1.08);
+}
+
+.oferta-info {
+    padding: 15px;
+}
+
+.oferta-info h3 {
+    color: darkcyan;
+    font-size: 18px;
+    margin: 0 0 5px;
+}
+
+.oferta-info p {
+    color: slategray;
+    font-size: 13px;
+    margin: 0;
+}
+
+
+/* --- DESTACADO --- */
 .destacado {
-    width: 80%;
-    margin: 10px auto 30px auto;
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
     padding: 20px;
     text-align: center;
     background-color: lightcyan;
     border: 1px solid deepskyblue;
+    border-radius: 8px;
 }
 
 .destacado h2 {
-    color: darkturquoise;
+    color: darkcyan;
+    margin-top: 0;
 }
 
+.destacado p {
+    color: slategray;
+    margin-bottom: 0;
+}
+
+
+/* --- PRODUCTOS (Grid Layout Moderno) --- */
 .titulo-productos {
     text-align: center;
-    color: darkturquoise;
-    margin: 30px;
+    color: darkcyan;
+    font-size: 26px;
+    margin: 40px 0 20px;
 }
 
-.productos-farmacia {
-    width: 95%;
-    margin: auto;
+.productos-grid-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 50px;
 }
 
-.productos-farmacia td {
-    width: 25%;
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.producto-card {
+    background: white;
+    border: 1px solid deepskyblue;
+    border-radius: 10px;
     padding: 20px;
     text-align: center;
-    vertical-align: top;
-    border: 1px solid deepskyblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 }
 
-.productos-farmacia img {
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+}
+
+.producto-img {
     width: 150px;
     height: 150px;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
-.productos-farmacia h3 {
-    color: darkturquoise;
+.producto-card:hover .producto-img {
+    transform: scale(1.05);
+}
+
+.producto-card h3 {
+    color: darkcyan;
+    font-size: 17px;
+    margin: 10px 0;
+}
+
+.producto-card p {
+    color: slategray;
+    font-size: 13px;
+    line-height: 1.4;
+    flex-grow: 1;
+    margin-bottom: 12px;
 }
 
 .precio {
     font-size: 20px;
     font-weight: bold;
     color: darkcyan;
+    margin: 5px 0;
 }
 
 .tipo {
     color: seagreen;
     font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 10px;
 }
 
 .receta {
     color: crimson;
     font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 10px;
 }
 
-.productos-farmacia input {
+.cantidad-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.producto-card input {
     width: 50px;
     padding: 6px;
     text-align: center;
-}
-
-.productos-farmacia button {
-    background-color: deepskyblue;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-}
-
-.productos-farmacia button:hover {
-    background-color: darkcyan;
-}
-
-.ver-carrito {
-    text-align: center;
-    margin: 30px;
-}
-
-.ver-carrito a {
-    display: inline-block;
-    background-color: deepskyblue;
-    color: white;
-    padding: 12px 30px;
-    text-decoration: none;
-}
-
-.ver-carrito a:hover {
-    background-color: darkcyan;
+    border: 1px solid lightgray;
+    border-radius: 4px;
 }
 
 .boton-producto {
-    display: inline-block;
+    display: block;
     background-color: deepskyblue;
     color: white;
     padding: 10px 15px;
     text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
 }
+
 .boton-producto:hover {
     background-color: darkcyan;
+}
+
+.receta-btn {
+    background-color: crimson !important;
+}
+
+.receta-btn:hover {
+    background-color: #a80024 !important;
+}
+
+
+/* --- VER CARRITO GENERAL --- */
+.ver-carrito {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.btn-ver-carrito {
+    display: inline-block;
+    background-color: deepskyblue;
+    color: white;
+    padding: 14px 35px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.btn-ver-carrito:hover {
+    background-color: darkcyan;
+}
+
+
+/* --- RESPONSIVE DESIGN (Media Queries) --- */
+@media screen and (max-width: 1024px) {
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
 }

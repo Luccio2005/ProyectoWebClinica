@@ -2,407 +2,355 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="description"
-        content="Farmacia virtual del Hospital Raíz. Productos para el cuidado y bienestar de la salud.">
-    <meta name="keywords"
-        content="farmacia, salud, bienestar, medicamentos, Hospital Raíz">
+    <meta name="description" content="Farmacia virtual del Hospital Raíz. Productos para el cuidado y bienestar de la salud.">
+    <meta name="keywords" content="farmacia, salud, bienestar, medicamentos, Hospital Raíz">
     <meta name="author" content="Hospital Raíz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farmacia - Hospital Raíz</title>
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/farmacia.css">
 </head>
 
 <body>
-    <marquee class="promocion-farmacia">
-        Promociones de farmacia | Productos para el cuidado de tu salud | Algunos medicamentos requieren receta médica
-    </marquee>
-    <header>
-    <div class="encabezado">
-        <table class="menu">
-            <tr>
-                <td class="logo">
-                    <b>Hospital Raíz</b>
-                </td>
-                <td>
-                    <a href="index.html">Inicio</a>
-                </td>
-                <td>
-                    <a href="citas.html">Reservar cita</a>
-                </td>
-                <td>
-                    <a href="farmacia.html">Farmacia</a>
-                </td>
-                <td>
-                    <a href="consultas.html">Consulta de salud</a>
-                </td>
-                <td>
-                    <a href="carrito.html">Ver carrito</a>
-                </td>
-            </tr>
-        </table>
+    <!-- MARQUEE MEJORADO (Animación continua sin saltos) -->
+    <div class="marquee-container">
+        <div class="marquee-track">
+            <span>Promociones de farmacia | Productos para el cuidado de tu salud | Algunos medicamentos requieren receta médica | ¡Descuentos en cuidado personal!</span>
+            <span>Promociones de farmacia | Productos para el cuidado de tu salud | Algunos medicamentos requieren receta médica | ¡Descuentos en cuidado personal!</span>
+        </div>
     </div>
+
+    <!-- ENCABEZADO CON NAVBAR (Flexbox) -->
+    <header class="encabezado">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Imagenes/logohospital1.jpg" alt="Logo Hospital Raíz" class="img-responsive logo-img">
+                </a>
+                <b>Hospital Raíz</b>
+            </div>
+
+            <nav class="navbar">
+                <a href="index.html">Inicio</a>
+                <a href="citas.html">Reservar cita</a>
+                <a href="farmacia.html" class="nav-link-activo">Farmacia</a>
+                <a href="consultas.html">Consulta de salud</a>
+                <a href="carrito.html" class="btn-carrito">Ver carrito</a>
+            </nav>
+        </div>
     </header>
 
-    <div class="titulo">
-        <h1>Farmacia Hospital Raíz</h1>
-        <p>
-            Encuentra productos para el cuidado de tu salud
-            y bienestar.
-        </p>
-        <p>
-            Algunos productos pueden requerir una receta médica
-            para su adquisición.
-        </p>
-    </div>
+    <main class="main-content">
+        <!-- TÍTULO PRINCIPAL -->
+        <section class="titulo animate-on-scroll">
+            <h1>Farmacia Hospital Raíz</h1>
+            <p>Encuentra productos para el cuidado de tu salud y bienestar.</p>
+            <p>Algunos productos pueden requerir una receta médica para su adquisición.</p>
+        </section>
 
-    <div class="destacado">
-        <h2>Productos para tu salud</h2>
-        <p>
-            Compra productos de cuidado personal y salud
-            desde nuestra farmacia virtual.
-        </p>
-    </div>
+        <!-- BARRA DE CATEGORÍAS CON ANIMACIÓN DE REPETICIÓN CONTINUA -->
+        <div class="categorias-ticker animate-on-scroll">
+            <div class="ticker-track">
+                <div class="ticker-item">☀️ Protección Solar</div>
+                <div class="ticker-item">💧 Cuidado de Piel</div>
+                <div class="ticker-item">🧴 Higiene & Desinfección</div>
+                <div class="ticker-item">🌡️ Primeros Auxilios</div>
+                <div class="ticker-item">💊 Vitaminas & Suplementos</div>
+                <div class="ticker-item">🩺 Medicamentos con Receta</div>
+                <!-- Elementos duplicados para hacer el loop infinito perfecto -->
+                <div class="ticker-item">☀️ Protección Solar</div>
+                <div class="ticker-item">💧 Cuidado de Piel</div>
+                <div class="ticker-item">🧴 Higiene & Desinfección</div>
+                <div class="ticker-item">🌡️ Primeros Auxilios</div>
+                <div class="ticker-item">💊 Vitaminas & Suplementos</div>
+                <div class="ticker-item">🩺 Medicamentos con Receta</div>
+            </div>
+        </div>
 
-    <h2 class="titulo-productos">Nuestros productos</h2>
-    <table class="productos-farmacia">
-        <tr>
-            <td>
-                <img src="Imagenes/producto1.webp"
-                    alt="Protector solar">
-                <h3>Protector Solar FPS 50</h3>
-                <p>
-                    Protección contra los rayos solares
-                    para el cuidado de la piel.
-                </p>
-                <p class="precio">S/ 35.00</p>
-                <p class="tipo">
-                    Venta libre
-                </p>
-                <label>Cantidad:</label>
-                <input type="number"
-                    value="1"
-                    min="1">
-                <br><br>
-                <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-            </td>
-            <td>
-                <img src="Imagenes/producto2.webp"
-                    alt="Crema hidratante">
-                <h3>Crema Hidratante</h3>
-                <p>
-                    Crema para mantener la hidratación
-                    y cuidado de la piel.
-                </p>
-                <p class="precio">S/ 28.00</p>
-                <p class="tipo">
-                    Venta libre
-                </p>
-                <label>Cantidad:</label>
-                <input type="number"
-                    value="1"
-                    min="1">
-                <br><br>
-                <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-            </td>
-            <td>
-                <img src="Imagenes/producto3.webp"
-                    alt="Gel antibacterial">
-                <h3>Gel Antibacterial</h3>
-                <p>
-                    Producto para la higiene y
-                    desinfección de las manos.
-                </p>
-                <p class="precio">S/ 12.00</p>
-                <p class="tipo">
-                    Venta libre
-                </p>
-                <label>Cantidad:</label>
-                <input type="number"
-                    value="1"
-                    min="1">
-                <br><br>
-                <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-            </td>
-            <td>
-                <img src="Imagenes/producto4.webp"
-                    alt="Termómetro digital">
-                <h3>Termómetro Digital</h3>
-                <p>
-                    Dispositivo para medir la
-                    temperatura corporal.
-                </p>
-                <p class="precio">S/ 25.00</p>
-                <p class="tipo">
-                    Venta libre
-                </p>
-                <label>Cantidad:</label>
-                <input type="number"
-                    value="1"
-                    min="1">
-                <br><br>
-                <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-            </td>
-        </tr>
+        <!-- CARRUSEL DE OFERTAS / VIDEOS CON TRANSICIÓN DE EVENTO -->
+        <section class="carrusel-ofertas animate-on-scroll">
+            <h2>Ofertas y Recomendaciones Destacadas</h2>
+            <div class="carrusel-track">
+                <div class="oferta-card">
+                    <img src="Imagenes/producto1.webp" alt="Oferta Protector Solar" class="img-responsive">
+                    <div class="oferta-info">
+                        <h3>¡Super Oferta Solar!</h3>
+                        <p>Lleva tu protector con 20% de descuento este mes.</p>
+                    </div>
+                </div>
+                <div class="oferta-card">
+                    <img src="Imagenes/producto5.jpg" alt="Oferta Vitaminas" class="img-responsive">
+                    <div class="oferta-info">
+                        <h3>Bienestar e Inmunidad</h3>
+                        <p>Completa tu nutrición con nuestra línea de vitaminas.</p>
+                    </div>
+                </div>
+                <div class="oferta-card">
+                    <img src="Imagenes/producto16.webp" alt="Botiquín" class="img-responsive">
+                    <div class="oferta-info">
+                        <h3>Kits de Emergencia</h3>
+                        <p>Todo lo necesario para la seguridad de tu hogar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <tr>
-            <td>
-                <img src="Imagenes/producto5.jpg"
-                    alt="Vitamina C">
-                <h3>Vitamina C</h3>
-                <p>
-                    Suplemento para complementar
-                    una alimentación equilibrada.
-                </p>
-                <p class="precio">S/ 18.00</p>
-                <p class="tipo">
-                    Venta libre
-                </p>
-                <label>Cantidad:</label>
-                <input type="number"
-                    value="1"
-                    min="1">
-                <br><br>
-                <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-            </td>
-            <td>
-                <img src="Imagenes/producto6.jpg"
-                    alt="Alcohol medicinal">
-                <h3>Alcohol Medicinal</h3>
-                <p>
-                    Producto para limpieza y
-                    desinfección.
-                </p>
-                <p class="precio">S/ 10.00</p>
-                <p class="tipo">
-                    Venta libre
-                </p>
-                <label>Cantidad:</label>
-                <input type="number"
-                    value="1"
-                    min="1">
-                <br><br>
-                <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-            </td>
-            <td>
-                <img src="Imagenes/producto7.jpg"
-                    alt="Vendas elásticas">
-                <h3>Vendas Elásticas</h3>
-                <p>
-                    Producto para primeros auxilios
-                    y soporte.
-                </p>
-                <p class="precio">S/ 15.00</p>
-                <p class="tipo">
-                    Venta libre
-                </p>
-                <label>Cantidad:</label>
-                <input type="number"
-                    value="1"
-                    min="1">
-                <br><br>
-                <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-            </td>
-            <td>
-                <img src="Imagenes/producto8.jpg"
-                    alt="Gasas estériles">
-                <h3>Gasas Estériles</h3>
-                <p>
-                    Gasas para curaciones y
-                    primeros auxilios.
-                </p>
-                <p class="precio">S/ 9.00</p>
-                <p class="tipo">
-                    Venta libre
-                </p>
-                <label>Cantidad:</label>
-                <input type="number"
-                    value="1"
-                    min="1">
-                <br><br>
-                <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-            </td>
-        </tr>
+        <!-- SECCIÓN DESTACADO -->
+        <section class="destacado animate-on-scroll">
+            <h2>Productos para tu salud</h2>
+            <p>Compra productos de cuidado personal y salud desde nuestra farmacia virtual.</p>
+        </section>
 
-        <tr>
-            <td>
-                <img src="Imagenes/producto9.jpg"
-                    alt="Paracetamol">
-                <h3>Paracetamol 500 mg</h3>
-                <p>
-                    Medicamento utilizado para aliviar
-                    dolor y reducir la fiebre.
-                </p>
-                <p class="precio">S/ 8.50</p>
-                <p class="receta">
-                    Requiere receta
-                </p>
-                <label>Cantidad:</label>
-                <input type="number"
-                    value="1"
-                    min="1">
-                <br><br>
-                <a href="subir-receta.html" class="boton-producto">Presentar receta</a>
-            </td>
-            <td>
-                <img src="Imagenes/producto10.jpg"
-                    alt="Amoxicilina">
-                <h3>Amoxicilina 500 mg</h3>
-                <p>
-                    Antibiótico utilizado bajo
-                    indicación médica.
-                </p>
-                <p class="precio">S/ 25.00</p>
-                <p class="receta">
-                    Requiere receta
-                </p>
-                <label>Cantidad:</label>
-                <input type="number"
-                    value="1"
-                    min="1">
-                <br><br>
-                <a href="subir-receta.html" class="boton-producto">Presentar receta</a>
-            </td>
-            <td>
-                <img src="Imagenes/producto11.webp"
-                    alt="Ibuprofeno">
-                <h3>Ibuprofeno 400 mg</h3>
-                <p>
-                    Medicamento utilizado para aliviar
-                    determinados dolores e inflamaciones.
-                </p>
-                <p class="precio">S/ 12.00</p>
-                <p class="receta">
-                    Requiere receta
-                </p>
-                <label>Cantidad:</label>
-                <input type="number"
-                    value="1"
-                    min="1">
-                <br><br>
-                <a href="subir-receta.html" class="boton-producto">Presentar receta</a>
-            </td>
-            <td>
-                <img src="Imagenes/producto12.webp"
-                    alt="Medicamento para alergia">
-                <h3>Antialérgico</h3>
-                <p>
-                    Medicamento utilizado para el
-                    tratamiento de determinados síntomas.
-                </p>
-                <p class="precio">S/ 20.00</p>
-                <p class="receta">
-                    Requiere receta
-                </p>
-                <label>Cantidad:</label>
-                <input type="number"
-                    value="1"
-                    min="1">
-                <br><br>
-                <a href="subir-receta.html" class="boton-producto">Presentar receta</a>
-            </td>
-        </tr>
+        <!-- PRODUCTOS (Grid Layout Moderno) -->
+        <h2 class="titulo-productos animate-on-scroll">Nuestros productos</h2>
+        
+        <section class="productos-grid-container animate-on-scroll">
+            <div class="productos-grid">
+                
+                <!-- PRODUCTO 1 -->
+                <div class="producto-card">
+                    <img src="Imagenes/producto1.webp" alt="Protector solar" class="img-responsive producto-img">
+                    <h3>Protector Solar FPS 50</h3>
+                    <p>Protección contra los rayos solares para el cuidado de la piel.</p>
+                    <p class="precio">S/ 35.00</p>
+                    <p class="tipo">Venta libre</p>
+                    <div class="cantidad-box">
+                        <label>Cantidad:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
+                </div>
 
-        <tr>
-            <td>
-                <img src="Imagenes/producto13.jpg"
-                    alt="Crema dermatológica">
-                <h3>Crema Dermatológica</h3>
-                <p>
-                    Producto para el cuidado de
-                    determinadas afecciones de la piel.
-                </p>
-                <p class="precio">S/ 32.00</p>
-                <p class="tipo">
-                    Venta libre
-                </p>
-                <label>Cantidad:</label>
-                <input type="number"
-                    value="1"
-                    min="1">
-                <br><br>
-                <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-            </td>
-            <td>
-                <img src="Imagenes/producto14.jpg"
-                    alt="Jarabe para la tos">
-                <h3>Jarabe para la tos</h3>
-                <p>
-                    Producto destinado al alivio
-                    de determinados síntomas respiratorios.
-                </p>
-                <p class="precio">S/ 22.00</p>
-                <p class="tipo">
-                    Venta libre
-                </p>
-                <label>Cantidad:</label>
-                <input type="number"
-                    value="1"
-                    min="1">
-                <br><br>
-                <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-            </td>
-            <td>
-                <img src="Imagenes/producto15.jpg"
-                    alt="Tiras reactivas">
-                <h3>Tiras Reactivas</h3>
-                <p>
-                    Accesorios para el control
-                    de determinados parámetros de salud.
-                </p>
-                <p class="precio">S/ 30.00</p>
-                <p class="tipo">
-                    Venta libre
-                </p>
-                <label>Cantidad:</label>
-                <input type="number"
-                    value="1"
-                    min="1">
-                <br><br>
-                <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-            </td>
-            <td>
-                <img src="Imagenes/producto16.webp"
-                    alt="Botiquín de primeros auxilios">
-                <h3>Botiquín de Primeros Auxilios</h3>
-                <p>
-                    Kit básico para atención
-                    de pequeñas emergencias.
-                </p>
-                <p class="precio">S/ 55.00</p>
-                <p class="tipo">
-                    Venta libre
-                </p>
-                <label>Cantidad:</label>
-                <input type="number"
-                    value="1"
-                    min="1">
-                <br><br>
-                <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-            </td>
-        </tr>
-    </table>
+                <!-- PRODUCTO 2 -->
+                <div class="producto-card">
+                    <img src="Imagenes/producto2.webp" alt="Crema hidratante" class="img-responsive producto-img">
+                    <h3>Crema Hidratante</h3>
+                    <p>Crema para mantener la hidratación y cuidado de la piel.</p>
+                    <p class="precio">S/ 28.00</p>
+                    <p class="tipo">Venta libre</p>
+                    <div class="cantidad-box">
+                        <label>Cantidad:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
+                </div>
 
-    <div class="ver-carrito">
-        <a href="carrito.html">
-            Ver carrito
-        </a>
-    </div>
+                <!-- PRODUCTO 3 -->
+                <div class="producto-card">
+                    <img src="Imagenes/producto3.webp" alt="Gel antibacterial" class="img-responsive producto-img">
+                    <h3>Gel Antibacterial</h3>
+                    <p>Producto para la higiene y desinfección de las manos.</p>
+                    <p class="precio">S/ 12.00</p>
+                    <p class="tipo">Venta libre</p>
+                    <div class="cantidad-box">
+                        <label>Cantidad:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
+                </div>
 
+                <!-- PRODUCTO 4 -->
+                <div class="producto-card">
+                    <img src="Imagenes/producto4.webp" alt="Termómetro digital" class="img-responsive producto-img">
+                    <h3>Termómetro Digital</h3>
+                    <p>Dispositivo para medir la temperatura corporal.</p>
+                    <p class="precio">S/ 25.00</p>
+                    <p class="tipo">Venta libre</p>
+                    <div class="cantidad-box">
+                        <label>Cantidad:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
+                </div>
+
+                <!-- PRODUCTO 5 -->
+                <div class="producto-card">
+                    <img src="Imagenes/producto5.jpg" alt="Vitamina C" class="img-responsive producto-img">
+                    <h3>Vitamina C</h3>
+                    <p>Suplemento para complementar una alimentación equilibrada.</p>
+                    <p class="precio">S/ 18.00</p>
+                    <p class="tipo">Venta libre</p>
+                    <div class="cantidad-box">
+                        <label>Cantidad:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
+                </div>
+
+                <!-- PRODUCTO 6 -->
+                <div class="producto-card">
+                    <img src="Imagenes/producto6.jpg" alt="Alcohol medicinal" class="img-responsive producto-img">
+                    <h3>Alcohol Medicinal</h3>
+                    <p>Producto para limpieza y desinfección.</p>
+                    <p class="precio">S/ 10.00</p>
+                    <p class="tipo">Venta libre</p>
+                    <div class="cantidad-box">
+                        <label>Cantidad:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
+                </div>
+
+                <!-- PRODUCTO 7 -->
+                <div class="producto-card">
+                    <img src="Imagenes/producto7.jpg" alt="Vendas elásticas" class="img-responsive producto-img">
+                    <h3>Vendas Elásticas</h3>
+                    <p>Producto para primeros auxilios y soporte.</p>
+                    <p class="precio">S/ 15.00</p>
+                    <p class="tipo">Venta libre</p>
+                    <div class="cantidad-box">
+                        <label>Cantidad:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
+                </div>
+
+                <!-- PRODUCTO 8 -->
+                <div class="producto-card">
+                    <img src="Imagenes/producto8.jpg" alt="Gasas estériles" class="img-responsive producto-img">
+                    <h3>Gasas Estériles</h3>
+                    <p>Gasas para curaciones y primeros auxilios.</p>
+                    <p class="precio">S/ 9.00</p>
+                    <p class="tipo">Venta libre</p>
+                    <div class="cantidad-box">
+                        <label>Cantidad:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
+                </div>
+
+                <!-- PRODUCTO 9 -->
+                <div class="producto-card">
+                    <img src="Imagenes/producto9.jpg" alt="Paracetamol" class="img-responsive producto-img">
+                    <h3>Paracetamol 500 mg</h3>
+                    <p>Medicamento utilizado para aliviar dolor y reducir la fiebre.</p>
+                    <p class="precio">S/ 8.50</p>
+                    <p class="receta">Requiere receta</p>
+                    <div class="cantidad-box">
+                        <label>Cantidad:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <a href="subir-receta.html" class="boton-producto receta-btn">Presentar receta</a>
+                </div>
+
+                <!-- PRODUCTO 10 -->
+                <div class="producto-card">
+                    <img src="Imagenes/producto10.jpg" alt="Amoxicilina" class="img-responsive producto-img">
+                    <h3>Amoxicilina 500 mg</h3>
+                    <p>Antibiótico utilizado bajo indicación médica.</p>
+                    <p class="precio">S/ 25.00</p>
+                    <p class="receta">Requiere receta</p>
+                    <div class="cantidad-box">
+                        <label>Cantidad:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <a href="subir-receta.html" class="boton-producto receta-btn">Presentar receta</a>
+                </div>
+
+                <!-- PRODUCTO 11 -->
+                <div class="producto-card">
+                    <img src="Imagenes/producto11.webp" alt="Ibuprofeno" class="img-responsive producto-img">
+                    <h3>Ibuprofeno 400 mg</h3>
+                    <p>Medicamento utilizado para aliviar determinados dolores e inflamaciones.</p>
+                    <p class="precio">S/ 12.00</p>
+                    <p class="receta">Requiere receta</p>
+                    <div class="cantidad-box">
+                        <label>Cantidad:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <a href="subir-receta.html" class="boton-producto receta-btn">Presentar receta</a>
+                </div>
+
+                <!-- PRODUCTO 12 -->
+                <div class="producto-card">
+                    <img src="Imagenes/producto12.webp" alt="Antialérgico" class="img-responsive producto-img">
+                    <h3>Antialérgico</h3>
+                    <p>Medicamento utilizado para el tratamiento de determinados síntomas.</p>
+                    <p class="precio">S/ 20.00</p>
+                    <p class="receta">Requiere receta</p>
+                    <div class="cantidad-box">
+                        <label>Cantidad:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <a href="subir-receta.html" class="boton-producto receta-btn">Presentar receta</a>
+                </div>
+
+                <!-- PRODUCTO 13 -->
+                <div class="producto-card">
+                    <img src="Imagenes/producto13.jpg" alt="Crema dermatológica" class="img-responsive producto-img">
+                    <h3>Crema Dermatológica</h3>
+                    <p>Producto para el cuidado de determinadas afecciones de la piel.</p>
+                    <p class="precio">S/ 32.00</p>
+                    <p class="tipo">Venta libre</p>
+                    <div class="cantidad-box">
+                        <label>Cantidad:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
+                </div>
+
+                <!-- PRODUCTO 14 -->
+                <div class="producto-card">
+                    <img src="Imagenes/producto14.jpg" alt="Jarabe para la tos" class="img-responsive producto-img">
+                    <h3>Jarabe para la tos</h3>
+                    <p>Producto destinado al alivio de determinados síntomas respiratorios.</p>
+                    <p class="precio">S/ 22.00</p>
+                    <p class="tipo">Venta libre</p>
+                    <div class="cantidad-box">
+                        <label>Cantidad:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
+                </div>
+
+                <!-- PRODUCTO 15 -->
+                <div class="producto-card">
+                    <img src="Imagenes/producto15.jpg" alt="Tiras reactivas" class="img-responsive producto-img">
+                    <h3>Tiras Reactivas</h3>
+                    <p>Accesorios para el control de determinados parámetros de salud.</p>
+                    <p class="precio">S/ 30.00</p>
+                    <p class="tipo">Venta libre</p>
+                    <div class="cantidad-box">
+                        <label>Cantidad:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
+                </div>
+
+                <!-- PRODUCTO 16 -->
+                <div class="producto-card">
+                    <img src="Imagenes/producto16.webp" alt="Botiquín" class="img-responsive producto-img">
+                    <h3>Botiquín de Primeros Auxilios</h3>
+                    <p>Kit básico para atención de pequeñas emergencias.</p>
+                    <p class="precio">S/ 55.00</p>
+                    <p class="tipo">Venta libre</p>
+                    <div class="cantidad-box">
+                        <label>Cantidad:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- VER CARRITO -->
+        <div class="ver-carrito">
+            <a href="carrito.html" class="btn-ver-carrito">Ver carrito completo</a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
     <footer>
-    <div class="pie">
-        <p>
-            Hospital Raíz - Av. Daniel Alcides Carreón 240,
-            Arequipa - (01) 0012121
-        </p>
-        <p>
-            <a href="index.html">Inicio</a> |
-            <a href="carrito.html">Carrito</a> |
-            <a href="citas.html">Reservar cita</a>
-        </p>
-        <p>
-            Síguenos en nuestras redes sociales
-        </p>
-    </div>
+        <div class="pie">
+            <p>Hospital Raíz - Av. Daniel Alcides Carreón 240, Arequipa - (01) 0012121</p>
+            <p>
+                <a href="index.html">Inicio</a> | 
+                <a href="carrito.html">Carrito</a> | 
+                <a href="citas.html">Reservar cita</a>
+            </p>
+            <p>Síguenos en nuestras redes sociales</p>
+        </div>
     </footer>
 </body>
 </html>

@@ -2,542 +2,204 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="description"
-          content="Subir receta médica - Hospital Raíz">
-
-    <meta name="keywords"
-          content="Hospital Raíz, receta médica, farmacia, medicamentos">
-
-    <meta name="author"
-          content="Hospital Raíz">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="Subir receta médica - Hospital Raíz">
+    <meta name="keywords" content="Hospital Raíz, receta médica, farmacia, medicamentos">
+    <meta name="author" content="Hospital Raíz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subir receta médica - Hospital Raíz</title>
-
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/subir-receta.css">
-
 </head>
-
 
 <body>
 
-
-    <!-- ENCABEZADO -->
-
+    <!-- ENCABEZADO CON NAVBAR (Flexbox) -->
     <header class="encabezado">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Imagenes/logohospital1.jpg" alt="Logo Hospital Raíz" class="img-responsive">
+                </a>
+                <b>Hospital Raíz</b>
+            </div>
 
-        <table class="menu">
-
-            <tr>
-
-                <td class="logo">
-
-                    <a href="index.html">
-
-                        <img src="Imagenes/logohospital1.jpg"
-                             alt="Logo Hospital Raíz" width="50" height="50">
-
-                    </a>
-                    <b>Hospital Raiz</b>
-                </td>
-
-
-                <td>
-                    <a href="index.html">
-                        Inicio
-                    </a>
-                </td>
-
-                <td>
-                    <a href="citas.html">
-                        Reservar cita
-                    </a>
-                </td>
-
-                <td>
-                    <a href="consultas.html">
-                        Consulta de salud
-                    </a>
-                </td>
-
-                <td>
-                    <a href="farmacia.html">
-                        Farmacia
-                    </a>
-                </td>
-
-                <td>
-                    <a href="#">
-                        Mi cuenta
-                    </a>
-                </td>
-
-            </tr>
-
-        </table>
-
+            <nav class="navbar">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="citas.html" class="nav-link">Reservar cita</a>
+                <a href="consultas.html" class="nav-link">Consulta de salud</a>
+                <a href="farmacia.html" class="nav-link">Farmacia</a>
+                <a href="#" class="btn-cuenta">Mi cuenta</a>
+            </nav>
+        </div>
     </header>
 
+    <!-- SECCIÓN PRINCIPAL -->
+    <main class="main-content">
 
-    <!-- SECCIÓN -->
-
-    <main>
-
-
-        <!-- CABECERA -->
-
-        <section class="cabecera-receta">
-
-            <p class="etiqueta-receta">
-                FARMACIA
-            </p>
-
-            <h1>
-                Subir receta médica
-            </h1>
-
-            <p>
-                Adjunta la receta indicada por un profesional
-                de salud para solicitar medicamentos que
-                requieren prescripción.
-            </p>
-
+        <!-- CABECERA DE LA SECCIÓN -->
+        <section class="cabecera-receta animate-on-scroll">
+            <p class="etiqueta-receta">FARMACIA</p>
+            <h1>Subir receta médica</h1>
+            <p>Adjunta la receta indicada por un profesional de salud para solicitar medicamentos que requieren prescripción.</p>
         </section>
 
-
-        <!-- PASOS -->
-
-        <section class="pasos-receta">
-
-            <table>
-
-                <tr>
-
-                    <td class="paso-activo">
-                        <span>01</span>
-                        <strong>Subir receta</strong>
-                    </td>
-
-                    <td>
-                        <span>02</span>
-                        <strong>Validación</strong>
-                    </td>
-
-                    <td>
-                        <span>03</span>
-                        <strong>Compra</strong>
-                    </td>
-
-                    <td>
-                        <span>04</span>
-                        <strong>Confirmación</strong>
-                    </td>
-
-                </tr>
-
-            </table>
-
+        <!-- PASOS (Grid Layout) -->
+        <section class="pasos-receta animate-on-scroll">
+            <div class="pasos-grid">
+                <div class="paso-item paso-activo">
+                    <span>01</span>
+                    <strong>Subir receta</strong>
+                </div>
+                <div class="paso-item">
+                    <span>02</span>
+                    <strong>Validación</strong>
+                </div>
+                <div class="paso-item">
+                    <span>03</span>
+                    <strong>Compra</strong>
+                </div>
+                <div class="paso-item">
+                    <span>04</span>
+                    <strong>Confirmación</strong>
+                </div>
+            </div>
         </section>
 
-
-        <!-- CONTENEDOR -->
-
-        <section class="contenedor-receta">
-
+        <!-- CONTENEDOR GENERAL (Grid Layout) -->
+        <section class="contenedor-receta animate-on-scroll">
 
             <!-- INFORMACIÓN DEL PACIENTE -->
-
-            <div class="paciente-receta">
-
+            <div class="paciente-receta card">
                 <div class="titulo-bloque">
-
-                    <span>
-                        PACIENTE
-                    </span>
-
-                    <h2>
-                        Receta asociada a tu cuenta
-                    </h2>
-
+                    <span>PACIENTE</span>
+                    <h2>Receta asociada a tu cuenta</h2>
                 </div>
 
-
-                <table>
-
-                    <tr>
-
-                        <td>
-
-                            <label>
-                                Paciente
-                            </label>
-
-                            <input
-                                type="text"
-                                value="Paciente registrado"
-                                readonly>
-
-                        </td>
-
-
-                        <td>
-
-                            <label>
-                                Documento
-                            </label>
-
-                            <input
-                                type="text"
-                                value="********"
-                                readonly>
-
-                        </td>
-
-                    </tr>
-
-                </table>
-
+                <div class="paciente-inputs-grid">
+                    <div class="input-group">
+                        <label>Paciente</label>
+                        <input type="text" value="Paciente registrado" readonly>
+                    </div>
+                    <div class="input-group">
+                        <label>Documento</label>
+                        <input type="text" value="********" readonly>
+                    </div>
+                </div>
 
                 <p class="mensaje-seguridad">
-
-                    ✓ La receta será asociada a la cuenta con
-                    la que has iniciado sesión.
-
+                    ✓ La receta será asociada a la cuenta con la que has iniciado sesión.
                 </p>
-
             </div>
-
 
             <!-- FORMULARIO -->
+            <form class="formulario-receta card" action="#" method="post" enctype="multipart/form-data">
 
-            <form
-                class="formulario-receta"
-                action="#"
-                method="post"
-                enctype="multipart/form-data">
-
-
-                <!-- ARCHIVO -->
-
+                <!-- BLOQUE 1: ARCHIVO -->
                 <div class="bloque-receta">
-
-                    <div class="numero-bloque">
-                        01
-                    </div>
-
-
+                    <div class="numero-bloque">01</div>
                     <div class="contenido-bloque">
+                        <h2>Adjunta tu receta</h2>
+                        <p>Sube una fotografía clara o un documento digital de la receta entregada por el profesional de salud.</p>
 
-                        <h2>
-                            Adjunta tu receta
-                        </h2>
-
-                        <p>
-                            Sube una fotografía clara o un documento
-                            digital de la receta entregada por el
-                            profesional de salud.
-                        </p>
-
-
-                        <label for="receta">
-                            Archivo de receta
-                        </label>
-
-
-                        <input
-                            type="file"
-                            id="receta"
-                            name="receta"
-                            accept=".jpg,.jpeg,.png,.pdf"
-                            required>
-
-
-                        <small>
-                            Formatos permitidos: JPG, JPEG, PNG y PDF.
-                        </small>
-
+                        <label for="receta" class="file-label">Archivo de receta</label>
+                        <input type="file" id="receta" name="receta" accept=".jpg,.jpeg,.png,.pdf" required>
+                        <small>Formatos permitidos: JPG, JPEG, PNG y PDF.</small>
                     </div>
-
                 </div>
 
-
-                <!-- FECHA -->
-
+                <!-- BLOQUE 2: FECHA Y TIPO -->
                 <div class="bloque-receta">
-
-                    <div class="numero-bloque">
-                        02
-                    </div>
-
-
+                    <div class="numero-bloque">02</div>
                     <div class="contenido-bloque">
+                        <h2>Información de la receta</h2>
+                        <p>Proporciona algunos datos para facilitar la revisión de la receta.</p>
 
-                        <h2>
-                            Información de la receta
-                        </h2>
-
-                        <p>
-                            Proporciona algunos datos para facilitar
-                            la revisión de la receta.
-                        </p>
-
-
-                        <table class="datos-receta">
-
-                            <tr>
-
-                                <td>
-
-                                    <label for="fecha-receta">
-                                        Fecha de emisión
-                                    </label>
-
-                                    <input
-                                        type="date"
-                                        id="fecha-receta"
-                                        name="fecha-receta"
-                                        required>
-
-                                </td>
-
-
-                                <td>
-
-                                    <label for="tipo-receta">
-                                        Tipo de receta
-                                    </label>
-
-                                    <select
-                                        id="tipo-receta"
-                                        name="tipo-receta"
-                                        required>
-
-                                        <option value="">
-                                            Selecciona una opción
-                                        </option>
-
-                                        <option value="clinica">
-                                            Receta del Hospital Raíz
-                                        </option>
-
-                                        <option value="externa">
-                                            Receta de otro establecimiento
-                                        </option>
-
-                                    </select>
-
-                                </td>
-
-                            </tr>
-
-                        </table>
-
+                        <div class="datos-receta-grid">
+                            <div class="input-group">
+                                <label for="fecha-receta">Fecha de emisión</label>
+                                <input type="date" id="fecha-receta" name="fecha-receta" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="tipo-receta">Tipo de receta</label>
+                                <select id="tipo-receta" name="tipo-receta" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="clinica">Receta del Hospital Raíz</option>
+                                    <option value="externa">Receta de otro establecimiento</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
 
-
-                <!-- OBSERVACIONES -->
-
+                <!-- BLOQUE 3: OBSERVACIONES -->
                 <div class="bloque-receta">
-
-                    <div class="numero-bloque">
-                        03
-                    </div>
-
-
+                    <div class="numero-bloque">03</div>
                     <div class="contenido-bloque">
-
-                        <h2>
-                            Observaciones
-                        </h2>
-
-                        <p>
-                            Agrega información adicional que pueda
-                            ayudar durante la revisión.
-                        </p>
-
+                        <h2>Observaciones</h2>
+                        <p>Agrega información adicional que pueda ayudar durante la revisión.</p>
 
                         <label for="observaciones">
-                            Comentarios
-                            <span class="opcional">
-                                (opcional)
-                            </span>
+                            Comentarios <span class="opcional">(opcional)</span>
                         </label>
-
-
-                        <textarea
-                            id="observaciones"
-                            name="observaciones"
-                            maxlength="500"
-                            placeholder="Escribe alguna observación relacionada con tu receta..."></textarea>
-
-
-                        <small>
-                            Máximo 500 caracteres.
-                        </small>
-
+                        <textarea id="observaciones" name="observaciones" maxlength="500" placeholder="Escribe alguna observación relacionada con tu receta..."></textarea>
+                        <small>Máximo 500 caracteres.</small>
                     </div>
-
                 </div>
-
 
                 <!-- VALIDACIÓN -->
-
                 <div class="aviso-validacion">
-
-                    <h2>
-                        Sobre la validación
-                    </h2>
-
-                    <p>
-                        La receta será revisada antes de permitir
-                        la compra de medicamentos que requieran
-                        prescripción.
-                    </p>
-
-                    <p>
-                        La aprobación dependerá de la información
-                        visible en el documento y de la verificación
-                        correspondiente.
-                    </p>
-
+                    <h2>Sobre la validación</h2>
+                    <p>La receta será revisada antes de permitir la compra de medicamentos que requieran prescripción.</p>
+                    <p>La aprobación dependerá de la información visible en el documento y de la verificación correspondiente.</p>
                 </div>
-
 
                 <!-- CONFIRMACIÓN -->
-
                 <div class="confirmar-receta">
-
-                    <label>
-
-                        <input
-                            type="checkbox"
-                            name="confirmacion"
-                            required>
-
-                        Confirmo que la receta corresponde a mi
-                        atención médica y que la información
-                        proporcionada es correcta.
-
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="confirmacion" required>
+                        <span>Confirmo que la receta corresponde a mi atención médica y que la información proporcionada es correcta.</span>
                     </label>
-
                 </div>
 
-
                 <!-- BOTÓN -->
-
-                <button
-                    type="submit"
-                    class="boton-subir">
-
+                <button type="submit" class="boton-subir">
                     Enviar receta para revisión
-
                 </button>
-
-
             </form>
 
-
-            <!-- AYUDA -->
-
-            <div class="ayuda-receta">
-
-                <h2>
-                    Recomendaciones
-                </h2>
-
-
-                <table>
-
-                    <tr>
-
-                        <td>
-                            <strong>01</strong>
-                        </td>
-
-                        <td>
-                            Asegúrate de que la receta sea legible
-                            y que toda la información sea visible.
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td>
-                            <strong>02</strong>
-                        </td>
-
-                        <td>
-                            Evita fotografías borrosas, oscuras o
-                            con información recortada.
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td>
-                            <strong>03</strong>
-                        </td>
-
-                        <td>
-                            La receta debe corresponder al paciente
-                            que realiza la solicitud.
-                        </td>
-
-                    </tr>
-
-                </table>
-
+            <!-- AYUDA / RECOMENDACIONES -->
+            <div class="ayuda-receta card">
+                <h2>Recomendaciones</h2>
+                <div class="recomendaciones-list">
+                    <div class="recomendacion-item">
+                        <strong>01</strong>
+                        <p>Asegúrate de que la receta sea legible y que toda la información sea visible.</p>
+                    </div>
+                    <div class="recomendacion-item">
+                        <strong>02</strong>
+                        <p>Evita fotografías borrosas, oscuras o con información recortada.</p>
+                    </div>
+                    <div class="recomendacion-item">
+                        <strong>03</strong>
+                        <p>La receta debe corresponder al paciente que realiza la solicitud.</p>
+                    </div>
+                </div>
             </div>
-
 
         </section>
 
     </main>
 
-
     <!-- FOOTER -->
-
     <footer class="pie">
-
+        <p>© 2026 Hospital Raíz. Todos los derechos reservados.</p>
         <p>
-            © 2026 Hospital Raíz. Todos los derechos reservados.
+            <a href="#">Términos y condiciones</a> &nbsp; | &nbsp;
+            <a href="#">Política de privacidad</a> &nbsp; | &nbsp;
+            <a href="index.html">Inicio</a>
         </p>
-
-        <p>
-
-            <a href="#">
-                Términos y condiciones
-            </a>
-
-            &nbsp; | &nbsp;
-
-            <a href="#">
-                Política de privacidad
-            </a>
-
-            &nbsp; | &nbsp;
-
-            <a href="index.html">
-                Inicio
-            </a>
-
-        </p>
-
     </footer>
 
-
 </body>
-
 </html>

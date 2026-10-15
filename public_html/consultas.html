@@ -2,359 +2,194 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="description"
-          content="Consultas de salud del Hospital Raíz">
-    <meta name="keywords"
-          content="Hospital Raíz, consultas de salud, orientación médica">
-    <meta name="author"
-          content="Hospital Raíz">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consultas de salud del Hospital Raíz">
+    <meta name="keywords" content="Hospital Raíz, consultas de salud, orientación médica">
+    <meta name="author" content="Hospital Raíz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultas de salud - Hospital Raíz</title>
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/consultas.css">
 </head>
 
 <body>
-    <!-- ENCABEZADO -->
+    <!-- ENCABEZADO CON NAVBAR (Flexbox) -->
     <header class="encabezado">
-        <table class="menu">
-            <tr>
-                <!-- LOGO -->
-                <td class="logo">
-                    <a href="index.html">
-                        <img src="Imagenes/logohospital1.jpg"
-                             alt="Logo Hospital Raíz" width="50" height="50">
-                    </a>
-                    <b>Hospital Raiz</b>
-                </td>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Imagenes/logohospital1.jpg" alt="Logo Hospital Raíz" class="img-responsive logo-img">
+                </a>
+                <b>Hospital Raíz</b>
+            </div>
 
-                <!-- MENÚ -->
-                <td>
-                    <a href="index.html">
-                        Inicio
-                    </a>
-                </td>
-                <td>
-                    <a href="citas.html">
-                        Reservar cita
-                    </a>
-                </td>
-                <td>
-                    <a href="consultas.html">
-                        Consulta de salud
-                    </a>
-                </td>
-                <td>
-                    <a href="farmacia.html">
-                        Farmacia
-                    </a>
-                </td>
-                <td>
-                    <a href="#">
-                        Mi cuenta
-                    </a>
-                </td>
-            </tr>
-        </table>
+            <nav class="navbar">
+                <a href="index.html">Inicio</a>
+                <a href="citas.html">Reservar cita</a>
+                <a href="consultas.html" class="nav-link-activo">Consulta de salud</a>
+                <a href="farmacia.html">Farmacia</a>
+                <a href="#" class="btn-cuenta">Mi cuenta</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- SECCIÓN -->
-    <main>
+    <!-- SECCIÓN PRINCIPAL -->
+    <main class="main-content">
         <!-- CABECERA -->
-        <section class="cabecera-consultas">
-            <p class="etiqueta-consulta">
-                ORIENTACIÓN EN SALUD
-            </p>
-            <h1>
-                Consulta de salud
-            </h1>
-            <p>
-                Envía una consulta a nuestro personal de salud
-                y revisa la respuesta desde tu cuenta.
-            </p>
+        <section class="cabecera-consultas animate-on-scroll">
+            <p class="etiqueta-consulta">ORIENTACIÓN EN SALUD</p>
+            <h1>Consulta de salud</h1>
+            <p>Envía una consulta a nuestro personal de salud y revisa la respuesta desde tu cuenta.</p>
         </section>
 
         <!-- AVISO -->
-        <section class="aviso-consulta">
-            <strong>
-                Importante:
-            </strong>
-            Este servicio está destinado a consultas generales
-            y orientación. Si necesitas una atención médica,
-            utiliza la opción
-            <a href="citas.html">
-                Reservar cita
-            </a>.
+        <section class="aviso-consulta animate-on-scroll">
+            <strong>Importante:</strong> Este servicio está destinado a consultas generales y orientación. Si necesitas una atención médica, utiliza la opción <a href="citas.html">Reservar cita</a>.
         </section>
 
-        <!-- CONTENEDOR -->
-        <section class="contenedor-consultas">
-            <!-- NUEVA CONSULTA -->
-            <div class="nueva-consulta">
-                <div class="encabezado-bloque">
-                    <span>
-                        NUEVA CONSULTA
-                    </span>
-                    <h2>
-                        ¿En qué podemos ayudarte?
-                    </h2>
-                    <p>
-                        Completa los siguientes datos para enviar
-                        tu consulta al personal de salud.
-                    </p>
-                </div>
+        <!-- CONTENEDOR (Grid Layout para formulario e historial) -->
+        <section class="contenedor-consultas animate-on-scroll">
+            <div class="consultas-grid-layout">
                 
-                <!-- FORMULARIO -->
-                <form action="#"
-                      method="post"
-                      enctype="multipart/form-data">
-                    <!-- TIPO -->
-                    <div class="campo-consulta">
-                        <label for="tipo-consulta">
-                            Tipo de consulta
-                        </label>
-                        <select
-                            id="tipo-consulta"
-                            name="tipo-consulta"
-                            required>
-                            <option value="">
-                                Selecciona una opción
-                            </option>
-                            <option value="orientacion">
-                                Orientación general
-                            </option>
-                            <option value="medicamentos">
-                                Información sobre medicamentos
-                            </option>
-                            <option value="resultados">
-                                Consulta sobre resultados
-                            </option>
-                            <option value="tratamiento">
-                                Consulta sobre tratamiento
-                            </option>
-                            <option value="seguimiento">
-                                Seguimiento de atención
-                            </option>
-                            <option value="otro">
-                                Otro
-                            </option>
-                        </select>
+                <!-- NUEVA CONSULTA -->
+                <div class="nueva-consulta card">
+                    <div class="encabezado-bloque">
+                        <span>NUEVA CONSULTA</span>
+                        <h2>¿En qué podemos ayudarte?</h2>
+                        <p>Completa los siguientes datos para enviar tu consulta al personal de salud.</p>
                     </div>
+                    
+                    <!-- FORMULARIO -->
+                    <form action="#" method="post" enctype="multipart/form-data">
+                        <!-- TIPO -->
+                        <div class="campo-consulta">
+                            <label for="tipo-consulta">Tipo de consulta</label>
+                            <select id="tipo-consulta" name="tipo-consulta" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="orientacion">Orientación general</option>
+                                <option value="medicamentos">Información sobre medicamentos</option>
+                                <option value="resultados">Consulta sobre resultados</option>
+                                <option value="tratamiento">Consulta sobre tratamiento</option>
+                                <option value="seguimiento">Seguimiento de atención</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
 
-                    <!-- ASUNTO -->
-                    <div class="campo-consulta">
-                        <label for="asunto">
-                            Asunto
-                        </label>
-                        <input
-                            type="text"
-                            id="asunto"
-                            name="asunto"
-                            placeholder="Escribe brevemente el motivo de tu consulta"
-                            maxlength="100"
-                            required>
-                    </div>
+                        <!-- ASUNTO -->
+                        <div class="campo-consulta">
+                            <label for="asunto">Asunto</label>
+                            <input type="text" id="asunto" name="asunto" placeholder="Escribe brevemente el motivo de tu consulta" maxlength="100" required>
+                        </div>
 
-                    <!-- DESCRIPCIÓN -->
-                    <div class="campo-consulta">
-                        <label for="descripcion">
-                            Describe tu consulta
-                        </label>
-                        <textarea
-                            id="descripcion"
-                            name="descripcion"
-                            placeholder="Explica con el mayor detalle posible tu consulta..."
-                            maxlength="1000"
-                            required></textarea>
-                        <small>
-                            Máximo 1000 caracteres.
-                        </small>
-                    </div>
+                        <!-- DESCRIPCIÓN -->
+                        <div class="campo-consulta">
+                            <label for="descripcion">Describe tu consulta</label>
+                            <textarea id="descripcion" name="descripcion" placeholder="Explica con el mayor detalle posible tu consulta..." maxlength="1000" required></textarea>
+                            <small>Máximo 1000 caracteres.</small>
+                        </div>
 
-                    <!--ARCHIVO -->
-                    <div class="campo-consulta">
-                        <label for="archivo">
-                            Adjuntar archivo
-                            <span class="opcional">
-                                (opcional)
-                            </span>
-                        </label>
-                        <input
-                            type="file"
-                            id="archivo"
-                            name="archivo"
-                            accept=".jpg,.jpeg,.png,.pdf">
-                        <small>
-                            Puedes adjuntar una imagen o PDF relacionado
-                            con tu consulta.
-                        </small>
-                    </div>
+                        <!-- ARCHIVO -->
+                        <div class="campo-consulta">
+                            <label for="archivo">
+                                Adjuntar archivo <span class="opcional">(opcional)</span>
+                            </label>
+                            <input type="file" id="archivo" name="archivo" accept=".jpg,.jpeg,.png,.pdf">
+                            <small>Puedes adjuntar una imagen o PDF relacionado con tu consulta.</small>
+                        </div>
 
-                    <!-- CONFIRMACIÓN -->
-                    <div class="confirmar-consulta">
-                        <label>
-                            <input
-                                type="checkbox"
-                                name="confirmacion"
-                                required>
-                            Confirmo que la información proporcionada
-                            es correcta.
-                        </label>
-                    </div>
-                    <!-- BOTÓN -->
-                    <button
-                        type="submit"
-                        class="boton-enviar-consulta">
+                        <!-- CONFIRMACIÓN -->
+                        <div class="confirmar-consulta">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="confirmacion" required>
+                                <span>Confirmo que la información proporcionada es correcta.</span>
+                            </label>
+                        </div>
 
-                        Enviar consulta
-                    </button>
-                </form>
-            </div>
-
-            <!-- MIS CONSULTAS -->
-            <div class="mis-consultas">
-                <div class="encabezado-bloque">
-                    <span>
-                        HISTORIAL
-                    </span>
-                    <h2>
-                        Mis consultas
-                    </h2>
-                    <p>
-                        Revisa las consultas que has enviado
-                        y las respuestas recibidas.
-                    </p>
+                        <!-- BOTÓN -->
+                        <button type="submit" class="boton-enviar-consulta">
+                            Enviar consulta
+                        </button>
+                    </form>
                 </div>
 
-                <!-- CONSULTA RESPONDIDA -->
-                <article class="tarjeta-consulta respondida">
-                    <div class="cabecera-tarjeta">
-                        <div>
-                            <span class="numero-consulta">
-                                CONSULTA #001
-                            </span>
-                            <h3>
-                                Consulta sobre medicamentos
-                            </h3>
-                        </div>
-                        <span class="estado respondida">
-                            Respondida
-                        </span>
+                <!-- MIS CONSULTAS (HISTORIAL) -->
+                <div class="mis-consultas card">
+                    <div class="encabezado-bloque">
+                        <span>HISTORIAL</span>
+                        <h2>Mis consultas</h2>
+                        <p>Revisa las consultas que has enviado y las respuestas recibidas.</p>
                     </div>
-                    <p class="fecha-consulta">
-                        Enviada el 10/09/2026
-                    </p>
-                    <div class="mensaje-paciente">
-                        <strong>
-                            Mi consulta
-                        </strong>
-                        <p>
-                            Quisiera saber si debo continuar tomando
-                            el medicamento indicado durante los próximos
-                            días.
-                        </p>
-                    </div>
-                    <div class="respuesta-profesional">
-                        <strong>
-                            Respuesta del personal de salud
-                        </strong>
-                        <p>
-                            Gracias por comunicarse con nosotros.
-                            Para brindarle una orientación adecuada
-                            sobre su tratamiento, recomendamos revisar
-                            las indicaciones proporcionadas durante
-                            su última atención médica.
-                        </p>
-                        <span class="profesional">
-                            Personal de salud · Hospital Raíz
-                        </span>
-                    </div>
-                    <a href="#"
-                       class="ver-consulta">
-                        Ver detalle →
-                    </a>
-                </article>
 
-                <!-- CONSULTA PENDIENTE -->
-                <article class="tarjeta-consulta pendiente">
-                    <div class="cabecera-tarjeta">
-                        <div>
-                            <span class="numero-consulta">
-                                CONSULTA #002
-                            </span>
-                            <h3>
-                                Consulta sobre resultados
-                            </h3>
+                    <!-- CONSULTA RESPONDIDA -->
+                    <article class="tarjeta-consulta respondida">
+                        <div class="cabecera-tarjeta">
+                            <div>
+                                <span class="numero-consulta">CONSULTA #001</span>
+                                <h3>Consulta sobre medicamentos</h3>
+                            </div>
+                            <span class="estado respondida">Respondida</span>
                         </div>
-                        <span class="estado pendiente">
-                            En revisión
-                        </span>
-                    </div>
-                    <p class="fecha-consulta">
-                        Enviada el 11/09/2026
-                    </p>
-                    <div class="mensaje-paciente">
-                        <strong>
-                            Mi consulta
-                        </strong>
-                        <p>
-                            Deseo consultar sobre los resultados
-                            obtenidos en mi última evaluación.
-                        </p>
-                    </div>
-                    <div class="mensaje-espera">
-                        <span>
-                            ⏳
-                        </span>
-                        <div>
-                            <strong>
-                                Consulta en revisión
-                            </strong>
-                            <p>
-                                El personal de salud revisará tu
-                                consulta y responderá cuando esté
-                                disponible.
-                            </p>
+                        <p class="fecha-consulta">Enviada el 10/09/2026</p>
+                        <div class="mensaje-paciente">
+                            <strong>Mi consulta</strong>
+                            <p>Quisiera saber si debo continuar tomando el medicamento indicado durante los próximos días.</p>
                         </div>
+                        <div class="respuesta-profesional">
+                            <strong>Respuesta del personal de salud</strong>
+                            <p>Gracias por comunicarse con nosotros. Para brindarle una orientación adecuada sobre su tratamiento, recomendamos revisar las indicaciones proporcionadas durante su última atención médica.</p>
+                            <span class="profesional">Personal de salud · Hospital Raíz</span>
+                        </div>
+                        <a href="#" class="ver-consulta">Ver detalle →</a>
+                    </article>
+
+                    <!-- CONSULTA PENDIENTE -->
+                    <article class="tarjeta-consulta pendiente">
+                        <div class="cabecera-tarjeta">
+                            <div>
+                                <span class="numero-consulta">CONSULTA #002</span>
+                                <h3>Consulta sobre resultados</h3>
+                            </div>
+                            <span class="estado pendiente">En revisión</span>
+                        </div>
+                        <p class="fecha-consulta">Enviada el 11/09/2026</p>
+                        <div class="mensaje-paciente">
+                            <strong>Mi consulta</strong>
+                            <p>Deseo consultar sobre los resultados obtenidos en mi última evaluación.</p>
+                        </div>
+                        <div class="mensaje-espera">
+                            <span class="icono-espera">⏳</span>
+                            <div>
+                                <strong>Consulta en revisión</strong>
+                                <p>El personal de salud revisará tu consulta y responderá cuando esté disponible.</p>
+                            </div>
+                        </div>
+                        <a href="#" class="ver-consulta">Ver detalle →</a>
+                    </article>
+                    
+                    <!-- NOTA HISTORIAL -->
+                    <div class="nota-historial">
+                        <strong>Tus consultas estarán aquí</strong>
+                        <p>Las nuevas consultas que envíes aparecerán automáticamente en este historial.</p>
                     </div>
-                    <a href="#"
-                       class="ver-consulta">
-                        Ver detalle →
-                    </a>
-                </article>
-                
-                <!-- SIN CONSULTAS -->
-                <div class="nota-historial">
-                    <strong>
-                        Tus consultas estarán aquí
-                    </strong>
-                    <p>
-                        Las nuevas consultas que envíes aparecerán
-                        automáticamente en este historial.
-                    </p>
                 </div>
+
             </div>
+        </section>
+
+        <!-- SECCIÓN INFERIOR: RESERVAR CITA -->
+        <section class="reservar-seccion animate-on-scroll">
+            <h2>¿Necesitas una atención médica?</h2>
+            <p>Si después de realizar tu consulta consideras que necesitas ser atendido por un especialista, puedes reservar una cita.</p>
+            <a href="citas.html" class="btn-reservar-extra">Reservar una cita</a>
         </section>
     </main>
 
     <!-- FOOTER -->
     <footer class="pie">
+        <p>© 2026 Hospital Raíz. Todos los derechos reservados.</p>
         <p>
-            © 2026 Hospital Raíz. Todos los derechos reservados.
-        </p>
-        <p>
-            <a href="#">
-                Términos y condiciones
-            </a>
-            &nbsp; | &nbsp;
-            <a href="#">
-                Política de privacidad
-            </a>
-            &nbsp; | &nbsp;
-            <a href="index.html">
-                Inicio
-            </a>
+            <a href="#">Términos y condiciones</a> &nbsp; | &nbsp;
+            <a href="#">Política de privacidad</a> &nbsp; | &nbsp;
+            <a href="index.html">Inicio</a>
         </p>
     </footer>
 </body>

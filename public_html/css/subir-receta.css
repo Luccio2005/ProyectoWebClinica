@@ -1,8 +1,94 @@
-/* SUBIR RECETA - */
+/* ==========================================
+                   SUBIR RECETA 
+   ========================================== */
+
+/* 1. TRANSICIONES GLOBALES */
+a, button, .card, input, select, textarea, .paso-item {
+    transition: all 0.3s ease-in-out;
+}
+
+/* 2. ANIMACIÓN POR DESPLAZAMIENTO (SCROLL) */
+.animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. IMÁGENES RESPONSIVAS */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
 
-/* CABECERA */
+/* --- ENCABEZADO Y NAVBAR (Flexbox) --- */
+.encabezado {
+    background-color: #ffffff;
+    border-bottom: 1px solid lightgray;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo b {
+    color: darkcyan;
+    font-size: 18px;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: slategray;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.navbar a:hover, .navbar a.nav-link:hover {
+    color: darkcyan;
+}
+
+.btn-cuenta {
+    background-color: darkcyan;
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+
+/* --- CABECERA DE LA SECCIÓN --- */
 .cabecera-receta {
     background-color: lightcyan;
     text-align: center;
@@ -31,21 +117,20 @@
 }
 
 
-/* PASOS */
-
+/* --- PASOS (Grid Layout) --- */
 .pasos-receta {
     width: 90%;
     max-width: 1000px;
     margin: 30px auto;
 }
 
-.pasos-receta table {
-    width: 100%;
-    border-collapse: collapse;
+.pasos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
 }
 
-.pasos-receta td {
-    width: 25%;
+.paso-item {
     text-align: center;
     padding: 14px 8px;
     border-bottom: 3px solid lightgray;
@@ -53,7 +138,7 @@
     font-size: 13px;
 }
 
-.pasos-receta td span {
+.paso-item span {
     display: block;
     color: gray;
     font-size: 12px;
@@ -61,7 +146,7 @@
     margin-bottom: 5px;
 }
 
-.pasos-receta td strong {
+.paso-item strong {
     display: block;
 }
 
@@ -75,23 +160,26 @@
 }
 
 
-/* CONTENEDOR */
-
+/* --- CONTENEDOR GENERAL --- */
 .contenedor-receta {
     width: 90%;
     max-width: 1000px;
     margin: 0 auto 70px;
 }
 
+.card {
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
 
-/* DATOS DEL PACIENTE */
 
+/* --- DATOS DEL PACIENTE (Grid Layout) --- */
 .paciente-receta {
     padding: 28px;
     margin-bottom: 25px;
     background-color: azure;
-    border: 1px solid lightgray;
-    border-radius: 10px;
 }
 
 .titulo-bloque {
@@ -111,20 +199,13 @@
     margin: 5px 0 0;
 }
 
-.paciente-receta table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 15px 5px;
-    margin-left: -15px;
+.paciente-inputs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
-.paciente-receta td {
-    width: 50%;
-    vertical-align: top;
-}
-
-.paciente-receta label,
-.contenido-bloque label {
+.input-group label {
     display: block;
     color: darkslategray;
     font-size: 14px;
@@ -132,7 +213,8 @@
     margin-bottom: 7px;
 }
 
-.paciente-receta input {
+.input-group input,
+.input-group select {
     width: 100%;
     box-sizing: border-box;
     padding: 12px;
@@ -140,6 +222,13 @@
     border-radius: 6px;
     background-color: white;
     color: slategray;
+    font-size: 14px;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: darkcyan;
 }
 
 .mensaje-seguridad {
@@ -149,10 +238,10 @@
 }
 
 
-/* BLOQUES */
-
+/* --- BLOQUES DEL FORMULARIO (Flexbox) --- */
 .bloque-receta {
-    display: table;
+    display: flex;
+    gap: 20px;
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 20px;
@@ -163,17 +252,15 @@
 }
 
 .numero-bloque {
-    display: table-cell;
-    width: 55px;
-    vertical-align: top;
+    flex-shrink: 0;
+    width: 40px;
     color: darkcyan;
     font-size: 15px;
     font-weight: bold;
 }
 
 .contenido-bloque {
-    display: table-cell;
-    vertical-align: top;
+    flex-grow: 1;
 }
 
 .contenido-bloque h2 {
@@ -191,7 +278,6 @@
 
 
 /* ARCHIVO */
-
 .contenido-bloque input[type="file"] {
     display: block;
     width: 100%;
@@ -217,42 +303,15 @@
 }
 
 
-/* DATOS DE RECETA */
-
-.datos-receta {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 15px 0;
-    margin-left: -15px;
-}
-
-.datos-receta td {
-    width: 50%;
-    vertical-align: top;
-}
-
-.datos-receta input,
-.datos-receta select {
-    width: 100%;
-    height: 45px;
-    box-sizing: border-box;
-    padding: 10px 13px;
-    border: 1px solid lightgray;
-    border-radius: 6px;
-    background-color: white;
-    color: slategray;
-    font-size: 15px;
-}
-
-.datos-receta input:focus,
-.datos-receta select:focus {
-    outline: none;
-    border-color: darkcyan;
+/* DATOS DE RECETA (Grid Layout) */
+.datos-receta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 
 /* OBSERVACIONES */
-
 .contenido-bloque textarea {
     width: 100%;
     min-height: 130px;
@@ -279,7 +338,6 @@
 
 
 /* AVISO DE VALIDACIÓN */
-
 .aviso-validacion {
     padding: 25px;
     margin: 5px 0 20px;
@@ -304,7 +362,6 @@
 
 
 /* CONFIRMACIÓN */
-
 .confirmar-receta {
     padding: 16px;
     margin-bottom: 22px;
@@ -317,16 +374,19 @@
     color: slategray;
     font-size: 13px;
     line-height: 1.5;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .confirmar-receta input {
-    vertical-align: middle;
-    margin-right: 7px;
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
 }
 
 
 /* BOTÓN */
-
 .boton-subir {
     display: block;
     width: 100%;
@@ -341,87 +401,84 @@
 }
 
 .boton-subir:hover {
-    background-color: darkcyan;
+    background-color: #006666;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 
-/* AYUDA */
-
+/* AYUDA / RECOMENDACIONES (Grid Layout) */
 .ayuda-receta {
     padding: 25px;
+    margin-top: 25px;
     background-color: white;
-    border: 1px solid lightgray;
-    border-radius: 10px;
 }
 
 .ayuda-receta h2 {
     color: darkcyan;
     font-size: 20px;
     margin-top: 0;
+    margin-bottom: 20px;
 }
 
-.ayuda-receta table {
-    width: 100%;
-    border-collapse: collapse;
+.recomendaciones-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
-.ayuda-receta td {
-    padding: 10px;
-    border-bottom: 1px solid lightgray;
+.recomendacion-item {
+    background-color: azure;
+    padding: 18px;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+}
+
+.recomendacion-item strong {
+    color: darkcyan;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.recomendacion-item p {
     color: slategray;
     font-size: 13px;
     line-height: 1.5;
-    vertical-align: top;
-}
-
-.ayuda-receta td:first-child {
-    width: 35px;
-    color: darkcyan;
+    margin: 0;
 }
 
 
-/* RESPONSIVE */
+/* --- RESPONSIVE DESIGN (Media Queries) --- */
+@media screen and (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
 
-@media screen and (max-width: 700px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .pasos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .paciente-inputs-grid,
+    .datos-receta-grid,
+    .recomendaciones-list {
+        grid-template-columns: 1fr;
+    }
+
+    .bloque-receta {
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+    }
 
     .cabecera-receta h1 {
         font-size: 30px;
     }
-
-    .contenedor-receta,
-    .pasos-receta {
-        width: 94%;
-    }
-
-    .paciente-receta {
-        padding: 20px;
-    }
-
-    .paciente-receta table,
-    .datos-receta {
-        border-spacing: 0;
-        margin-left: 0;
-    }
-
-    .paciente-receta td,
-    .datos-receta td {
-        display: block;
-        width: 100%;
-        margin-bottom: 15px;
-    }
-
-    .bloque-receta {
-        padding: 22px;
-    }
-
-    .numero-bloque,
-    .contenido-bloque {
-        display: block;
-        width: auto;
-    }
-
-    .numero-bloque {
-        margin-bottom: 10px;
-    }
-
 }

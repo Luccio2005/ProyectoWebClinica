@@ -1,8 +1,111 @@
-/* RESERVAR CITA */
+/* ==========================================
+                RESERVAR CITA 
+   ========================================== */
+
+/* 1. TRANSICIONES Y EFECTOS GLOBALES */
+a, button, .card, input, select, textarea, .paso-item, .modalidad-opcion {
+    transition: all 0.3s ease-in-out;
+}
+
+/* 2. ANIMACIÓN POR DESPLAZAMIENTO (SCROLL) */
+.animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. IMÁGENES RESPONSIVAS Y TRANSFORMACIÓN DEL LOGO */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+/* Transformación por desplazamiento / hover en el logo */
+.logo a:hover .logo-img {
+    transform: scale(1.1) rotate(5deg);
+}
 
 
-/* CABECERA */
+/* --- ENCABEZADO Y NAVBAR (Flexbox) --- */
+.encabezado {
+    background-color: #ffffff;
+    border-bottom: 1px solid lightgray;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo b {
+    color: darkcyan;
+    font-size: 18px;
+}
+
+.navbar {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: slategray;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.navbar a:hover, .nav-link-activo {
+    color: darkcyan;
+}
+
+.btn-cuenta {
+    background-color: darkcyan;
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.btn-cerrar-sesion {
+    background-color: #e74c3c;
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.btn-cerrar-sesion:hover {
+    background-color: #c0392b !important;
+}
+
+
+/* --- CABECERA DE LA PÁGINA --- */
 .cabecera-citas {
     background-color: lightcyan;
     text-align: center;
@@ -31,21 +134,20 @@
 }
 
 
-/* PASOS */
-
+/* --- PASOS (Grid Layout) --- */
 .pasos {
     width: 90%;
     max-width: 1000px;
     margin: 30px auto;
 }
 
-.pasos table {
-    width: 100%;
-    border-collapse: collapse;
+.pasos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
 }
 
-.pasos td {
-    width: 25%;
+.paso-item {
     text-align: center;
     padding: 14px 8px;
     border-bottom: 3px solid lightgray;
@@ -53,7 +155,7 @@
     font-size: 13px;
 }
 
-.pasos td span {
+.paso-item span {
     display: block;
     color: gray;
     font-size: 12px;
@@ -61,35 +163,38 @@
     margin-bottom: 5px;
 }
 
-.pasos td strong {
+.paso-item strong {
     display: block;
 }
 
-.pasos .paso-activo {
+.paso-activo {
     color: darkcyan;
     border-bottom-color: darkcyan;
 }
 
-.pasos .paso-activo span {
+.paso-activo span {
     color: darkcyan;
 }
 
 
-/* CONTENEDOR */
-
+/* --- CONTENEDOR GENERAL --- */
 .contenedor-citas {
     width: 90%;
     max-width: 1000px;
     margin: 0 auto 70px;
 }
 
-
-/* DATOS DEL PACIENTE */
-
-.datos-paciente {
-    background-color: azure;
+.card {
+    background-color: white;
     border: 1px solid lightgray;
     border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+
+/* --- DATOS DEL PACIENTE (Grid Layout) --- */
+.datos-paciente {
+    background-color: azure;
     padding: 28px;
     margin-bottom: 25px;
 }
@@ -112,21 +217,13 @@
     margin: 5px 0 0;
 }
 
-.tabla-paciente {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 15px 5px;
-    margin-left: -15px;
+.paciente-inputs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
-.tabla-paciente td {
-    width: 50%;
-    vertical-align: top;
-}
-
-.tabla-paciente label,
-.contenido-bloque > label,
-.fecha-hora label {
+.input-group label {
     display: block;
     color: darkslategray;
     font-size: 14px;
@@ -134,7 +231,8 @@
     margin-bottom: 7px;
 }
 
-.tabla-paciente input {
+.input-group input,
+.input-group select {
     width: 100%;
     box-sizing: border-box;
     padding: 12px;
@@ -142,6 +240,7 @@
     border-radius: 6px;
     background-color: white;
     color: slategray;
+    font-size: 14px;
 }
 
 .nota-paciente {
@@ -151,38 +250,26 @@
 }
 
 
-/* FORMULARIO */
-
-.formulario-cita {
-    width: 100%;
-}
-
-
-/* BLOQUES */
-
+/* --- BLOQUES DEL FORMULARIO (Flexbox) --- */
 .bloque-formulario {
-    display: table;
+    display: flex;
+    gap: 20px;
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 20px;
     padding: 30px;
-    background-color: white;
-    border: 1px solid lightgray;
-    border-radius: 10px;
 }
 
 .numero-bloque {
-    display: table-cell;
-    width: 55px;
-    vertical-align: top;
+    flex-shrink: 0;
+    width: 40px;
     color: darkcyan;
     font-size: 15px;
     font-weight: bold;
 }
 
 .contenido-bloque {
-    display: table-cell;
-    vertical-align: top;
+    flex-grow: 1;
 }
 
 .contenido-bloque h2 {
@@ -198,12 +285,9 @@
     margin: 0 0 22px;
 }
 
-
-/* INPUTS Y SELECT */
-
 .contenido-bloque select,
-.fecha-hora input,
-.fecha-hora select {
+.fecha-hora-grid input,
+.fecha-hora-grid select {
     width: 100%;
     box-sizing: border-box;
     padding: 13px;
@@ -215,77 +299,60 @@
 }
 
 .contenido-bloque select:focus,
-.fecha-hora input:focus,
-.fecha-hora select:focus {
+.fecha-hora-grid input:focus,
+.fecha-hora-grid select:focus,
+.input-group input:focus {
     outline: none;
     border-color: darkcyan;
 }
 
 
-/* MODALIDAD */
-
-.opciones-modalidad {
-    width: 100%;
+/* MODALIDAD (Grid) */
+.opciones-modalidad-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
 }
 
-.opciones-modalidad label {
-    display: inline-block;
-    vertical-align: top;
-    width: 46%;
-    box-sizing: border-box;
-    margin-right: 2%;
+.modalidad-opcion {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
     padding: 18px;
     border: 1px solid lightgray;
     border-radius: 8px;
     cursor: pointer;
+    background-color: white;
 }
 
-.opciones-modalidad label:last-child {
-    margin-right: 0;
-}
-
-.opciones-modalidad label:hover {
+.modalidad-opcion:hover {
     background-color: azure;
     border-color: darkcyan;
 }
 
-.opciones-modalidad input {
-    vertical-align: top;
-    margin-right: 8px;
+.modalidad-opcion input {
+    margin-top: 3px;
 }
 
-.opciones-modalidad span {
-    display: inline-block;
-    width: 82%;
-    vertical-align: top;
-}
-
-.opciones-modalidad strong {
+.modalidad-opcion strong {
     display: block;
     color: darkcyan;
     font-size: 14px;
     margin-bottom: 5px;
 }
 
-.opciones-modalidad small {
+.modalidad-opcion small {
     display: block;
     color: slategray;
     line-height: 1.5;
 }
 
 
-/* FECHA Y HORA */
-
-.fecha-hora {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 15px 0;
-    margin-left: -15px;
-}
-
-.fecha-hora td {
-    width: 50%;
-    vertical-align: top;
+/* FECHA Y HORA (Grid) */
+.fecha-hora-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 .aviso-horario {
@@ -304,7 +371,6 @@
 
 
 /* MOTIVO DE CONSULTA */
-
 .contenido-bloque textarea {
     width: 100%;
     min-height: 130px;
@@ -319,11 +385,6 @@
     font-size: 15px;
 }
 
-.contenido-bloque textarea:focus {
-    outline: none;
-    border-color: darkcyan;
-}
-
 .contador-info {
     display: block;
     color: gray;
@@ -333,13 +394,10 @@
 
 
 /* RESUMEN */
-
 .resumen-cita {
     margin-top: 25px;
     padding: 32px;
     background-color: azure;
-    border: 1px solid lightgray;
-    border-radius: 10px;
 }
 
 .resumen-cita h2 {
@@ -348,44 +406,50 @@
     margin: 0 0 20px;
 }
 
-.resumen-cita table {
-    width: 100%;
-    border-collapse: collapse;
+.resumen-tabla {
     background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
-.resumen-cita th,
-.resumen-cita td {
+.resumen-fila {
+    display: flex;
+    justify-content: space-between;
     padding: 13px 15px;
     border-bottom: 1px solid lightgray;
-    text-align: left;
 }
 
-.resumen-cita th {
-    width: 35%;
+.resumen-fila:last-child {
+    border-bottom: none;
+}
+
+.resumen-fila span {
     color: slategray;
     font-size: 14px;
 }
 
-.resumen-cita td {
+.resumen-fila strong {
     color: slategray;
     font-size: 14px;
 }
 
 
-/* CONFIRMACIÓN */
-
+/* CONFIRMACIÓN Y BOTÓN */
 .confirmacion-datos {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin: 25px 0;
     color: slategray;
     font-size: 14px;
     line-height: 1.6;
+    cursor: pointer;
 }
 
 .confirmacion-datos input {
-    vertical-align: middle;
-    margin-right: 7px;
+    width: 18px;
+    height: 18px;
 }
 
 .boton-confirmar {
@@ -402,17 +466,16 @@
 }
 
 .boton-confirmar:hover {
-    background-color: darkcyan;
+    background-color: #006666;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 
-/* INFORMACIÓN IMPORTANTE */
-
+/* INFORMACIÓN IMPORTANTE / RECOMENDACIONES (Grid) */
 .informacion-cita {
     margin-top: 25px;
     padding: 25px;
-    border: 1px solid lightgray;
-    border-radius: 10px;
     background-color: white;
 }
 
@@ -420,87 +483,68 @@
     color: darkcyan;
     font-size: 20px;
     margin-top: 0;
+    margin-bottom: 20px;
 }
 
-.informacion-cita table {
-    width: 100%;
-    border-collapse: collapse;
+.recomendaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
-.informacion-cita td {
-    padding: 10px;
-    border-bottom: 1px solid lightgray;
-    color: slategray;
-    line-height: 1.5;
-    vertical-align: top;
+.recomendacion-item {
+    background-color: azure;
+    padding: 18px;
+    border-radius: 8px;
+    border: 1px solid lightgray;
 }
 
-.informacion-cita td:first-child {
-    width: 35px;
+.recomendacion-item strong {
     color: darkcyan;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.recomendacion-item p {
+    color: slategray;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
 }
 
 
-/* RESPONSIVE */
-
-@media screen and (max-width: 700px) {
-
-    .cabecera-citas h1 {
-        font-size: 30px;
+/* --- RESPONSIVE DESIGN (Media Queries) --- */
+@media screen and (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
     }
 
-    .pasos td {
-        font-size: 11px;
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
 
-    .contenedor-citas {
-        width: 94%;
+    .pasos-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .datos-paciente {
-        padding: 20px;
-    }
-
-    .tabla-paciente,
-    .fecha-hora {
-        border-spacing: 0;
-        margin-left: 0;
-    }
-
-    .tabla-paciente td,
-    .fecha-hora td {
-        display: block;
-        width: 100%;
-        margin-bottom: 15px;
+    .paciente-inputs-grid,
+    .opciones-modalidad-grid,
+    .fecha-hora-grid,
+    .recomendaciones-grid {
+        grid-template-columns: 1fr;
     }
 
     .bloque-formulario {
-        padding: 22px;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
     }
 
-    .numero-bloque,
-    .contenido-bloque {
-        display: block;
-        width: auto;
-    }
-
-    .numero-bloque {
-        margin-bottom: 10px;
-    }
-
-    .opciones-modalidad label {
-        display: block;
-        width: 100%;
-        margin: 0 0 12px;
-    }
-
-    .resumen-cita {
-        padding: 22px;
-    }
-
-    .resumen-cita th,
-    .resumen-cita td {
-        display: block;
-        width: auto;
+    .cabecera-citas h1 {
+        font-size: 30px;
     }
 }

@@ -2,290 +2,154 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="description"
-          content="Reserva de citas médicas del Hospital Raíz">
-    <meta name="keywords"
-          content="Hospital Raíz, citas médicas, reservar cita, médicos">
-    <meta name="author"
-          content="Hospital Raíz">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-    <title>Reservar cita - Hospital Raíz</title>
+    <meta name="description" content="Reserva de citas médicas del Hospital Raíz">
+    <meta name="keywords" content="Hospital Raíz, citas médicas, reservar cita, médicos">
+    <meta name="author" content="Hospital Raíz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de citas - Hospital Raíz</title>
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/citas.css">
-
 </head>
 
 <body>
-    <!-- ENCABEZADO -->
+    <!-- ENCABEZADO CON NAVBAR (Flexbox) -->
     <header class="encabezado">
-        <table class="menu">
-            <tr>
-                <!-- LOGO -->
-                <td class="logo">
-                    <a href="index.html">
-                        <img src="Imagenes/logohospital1.jpg"
-                             alt="Logo Hospital Raíz" width="50" height="50">
-                    </a>
-                    <b>Hospital Raiz</b>
-                </td>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Imagenes/logohospital1.jpg" alt="Logo Hospital Raíz" class="img-responsive logo-img">
+                </a>
+                <b>Hospital Raíz</b>
+            </div>
 
-                <!-- MENÚ -->
-                <td>
-                    <a href="index.html">
-                        Inicio
-                    </a>
-                </td>
-                <td>
-                    <a href="citas.html">
-                        Reservar cita
-                    </a>
-                </td>
-                <td>
-                    <a href="consultas.html">
-                        Consulta de salud
-                    </a>
-                </td>
-                <td>
-                    <a href="farmacia.html">
-                        Farmacia
-                    </a>
-                </td>
-                <td>
-                    <a href="#">
-                        Mi cuenta
-                    </a>
-                </td>
-            </tr>
-        </table>
+            <nav class="navbar">
+                <a href="index.html">Inicio</a>
+                <a href="citas.html" class="nav-link-activo">Reservar cita</a>
+                <a href="consultas.html">Consulta de salud</a>
+                <a href="farmacia.html">Farmacia</a>
+                <a href="#" class="btn-cuenta">Mi cuenta</a>
+                <a href="login.html" class="btn-cerrar-sesion">Cerrar sesión</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
+    <main class="main-content">
         <!-- ENCABEZADO DE LA PÁGINA -->
-        <section class="cabecera-citas">
-            <p class="etiqueta">
-                SERVICIO DE CITAS
-            </p>
-            <h1>
-                Reserva tu cita médica
-            </h1>
-            <p>
-                Selecciona la especialidad, el profesional,
-                la fecha y el horario que prefieras.
-            </p>
+        <section class="cabecera-citas animate-on-scroll">
+            <p class="etiqueta">SERVICIO DE CITAS</p>
+            <h1>Reserva tu cita médica</h1>
+            <p>Selecciona la especialidad, el profesional, la fecha y el horario que prefieras.</p>
         </section>
         
-        <!-- PASOS -->
-        <section class="pasos">
-            <table>
-                <tr>
-                    <td class="paso-activo">
-                        <span>01</span>
-                        <strong>Especialidad</strong>
-                    </td>
-                    <td>
-                        <span>02</span>
-                        <strong>Médico</strong>
-                    </td>
-                    <td>
-                        <span>03</span>
-                        <strong>Fecha y hora</strong>
-                    </td>
-                    <td>
-                        <span>04</span>
-                        <strong>Confirmación</strong>
-                    </td>
-                </tr>
-            </table>
+        <!-- PASOS (Grid Layout) -->
+        <section class="pasos animate-on-scroll">
+            <div class="pasos-grid">
+                <div class="paso-item paso-activo">
+                    <span>01</span>
+                    <strong>Especialidad</strong>
+                </div>
+                <div class="paso-item">
+                    <span>02</span>
+                    <strong>Médico</strong>
+                </div>
+                <div class="paso-item">
+                    <span>03</span>
+                    <strong>Fecha y hora</strong>
+                </div>
+                <div class="paso-item">
+                    <span>04</span>
+                    <strong>Confirmación</strong>
+                </div>
+            </div>
         </section>
 
         <!-- CONTENIDO PRINCIPAL -->
-
-        <section class="contenedor-citas">
+        <section class="contenedor-citas animate-on-scroll">
             <!-- DATOS DEL PACIENTE -->
-            <div class="datos-paciente">
+            <div class="datos-paciente card">
                 <div class="titulo-bloque">
                     <span>Paciente</span>
-                    <h2>
-                        Datos de tu cuenta
-                    </h2>
+                    <h2>Datos de tu cuenta</h2>
                 </div>
-                <table class="tabla-paciente">
-                    <tr>
-                        <td>
-                            <label>
-                                Nombre completo
-                            </label>
-                            <input
-                                type="text"
-                                value="Paciente registrado"
-                                readonly>
-                        </td>
-                        <td>
-                            <label>
-                                Documento de identidad
-                            </label>
-                            <input
-                                type="text"
-                                value="********"
-                                readonly>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>
-                                Correo electrónico
-                            </label>
-                            <input
-                                type="email"
-                                value="paciente@correo.com"
-                                readonly>
-                        </td>
-                        <td>
-                            <label>
-                                Número de celular
-                            </label>
-                            <input
-                                type="tel"
-                                value="999999999"
-                                readonly>
-                        </td>
-                    </tr>
-                </table>
+                <div class="paciente-inputs-grid">
+                    <div class="input-group">
+                        <label>Nombre completo</label>
+                        <input type="text" value="Paciente registrado" readonly>
+                    </div>
+                    <div class="input-group">
+                        <label>Documento de identidad</label>
+                        <input type="text" value="********" readonly>
+                    </div>
+                    <div class="input-group">
+                        <label>Correo electrónico</label>
+                        <input type="email" value="paciente@correo.com" readonly>
+                    </div>
+                    <div class="input-group">
+                        <label>Número de celular</label>
+                        <input type="tel" value="999999999" readonly>
+                    </div>
+                </div>
                 <p class="nota-paciente">
-                    ✓ Los datos corresponden a tu cuenta.
-                    Si necesitas modificarlos, puedes hacerlo
-                    desde tu perfil.
+                    ✓ Los datos corresponden a tu cuenta. Si necesitas modificarlos, puedes hacerlo desde tu perfil.
                 </p>
             </div>
             
             <!-- FORMULARIO DE CITA -->
-            <form
-                class="formulario-cita"
-                action="#"
-                method="post">
+            <form class="formulario-cita" action="#" method="post">
                 
                 <!-- ESPECIALIDAD -->
-                <div class="bloque-formulario">
-                    <div class="numero-bloque">
-                        01
-                    </div>
+                <div class="bloque-formulario card">
+                    <div class="numero-bloque">01</div>
                     <div class="contenido-bloque">
-                        <h2>
-                            Selecciona una especialidad
-                        </h2>
-                        <p>
-                            Elige el área médica en la que deseas
-                            recibir atención.
-                        </p>
-                        <label for="especialidad">
-                            Especialidad
-                        </label>
-                        <select
-                            id="especialidad"
-                            name="especialidad"
-                            required>
-                            <option value="">
-                                Selecciona una especialidad
-                            </option>
-                            <option value="cardiologia">
-                                Cardiología
-                            </option>
-                            <option value="pediatria">
-                                Pediatría
-                            </option>
-                            <option value="dermatologia">
-                                Dermatología
-                            </option>
-                            <option value="traumatologia">
-                                Traumatología
-                            </option>
+                        <h2>Selecciona una especialidad</h2>
+                        <p>Elige el área médica en la que deseas recibir atención.</p>
+                        <label for="especialidad">Especialidad</label>
+                        <select id="especialidad" name="especialidad" required>
+                            <option value="">Selecciona una especialidad</option>
+                            <option value="cardiologia">Cardiología</option>
+                            <option value="pediatria">Pediatría</option>
+                            <option value="dermatologia">Dermatología</option>
+                            <option value="traumatologia">Traumatología</option>
                         </select>
                     </div>
                 </div>
                 
                 <!-- MÉDICO -->
-                <div class="bloque-formulario">
-                    <div class="numero-bloque">
-                        02
-                    </div>
+                <div class="bloque-formulario card">
+                    <div class="numero-bloque">02</div>
                     <div class="contenido-bloque">
-                        <h2>
-                            Selecciona un médico
-                        </h2>
-                        <p>
-                            Selecciona el profesional con quien
-                            deseas realizar tu consulta.
-                        </p>
-                        <label for="medico">
-                            Médico
-                        </label>
-                        <select
-                            id="medico"
-                            name="medico"
-                            required>
-                            <option value="">
-                                Selecciona un médico
-                            </option>
-                            <option value="marisol">
-                                Dra. Marisol Chávez - Cardiología
-                            </option>
-                            <option value="javier">
-                                Dr. Javier Torres - Pediatría
-                            </option>
-                            <option value="lucia">
-                                Dra. Lucía Ramos - Dermatología
-                            </option>
-                            <option value="eduardo">
-                                Dr. Eduardo Salas - Traumatología
-                            </option>
+                        <h2>Selecciona un médico</h2>
+                        <p>Selecciona el profesional con quien deseas realizar tu consulta.</p>
+                        <label for="medico">Médico</label>
+                        <select id="medico" name="medico" required>
+                            <option value="">Selecciona un médico</option>
+                            <option value="marisol">Dra. Marisol Chávez - Cardiología</option>
+                            <option value="javier">Dr. Javier Torres - Pediatría</option>
+                            <option value="lucia">Dra. Lucía Ramos - Dermatología</option>
+                            <option value="eduardo">Dr. Eduardo Salas - Traumatología</option>
                         </select>
                     </div>
                 </div>
 
                 <!-- MODALIDAD -->
-                <div class="bloque-formulario">
-                    <div class="numero-bloque">
-                        03
-                    </div>
+                <div class="bloque-formulario card">
+                    <div class="numero-bloque">03</div>
                     <div class="contenido-bloque">
-                        <h2>
-                            Modalidad de atención
-                        </h2>
-                        <p>
-                            Selecciona cómo deseas recibir
-                            tu atención médica.
-                        </p>
-                        <div class="opciones-modalidad">
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="modalidad"
-                                    value="presencial"
-                                    required>
+                        <h2>Modalidad de atención</h2>
+                        <p>Selecciona cómo deseas recibir tu atención médica.</p>
+                        <div class="opciones-modalidad-grid">
+                            <label class="modalidad-opcion">
+                                <input type="radio" name="modalidad" value="presencial" required>
                                 <span>
-                                    <strong>
-                                        Atención presencial
-                                    </strong>
-                                    <small>
-                                        Acude a las instalaciones
-                                        del Hospital Raíz.
-                                    </small>
+                                    <strong>Atención presencial</strong>
+                                    <small>Acude a las instalaciones del Hospital Raíz.</small>
                                 </span>
                             </label>
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="modalidad"
-                                    value="virtual">
+                            <label class="modalidad-opcion">
+                                <input type="radio" name="modalidad" value="virtual">
                                 <span>
-                                    <strong>
-                                        Atención virtual
-                                    </strong>
-                                    <small>
-                                        Recibe la atención mediante
-                                        una consulta en línea.
-                                    </small>
+                                    <strong>Atención virtual</strong>
+                                    <small>Recibe la atención mediante una consulta en línea.</small>
                                 </span>
                             </label>
                         </div>
@@ -293,233 +157,98 @@
                 </div>
 
                 <!-- FECHA Y HORA -->
-                <div class="bloque-formulario">
-                    <div class="numero-bloque">
-                        04
-                    </div>
+                <div class="bloque-formulario card">
+                    <div class="numero-bloque">04</div>
                     <div class="contenido-bloque">
-                        <h2>
-                            Fecha y horario
-                        </h2>
-                        <p>
-                            Selecciona una fecha y uno de los
-                            horarios disponibles.
-                        </p>
-                        <table class="fecha-hora">
-                            <tr>
-                                <td>
-                                    <label for="fecha">
-                                        Fecha de atención
-                                    </label>
-                                    <input
-                                        type="date"
-                                        id="fecha"
-                                        name="fecha"
-                                        required>
-                                </td>
-                                <td>
-                                    <label for="hora">
-                                        Horario disponible
-                                    </label>
-                                    <select
-                                        id="hora"
-                                        name="hora"
-                                        required>
-                                        <option value="">
-                                            Selecciona un horario
-                                        </option>
-                                        <option value="0900">
-                                            09:00 a. m.
-                                        </option>
-                                        <option value="0930">
-                                            09:30 a. m.
-                                        </option>
-                                        <option value="1000">
-                                            10:00 a. m.
-                                        </option>
-                                        <option value="1030">
-                                            10:30 a. m.
-                                        </option>
-                                        <option value="1100">
-                                            11:00 a. m.
-                                        </option>
-                                        <option value="1130">
-                                            11:30 a. m.
-                                        </option>
-                                        <option value="1500">
-                                            03:00 p. m.
-                                        </option>
-                                        <option value="1530">
-                                            03:30 p. m.
-                                        </option>
-                                    </select>
-                                </td>
-                            </tr>
-                        </table>
+                        <h2>Fecha y horario</h2>
+                        <p>Selecciona una fecha y uno de los horarios disponibles.</p>
+                        <div class="fecha-hora-grid">
+                            <div class="input-group">
+                                <label for="fecha">Fecha de atención</label>
+                                <input type="date" id="fecha" name="fecha" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="hora">Horario disponible</label>
+                                <select id="hora" name="hora" required>
+                                    <option value="">Selecciona un horario</option>
+                                    <option value="0900">09:00 a. m.</option>
+                                    <option value="0930">09:30 a. m.</option>
+                                    <option value="1000">10:00 a. m.</option>
+                                    <option value="1030">10:30 a. m.</option>
+                                    <option value="1100">11:00 a. m.</option>
+                                    <option value="1130">11:30 a. m.</option>
+                                    <option value="1500">03:00 p. m.</option>
+                                    <option value="1530">03:30 p. m.</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="aviso-horario">
-                            <strong>
-                                Información:
-                            </strong>
-                            Los horarios mostrados representan
-                            los espacios disponibles para la
-                            atención seleccionada.
+                            <strong>Información:</strong> Los horarios mostrados representan los espacios disponibles para la atención seleccionada.
                         </div>
                     </div>
                 </div>
 
                 <!-- MOTIVO -->
-                <div class="bloque-formulario">
-                    <div class="numero-bloque">
-                        05
-                    </div>
+                <div class="bloque-formulario card">
+                    <div class="numero-bloque">05</div>
                     <div class="contenido-bloque">
-                        <h2>
-                            Motivo de la cita
-                        </h2>
-                        <p>
-                            Describe brevemente el motivo por el
-                            que deseas recibir atención.
-                        </p>
-                        <label for="motivo">
-                            Motivo de consulta
-                        </label>
-                        <textarea
-                            id="motivo"
-                            name="motivo"
-                            placeholder="Describe brevemente el motivo de tu cita..."
-                            maxlength="500"
-                            required></textarea>
-                        <small class="contador-info">
-                            Máximo 500 caracteres.
-                        </small>
+                        <h2>Motivo de la cita</h2>
+                        <p>Describe brevemente el motivo por el que deseas recibir atención.</p>
+                        <label for="motivo">Motivo de consulta</label>
+                        <textarea id="motivo" name="motivo" placeholder="Describe brevemente el motivo de tu cita..." maxlength="500" required></textarea>
+                        <small class="contador-info">Máximo 500 caracteres.</small>
                     </div>
                 </div>
 
                 <!-- RESUMEN -->
-                <div class="resumen-cita">
-                    <h2>
-                        Resumen de tu cita
-                    </h2>
-                    <table>
-                        <tr>
-                            <th>
-                                Paciente
-                            </th>
-                            <td>
-                                Luis Cruz
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Especialidad
-                            </th>
-                            <td>
-                                Seleccionada en el formulario
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Médico
-                            </th>
-                            <td>
-                                Seleccionado en el formulario
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Modalidad
-                            </th>
-                            <td>
-                                Seleccionada en el formulario
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Fecha
-                            </th>
-                            <td>
-                                Seleccionada en el formulario
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Horario
-                            </th>
-                            <td>
-                                Seleccionado en el formulario
-                            </td>
-                        </tr>
-                    </table>
+                <div class="resumen-cita card">
+                    <h2>Resumen de tu cita</h2>
+                    <div class="resumen-tabla">
+                        <div class="resumen-fila"><span>Paciente</span><strong>Luis Cruz</strong></div>
+                        <div class="resumen-fila"><span>Especialidad</span><strong>Seleccionada en el formulario</strong></div>
+                        <div class="resumen-fila"><span>Médico</span><strong>Seleccionado en el formulario</strong></div>
+                        <div class="resumen-fila"><span>Modalidad</span><strong>Seleccionada en el formulario</strong></div>
+                        <div class="resumen-fila"><span>Fecha</span><strong>Seleccionada en el formulario</strong></div>
+                        <div class="resumen-fila"><span>Horario</span><strong>Seleccionado en el formulario</strong></div>
+                    </div>
                     <label class="confirmacion-datos">
-                        <input
-                            type="checkbox"
-                            name="confirmar-datos"
-                            required>
-                        Confirmo que los datos seleccionados
-                        son correctos y deseo solicitar esta cita.
+                        <input type="checkbox" name="confirmar-datos" required>
+                        Confirmo que los datos seleccionados son correctos y deseo solicitar esta cita.
                     </label>
-                    <button
-                        type="submit"
-                        class="boton-confirmar">
+                    <button type="submit" class="boton-confirmar">
                         Confirmar reserva de cita
                     </button>
                 </div>
             </form>
+
             <!-- INFORMACIÓN IMPORTANTE -->
-            <div class="informacion-cita">
-                <h2>
-                    Antes de reservar
-                </h2>
-                <table>
-                    <tr>
-                        <td>
-                            <strong>01</strong>
-                        </td>
-                        <td>
-                            Verifica que la especialidad y el
-                            médico seleccionados sean los correctos.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>02</strong>
-                        </td>
-                        <td>
-                            Selecciona únicamente uno de los
-                            horarios disponibles.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>03</strong>
-                        </td>
-                        <td>
-                            Después de confirmar podrás consultar
-                            la información de tu cita desde tu cuenta.
-                        </td>
-                    </tr>
-                </table>
+            <div class="informacion-cita card">
+                <h2>Antes de reservar</h2>
+                <div class="recomendaciones-grid">
+                    <div class="recomendacion-item">
+                        <strong>01</strong>
+                        <p>Verifica que la especialidad y el médico seleccionados sean los correctos.</p>
+                    </div>
+                    <div class="recomendacion-item">
+                        <strong>02</strong>
+                        <p>Selecciona únicamente uno de los horarios disponibles.</p>
+                    </div>
+                    <div class="recomendacion-item">
+                        <strong>03</strong>
+                        <p>Después de confirmar podrás consultar la información de tu cita desde tu cuenta.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
     
     <!-- PIE DE PÁGINA -->
     <footer class="pie">
+        <p>© 2026 Hospital Raíz. Todos los derechos reservados.</p>
         <p>
-            © 2026 Hospital Raíz. Todos los derechos reservados.
-        </p>
-        <p>
-            <a href="#">
-                Términos y condiciones
-            </a>
-            &nbsp; | &nbsp;
-            <a href="#">
-                Política de privacidad
-            </a>
-            &nbsp; | &nbsp;
-            <a href="index.html">
-                Inicio
-            </a>
+            <a href="#">Términos y condiciones</a> &nbsp; | &nbsp;
+            <a href="#">Política de privacidad</a> &nbsp; | &nbsp;
+            <a href="index.html">Inicio</a>
         </p>
     </footer>
 </body>
