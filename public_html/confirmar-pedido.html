@@ -42,44 +42,48 @@
                 <table class="datos">
                     <tr>
                         <td><b>Nombre completo:</b></td>
-                        <td>Luis Pérez</td>
+                        <td id="cli-nombre">—</td>
+                    </tr>
+                    <tr>
+                        <td><b>DNI:</b></td>
+                        <td id="cli-dni">—</td>
                     </tr>
                     <tr>
                         <td><b>Correo electrónico:</b></td>
-                        <td>usuario@correo.com</td>
+                        <td id="cli-correo">—</td>
                     </tr>
                     <tr>
                         <td><b>Teléfono:</b></td>
-                        <td>987 654 321</td>
+                        <td id="cli-celular">—</td>
                     </tr>
                 </table>
             </div>
 
             <div class="seccion revelar derecha">
                 <h2>Información de entrega</h2>
-                <form>
+                <form onsubmit="return false;">
                     <table class="datos">
                         <tr>
                             <td><b>Modalidad de entrega:</b></td>
                             <td>
-                                <select>
-                                    <option>Seleccionar</option>
-                                    <option>Recojo en la clínica</option>
-                                    <option>Delivery</option>
+                                <select id="tipo-entrega" name="tipo-entrega" onchange="cambiarEntrega()">
+                                    <option value="">Seleccionar</option>
+                                    <option value="recojo">Recojo en la clínica</option>
+                                    <option value="delivery">Delivery</option>
                                 </select>
                             </td>
                         </tr>
-                        <tr>
+                        <tr id="fila-direccion">
                             <td><b>Dirección:</b></td>
                             <td>
-                                <input type="text"
+                                <input type="text" id="direccion" name="direccion"
                                     placeholder="Ingrese su dirección">
                             </td>
                         </tr>
-                        <tr>
+                        <tr id="fila-referencia">
                             <td><b>Referencia:</b></td>
                             <td>
-                                <input type="text"
+                                <input type="text" id="referencia" name="referencia"
                                     placeholder="Referencia de la dirección">
                             </td>
                         </tr>
@@ -89,46 +93,15 @@
 
             <div class="seccion revelar">
                 <h2>Resumen de productos</h2>
-                <table class="tabla-productos tabla-adaptable">
+                <!-- Las filas las crea js/confirmar-pedido.js desde la matriz del carrito -->
+                <table class="tabla-productos tabla-adaptable" id="tabla-resumen">
                     <tr>
+                        <th>Código</th>
                         <th>Producto</th>
-                        <th>Precio</th>
                         <th>Cantidad</th>
+                        <th>Precio</th>
                         <th>Subtotal</th>
                     </tr>
-                <tr>
-                    <td data-label="Producto">
-                        <div class="celda-producto">
-                            <img class="miniatura" src="Imagenes/producto1.webp" alt="Protector solar">
-                            <span>Protector Solar FPS 50</span>
-                        </div>
-                    </td>
-                    <td data-label="Precio">S/ 35.00</td>
-                    <td data-label="Cantidad">2</td>
-                    <td data-label="Subtotal">S/ 70.00</td>
-                </tr>
-                <tr>
-                    <td data-label="Producto">
-                        <div class="celda-producto">
-                            <img class="miniatura" src="Imagenes/producto3.webp" alt="Gel antibacterial">
-                            <span>Gel Antibacterial</span>
-                        </div>
-                    </td>
-                    <td data-label="Precio">S/ 12.00</td>
-                    <td data-label="Cantidad">1</td>
-                    <td data-label="Subtotal">S/ 12.00</td>
-                </tr>
-                <tr>
-                    <td data-label="Producto">
-                        <div class="celda-producto">
-                            <img class="miniatura" src="Imagenes/producto7.jpg" alt="Vendas elásticas">
-                            <span>Vendas Elásticas</span>
-                        </div>
-                    </td>
-                    <td data-label="Precio">S/ 15.00</td>
-                    <td data-label="Cantidad">1</td>
-                    <td data-label="Subtotal">S/ 15.00</td>
-                </tr>
                 </table>
             </div>
 
@@ -138,15 +111,16 @@
                     <tr>
                         <td><b>Seleccionar método:</b></td>
                         <td>
-                            <select>
-                                <option>Seleccionar</option>
-                                <option>Pago en clínica</option>
-                                <option>Tarjeta de crédito o débito</option>
-                                <option>Yape</option>
+                            <select id="metodo-pago" name="metodo-pago" onchange="mostrarInfoPago()">
+                                <option value="">Seleccionar</option>
+                                <option value="clinica">Pago en clínica</option>
+                                <option value="tarjeta">Tarjeta de crédito o débito</option>
+                                <option value="yape">Yape</option>
                             </select>
                         </td>
                     </tr>
                 </table>
+                <p id="info-pago" class="info-pago"></p>
             </div>
         </div>
 
@@ -155,15 +129,19 @@
                 <table>
                     <tr>
                         <td>Subtotal:</td>
-                        <td>S/ 97.00</td>
+                        <td id="res-subtotal">S/ 0.00</td>
                     </tr>
                     <tr>
                         <td>Envío:</td>
-                        <td>S/ 10.00</td>
+                        <td id="res-envio">S/ 0.00</td>
+                    </tr>
+                    <tr>
+                        <td>IGV incluido (18%):</td>
+                        <td id="res-igv">S/ 0.00</td>
                     </tr>
                     <tr class="total-final">
                         <td>Total a pagar:</td>
-                        <td><span class="precio-animado">S/ 107.00</span></td>
+                        <td><span class="precio-animado" id="res-total">S/ 0.00</span></td>
                     </tr>
                 </table>
             </div>
@@ -178,15 +156,13 @@
                     contar con la autorización correspondiente.
                 </p>
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" id="acepto-terminos">
                     Confirmo que los datos de mi pedido son correctos.
                 </label>
                 <br><br>
-                <a href="confirmacion.html">
-                    <button class="boton-confirmar">
-                        Confirmar pedido
-                    </button>
-                </a>
+                <button type="button" class="boton-confirmar" onclick="confirmarPedido()">
+                    Confirmar pedido
+                </button>
             </div>
 
             <div class="navegacion">
@@ -213,5 +189,9 @@
             </p>
         </div>
     </footer>
+
+    <!-- Primero el común, luego el de esta página -->
+    <script src="js/comun.js"></script>
+    <script src="js/confirmar-pedido.js"></script>
 </body>
 </html>

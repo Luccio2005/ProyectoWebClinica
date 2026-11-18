@@ -58,7 +58,7 @@
                     </div>
                     
                     <!-- FORMULARIO -->
-                    <form action="#" method="post" enctype="multipart/form-data">
+                    <form action="#" method="post" enctype="multipart/form-data" id="form-consulta" onsubmit="enviarConsulta(event)" novalidate>
                         <!-- TIPO -->
                         <div class="campo-consulta">
                             <label for="tipo-consulta">Tipo de consulta</label>
@@ -82,8 +82,8 @@
                         <!-- DESCRIPCIÓN -->
                         <div class="campo-consulta">
                             <label for="descripcion">Describe tu consulta</label>
-                            <textarea id="descripcion" name="descripcion" placeholder="Explica con el mayor detalle posible tu consulta..." maxlength="1000" required></textarea>
-                            <small>Máximo 1000 caracteres.</small>
+                            <textarea id="descripcion" name="descripcion" placeholder="Explica con el mayor detalle posible tu consulta..." maxlength="1000" oninput="contarCaracteres()" required></textarea>
+                            <small>Máximo 1000 caracteres: <span id="contador-descripcion">0 / 1000</span></small>
                         </div>
 
                         <!-- ARCHIVO -->
@@ -98,7 +98,7 @@
                         <!-- CONFIRMACIÓN -->
                         <div class="confirmar-consulta">
                             <label class="checkbox-label">
-                                <input type="checkbox" name="confirmacion" required>
+                                <input type="checkbox" id="confirmacion" name="confirmacion" required>
                                 <span>Confirmo que la información proporcionada es correcta.</span>
                             </label>
                         </div>
@@ -118,52 +118,17 @@
                         <p>Revisa las consultas que has enviado y las respuestas recibidas.</p>
                     </div>
 
-                    <!-- CONSULTA RESPONDIDA -->
-                    <article class="tarjeta-consulta respondida">
-                        <div class="cabecera-tarjeta">
-                            <div>
-                                <span class="numero-consulta">CONSULTA #001</span>
-                                <h3>Consulta sobre medicamentos</h3>
-                            </div>
-                            <span class="estado respondida">Respondida</span>
-                        </div>
-                        <p class="fecha-consulta">Enviada el 10/09/2026</p>
-                        <div class="mensaje-paciente">
-                            <strong>Mi consulta</strong>
-                            <p>Quisiera saber si debo continuar tomando el medicamento indicado durante los próximos días.</p>
-                        </div>
-                        <div class="respuesta-profesional">
-                            <strong>Respuesta del personal de salud</strong>
-                            <p>Gracias por comunicarse con nosotros. Para brindarle una orientación adecuada sobre su tratamiento, recomendamos revisar las indicaciones proporcionadas durante su última atención médica.</p>
-                            <span class="profesional">Personal de salud · Hospital Raíz</span>
-                        </div>
-                        <a href="#" class="ver-consulta">Ver detalle →</a>
-                    </article>
+                    <!-- COLA DE ATENCIÓN (la llena js/consultas.js) -->
+                    <div id="turno-actual" class="turno-actual">Aún no tienes consultas en la cola.</div>
 
-                    <!-- CONSULTA PENDIENTE -->
-                    <article class="tarjeta-consulta pendiente">
-                        <div class="cabecera-tarjeta">
-                            <div>
-                                <span class="numero-consulta">CONSULTA #002</span>
-                                <h3>Consulta sobre resultados</h3>
-                            </div>
-                            <span class="estado pendiente">En revisión</span>
-                        </div>
-                        <p class="fecha-consulta">Enviada el 11/09/2026</p>
-                        <div class="mensaje-paciente">
-                            <strong>Mi consulta</strong>
-                            <p>Deseo consultar sobre los resultados obtenidos en mi última evaluación.</p>
-                        </div>
-                        <div class="mensaje-espera">
-                            <span class="icono-espera">⏳</span>
-                            <div>
-                                <strong>Consulta en revisión</strong>
-                                <p>El personal de salud revisará tu consulta y responderá cuando esté disponible.</p>
-                            </div>
-                        </div>
-                        <a href="#" class="ver-consulta">Ver detalle →</a>
-                    </article>
-                    
+                    <div class="acciones-consultas">
+                        <button type="button" class="boton-accion-consulta" onclick="buscarConsulta()">Buscar consulta por número</button>
+                        <button type="button" class="boton-accion-consulta boton-demo" onclick="simularRespuesta()">Simular respuesta del personal</button>
+                    </div>
+
+                    <!-- Las tarjetas las crea js/consultas.js desde el arreglo "historial" -->
+                    <div id="lista-consultas"></div>
+
                     <!-- NOTA HISTORIAL -->
                     <div class="nota-historial">
                         <strong>Tus consultas estarán aquí</strong>
@@ -191,5 +156,9 @@
             <a href="index.html">Inicio</a>
         </p>
     </footer>
+
+    <!-- Primero el común, luego el de esta página -->
+    <script src="js/comun.js"></script>
+    <script src="js/consultas.js"></script>
 </body>
 </html>

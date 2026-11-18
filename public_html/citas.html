@@ -73,19 +73,19 @@
                 <div class="paciente-inputs-grid">
                     <div class="input-group">
                         <label>Nombre completo</label>
-                        <input type="text" value="Paciente registrado" readonly>
+                        <input type="text" id="pac-nombre" value="Sin sesión" readonly>
                     </div>
                     <div class="input-group">
                         <label>Documento de identidad</label>
-                        <input type="text" value="********" readonly>
+                        <input type="text" id="pac-dni" value="********" readonly>
                     </div>
                     <div class="input-group">
                         <label>Correo electrónico</label>
-                        <input type="email" value="paciente@correo.com" readonly>
+                        <input type="email" id="pac-correo" value="" readonly>
                     </div>
                     <div class="input-group">
                         <label>Número de celular</label>
-                        <input type="tel" value="999999999" readonly>
+                        <input type="tel" id="pac-celular" value="" readonly>
                     </div>
                 </div>
                 <p class="nota-paciente">
@@ -94,7 +94,7 @@
             </div>
             
             <!-- FORMULARIO DE CITA -->
-            <form class="formulario-cita" action="#" method="post">
+            <form class="formulario-cita" action="#" method="post" id="form-cita" onsubmit="reservarCita(event)" novalidate>
                 
                 <!-- ESPECIALIDAD -->
                 <div class="bloque-formulario card">
@@ -103,7 +103,7 @@
                         <h2>Selecciona una especialidad</h2>
                         <p>Elige el área médica en la que deseas recibir atención.</p>
                         <label for="especialidad">Especialidad</label>
-                        <select id="especialidad" name="especialidad" required>
+                        <select id="especialidad" name="especialidad" onchange="filtrarMedicos()" required>
                             <option value="">Selecciona una especialidad</option>
                             <option value="cardiologia">Cardiología</option>
                             <option value="pediatria">Pediatría</option>
@@ -120,12 +120,8 @@
                         <h2>Selecciona un médico</h2>
                         <p>Selecciona el profesional con quien deseas realizar tu consulta.</p>
                         <label for="medico">Médico</label>
-                        <select id="medico" name="medico" required>
+                        <select id="medico" name="medico" onchange="elegirMedico()" required>
                             <option value="">Selecciona un médico</option>
-                            <option value="marisol">Dra. Marisol Chávez - Cardiología</option>
-                            <option value="javier">Dr. Javier Torres - Pediatría</option>
-                            <option value="lucia">Dra. Lucía Ramos - Dermatología</option>
-                            <option value="eduardo">Dr. Eduardo Salas - Traumatología</option>
                         </select>
                     </div>
                 </div>
@@ -138,14 +134,14 @@
                         <p>Selecciona cómo deseas recibir tu atención médica.</p>
                         <div class="opciones-modalidad-grid">
                             <label class="modalidad-opcion">
-                                <input type="radio" name="modalidad" value="presencial" required>
+                                <input type="radio" name="modalidad" value="presencial" onchange="elegirModalidad()" required>
                                 <span>
                                     <strong>Atención presencial</strong>
                                     <small>Acude a las instalaciones del Hospital Raíz.</small>
                                 </span>
                             </label>
                             <label class="modalidad-opcion">
-                                <input type="radio" name="modalidad" value="virtual">
+                                <input type="radio" name="modalidad" value="virtual" onchange="elegirModalidad()">
                                 <span>
                                     <strong>Atención virtual</strong>
                                     <small>Recibe la atención mediante una consulta en línea.</small>
@@ -164,25 +160,17 @@
                         <div class="fecha-hora-grid">
                             <div class="input-group">
                                 <label for="fecha">Fecha de atención</label>
-                                <input type="date" id="fecha" name="fecha" required>
+                                <input type="date" id="fecha" name="fecha" onchange="validarFecha()" required>
                             </div>
                             <div class="input-group">
                                 <label for="hora">Horario disponible</label>
-                                <select id="hora" name="hora" required>
+                                <select id="hora" name="hora" onchange="elegirHora()" required>
                                     <option value="">Selecciona un horario</option>
-                                    <option value="0900">09:00 a. m.</option>
-                                    <option value="0930">09:30 a. m.</option>
-                                    <option value="1000">10:00 a. m.</option>
-                                    <option value="1030">10:30 a. m.</option>
-                                    <option value="1100">11:00 a. m.</option>
-                                    <option value="1130">11:30 a. m.</option>
-                                    <option value="1500">03:00 p. m.</option>
-                                    <option value="1530">03:30 p. m.</option>
                                 </select>
                             </div>
                         </div>
                         <div class="aviso-horario">
-                            <strong>Información:</strong> Los horarios mostrados representan los espacios disponibles para la atención seleccionada.
+                            <strong>Información:</strong> Los horarios mostrados representan los espacios disponibles para la atención seleccionada. Los horarios marcados como (ocupado) no se pueden elegir. No atendemos los domingos.
                         </div>
                     </div>
                 </div>
@@ -194,8 +182,8 @@
                         <h2>Motivo de la cita</h2>
                         <p>Describe brevemente el motivo por el que deseas recibir atención.</p>
                         <label for="motivo">Motivo de consulta</label>
-                        <textarea id="motivo" name="motivo" placeholder="Describe brevemente el motivo de tu cita..." maxlength="500" required></textarea>
-                        <small class="contador-info">Máximo 500 caracteres.</small>
+                        <textarea id="motivo" name="motivo" placeholder="Describe brevemente el motivo de tu cita..." maxlength="500" oninput="contarCaracteres()" required></textarea>
+                        <small class="contador-info">Máximo 500 caracteres: <span id="contador-motivo">0 / 500</span></small>
                     </div>
                 </div>
 
@@ -203,15 +191,16 @@
                 <div class="resumen-cita card">
                     <h2>Resumen de tu cita</h2>
                     <div class="resumen-tabla">
-                        <div class="resumen-fila"><span>Paciente</span><strong>Luis Cruz</strong></div>
-                        <div class="resumen-fila"><span>Especialidad</span><strong>Seleccionada en el formulario</strong></div>
-                        <div class="resumen-fila"><span>Médico</span><strong>Seleccionado en el formulario</strong></div>
-                        <div class="resumen-fila"><span>Modalidad</span><strong>Seleccionada en el formulario</strong></div>
-                        <div class="resumen-fila"><span>Fecha</span><strong>Seleccionada en el formulario</strong></div>
-                        <div class="resumen-fila"><span>Horario</span><strong>Seleccionado en el formulario</strong></div>
+                        <div class="resumen-fila"><span>Paciente</span><strong>Sin seleccionar</strong></div>
+                        <div class="resumen-fila"><span>Especialidad</span><strong>Sin seleccionar</strong></div>
+                        <div class="resumen-fila"><span>Médico</span><strong>Sin seleccionar</strong></div>
+                        <div class="resumen-fila"><span>Modalidad</span><strong>Sin seleccionar</strong></div>
+                        <div class="resumen-fila"><span>Fecha</span><strong>Sin seleccionar</strong></div>
+                        <div class="resumen-fila"><span>Horario</span><strong>Sin seleccionar</strong></div>
+                        <div class="resumen-fila"><span>Precio</span><strong>Sin seleccionar</strong></div>
                     </div>
                     <label class="confirmacion-datos">
-                        <input type="checkbox" name="confirmar-datos" required>
+                        <input type="checkbox" id="confirmar-datos" name="confirmar-datos" required>
                         Confirmo que los datos seleccionados son correctos y deseo solicitar esta cita.
                     </label>
                     <button type="submit" class="boton-confirmar">
@@ -250,5 +239,9 @@
             <a href="index.html">Inicio</a>
         </p>
     </footer>
+
+    <!-- Primero el común, luego el de esta página -->
+    <script src="js/comun.js"></script>
+    <script src="js/citas.js"></script>
 </body>
 </html>

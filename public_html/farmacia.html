@@ -102,235 +102,40 @@
 
         <!-- PRODUCTOS (Grid Layout Moderno) -->
         <h2 class="titulo-productos animate-on-scroll">Nuestros productos</h2>
+
+        <!-- BUSCADOR, FILTRO Y ORDEN (los conecta js/farmacia.js) -->
+        <section class="barra-filtros animate-on-scroll">
+            <div class="filtro-campo">
+                <label for="buscar-producto">Buscar producto</label>
+                <input type="text" id="buscar-producto" placeholder="Ej: protector, vitamina, gasas...">
+            </div>
+            <div class="filtro-campo">
+                <label for="filtro-categoria">Categoría</label>
+                <select id="filtro-categoria">
+                    <option value="todas">Todas las categorías</option>
+                    <option value="solar">☀️ Protección Solar</option>
+                    <option value="piel">💧 Cuidado de Piel</option>
+                    <option value="higiene">🧴 Higiene &amp; Desinfección</option>
+                    <option value="auxilios">🌡️ Primeros Auxilios</option>
+                    <option value="vitaminas">💊 Vitaminas &amp; Suplementos</option>
+                    <option value="receta">🩺 Medicamentos con Receta</option>
+                </select>
+            </div>
+            <div class="filtro-campo">
+                <label for="orden-productos">Ordenar por</label>
+                <select id="orden-productos">
+                    <option value="defecto">Orden original</option>
+                    <option value="precio-menor">Precio: menor a mayor</option>
+                    <option value="precio-mayor">Precio: mayor a menor</option>
+                    <option value="nombre">Nombre: A - Z</option>
+                </select>
+            </div>
+            <p id="resultado-productos" class="contador-resultados"></p>
+        </section>
         
         <section class="productos-grid-container animate-on-scroll">
-            <div class="productos-grid">
-                
-                <!-- PRODUCTO 1 -->
-                <div class="producto-card">
-                    <img src="Imagenes/producto1.webp" alt="Protector solar" class="img-responsive producto-img">
-                    <h3>Protector Solar FPS 50</h3>
-                    <p>Protección contra los rayos solares para el cuidado de la piel.</p>
-                    <p class="precio">S/ 35.00</p>
-                    <p class="tipo">Venta libre</p>
-                    <div class="cantidad-box">
-                        <label>Cantidad:</label>
-                        <input type="number" value="1" min="1">
-                    </div>
-                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-                </div>
-
-                <!-- PRODUCTO 2 -->
-                <div class="producto-card">
-                    <img src="Imagenes/producto2.webp" alt="Crema hidratante" class="img-responsive producto-img">
-                    <h3>Crema Hidratante</h3>
-                    <p>Crema para mantener la hidratación y cuidado de la piel.</p>
-                    <p class="precio">S/ 28.00</p>
-                    <p class="tipo">Venta libre</p>
-                    <div class="cantidad-box">
-                        <label>Cantidad:</label>
-                        <input type="number" value="1" min="1">
-                    </div>
-                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-                </div>
-
-                <!-- PRODUCTO 3 -->
-                <div class="producto-card">
-                    <img src="Imagenes/producto3.webp" alt="Gel antibacterial" class="img-responsive producto-img">
-                    <h3>Gel Antibacterial</h3>
-                    <p>Producto para la higiene y desinfección de las manos.</p>
-                    <p class="precio">S/ 12.00</p>
-                    <p class="tipo">Venta libre</p>
-                    <div class="cantidad-box">
-                        <label>Cantidad:</label>
-                        <input type="number" value="1" min="1">
-                    </div>
-                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-                </div>
-
-                <!-- PRODUCTO 4 -->
-                <div class="producto-card">
-                    <img src="Imagenes/producto4.webp" alt="Termómetro digital" class="img-responsive producto-img">
-                    <h3>Termómetro Digital</h3>
-                    <p>Dispositivo para medir la temperatura corporal.</p>
-                    <p class="precio">S/ 25.00</p>
-                    <p class="tipo">Venta libre</p>
-                    <div class="cantidad-box">
-                        <label>Cantidad:</label>
-                        <input type="number" value="1" min="1">
-                    </div>
-                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-                </div>
-
-                <!-- PRODUCTO 5 -->
-                <div class="producto-card">
-                    <img src="Imagenes/producto5.jpg" alt="Vitamina C" class="img-responsive producto-img">
-                    <h3>Vitamina C</h3>
-                    <p>Suplemento para complementar una alimentación equilibrada.</p>
-                    <p class="precio">S/ 18.00</p>
-                    <p class="tipo">Venta libre</p>
-                    <div class="cantidad-box">
-                        <label>Cantidad:</label>
-                        <input type="number" value="1" min="1">
-                    </div>
-                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-                </div>
-
-                <!-- PRODUCTO 6 -->
-                <div class="producto-card">
-                    <img src="Imagenes/producto6.jpg" alt="Alcohol medicinal" class="img-responsive producto-img">
-                    <h3>Alcohol Medicinal</h3>
-                    <p>Producto para limpieza y desinfección.</p>
-                    <p class="precio">S/ 10.00</p>
-                    <p class="tipo">Venta libre</p>
-                    <div class="cantidad-box">
-                        <label>Cantidad:</label>
-                        <input type="number" value="1" min="1">
-                    </div>
-                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-                </div>
-
-                <!-- PRODUCTO 7 -->
-                <div class="producto-card">
-                    <img src="Imagenes/producto7.jpg" alt="Vendas elásticas" class="img-responsive producto-img">
-                    <h3>Vendas Elásticas</h3>
-                    <p>Producto para primeros auxilios y soporte.</p>
-                    <p class="precio">S/ 15.00</p>
-                    <p class="tipo">Venta libre</p>
-                    <div class="cantidad-box">
-                        <label>Cantidad:</label>
-                        <input type="number" value="1" min="1">
-                    </div>
-                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-                </div>
-
-                <!-- PRODUCTO 8 -->
-                <div class="producto-card">
-                    <img src="Imagenes/producto8.jpg" alt="Gasas estériles" class="img-responsive producto-img">
-                    <h3>Gasas Estériles</h3>
-                    <p>Gasas para curaciones y primeros auxilios.</p>
-                    <p class="precio">S/ 9.00</p>
-                    <p class="tipo">Venta libre</p>
-                    <div class="cantidad-box">
-                        <label>Cantidad:</label>
-                        <input type="number" value="1" min="1">
-                    </div>
-                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-                </div>
-
-                <!-- PRODUCTO 9 -->
-                <div class="producto-card">
-                    <img src="Imagenes/producto9.jpg" alt="Paracetamol" class="img-responsive producto-img">
-                    <h3>Paracetamol 500 mg</h3>
-                    <p>Medicamento utilizado para aliviar dolor y reducir la fiebre.</p>
-                    <p class="precio">S/ 8.50</p>
-                    <p class="receta">Requiere receta</p>
-                    <div class="cantidad-box">
-                        <label>Cantidad:</label>
-                        <input type="number" value="1" min="1">
-                    </div>
-                    <a href="subir-receta.html" class="boton-producto receta-btn">Presentar receta</a>
-                </div>
-
-                <!-- PRODUCTO 10 -->
-                <div class="producto-card">
-                    <img src="Imagenes/producto10.jpg" alt="Amoxicilina" class="img-responsive producto-img">
-                    <h3>Amoxicilina 500 mg</h3>
-                    <p>Antibiótico utilizado bajo indicación médica.</p>
-                    <p class="precio">S/ 25.00</p>
-                    <p class="receta">Requiere receta</p>
-                    <div class="cantidad-box">
-                        <label>Cantidad:</label>
-                        <input type="number" value="1" min="1">
-                    </div>
-                    <a href="subir-receta.html" class="boton-producto receta-btn">Presentar receta</a>
-                </div>
-
-                <!-- PRODUCTO 11 -->
-                <div class="producto-card">
-                    <img src="Imagenes/producto11.webp" alt="Ibuprofeno" class="img-responsive producto-img">
-                    <h3>Ibuprofeno 400 mg</h3>
-                    <p>Medicamento utilizado para aliviar determinados dolores e inflamaciones.</p>
-                    <p class="precio">S/ 12.00</p>
-                    <p class="receta">Requiere receta</p>
-                    <div class="cantidad-box">
-                        <label>Cantidad:</label>
-                        <input type="number" value="1" min="1">
-                    </div>
-                    <a href="subir-receta.html" class="boton-producto receta-btn">Presentar receta</a>
-                </div>
-
-                <!-- PRODUCTO 12 -->
-                <div class="producto-card">
-                    <img src="Imagenes/producto12.webp" alt="Antialérgico" class="img-responsive producto-img">
-                    <h3>Antialérgico</h3>
-                    <p>Medicamento utilizado para el tratamiento de determinados síntomas.</p>
-                    <p class="precio">S/ 20.00</p>
-                    <p class="receta">Requiere receta</p>
-                    <div class="cantidad-box">
-                        <label>Cantidad:</label>
-                        <input type="number" value="1" min="1">
-                    </div>
-                    <a href="subir-receta.html" class="boton-producto receta-btn">Presentar receta</a>
-                </div>
-
-                <!-- PRODUCTO 13 -->
-                <div class="producto-card">
-                    <img src="Imagenes/producto13.jpg" alt="Crema dermatológica" class="img-responsive producto-img">
-                    <h3>Crema Dermatológica</h3>
-                    <p>Producto para el cuidado de determinadas afecciones de la piel.</p>
-                    <p class="precio">S/ 32.00</p>
-                    <p class="tipo">Venta libre</p>
-                    <div class="cantidad-box">
-                        <label>Cantidad:</label>
-                        <input type="number" value="1" min="1">
-                    </div>
-                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-                </div>
-
-                <!-- PRODUCTO 14 -->
-                <div class="producto-card">
-                    <img src="Imagenes/producto14.jpg" alt="Jarabe para la tos" class="img-responsive producto-img">
-                    <h3>Jarabe para la tos</h3>
-                    <p>Producto destinado al alivio de determinados síntomas respiratorios.</p>
-                    <p class="precio">S/ 22.00</p>
-                    <p class="tipo">Venta libre</p>
-                    <div class="cantidad-box">
-                        <label>Cantidad:</label>
-                        <input type="number" value="1" min="1">
-                    </div>
-                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-                </div>
-
-                <!-- PRODUCTO 15 -->
-                <div class="producto-card">
-                    <img src="Imagenes/producto15.jpg" alt="Tiras reactivas" class="img-responsive producto-img">
-                    <h3>Tiras Reactivas</h3>
-                    <p>Accesorios para el control de determinados parámetros de salud.</p>
-                    <p class="precio">S/ 30.00</p>
-                    <p class="tipo">Venta libre</p>
-                    <div class="cantidad-box">
-                        <label>Cantidad:</label>
-                        <input type="number" value="1" min="1">
-                    </div>
-                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-                </div>
-
-                <!-- PRODUCTO 16 -->
-                <div class="producto-card">
-                    <img src="Imagenes/producto16.webp" alt="Botiquín" class="img-responsive producto-img">
-                    <h3>Botiquín de Primeros Auxilios</h3>
-                    <p>Kit básico para atención de pequeñas emergencias.</p>
-                    <p class="precio">S/ 55.00</p>
-                    <p class="tipo">Venta libre</p>
-                    <div class="cantidad-box">
-                        <label>Cantidad:</label>
-                        <input type="number" value="1" min="1">
-                    </div>
-                    <a href="carrito.html" class="boton-producto">Agregar al carrito</a>
-                </div>
-
-            </div>
+            <!-- Las 16 tarjetas las genera js/farmacia.js desde el arreglo "productos" -->
+            <div class="productos-grid"></div>
         </section>
 
         <!-- VER CARRITO -->
@@ -351,5 +156,9 @@
             <p>Síguenos en nuestras redes sociales</p>
         </div>
     </footer>
+
+    <!-- Primero el común, luego el de esta página -->
+    <script src="js/comun.js"></script>
+    <script src="js/farmacia.js"></script>
 </body>
 </html>

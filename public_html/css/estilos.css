@@ -4455,3 +4455,266 @@ body.pagina-autenticacion {
         transition: none;
     }
 }
+/* =====================================================
+   ESTILOS NUEVOS PARA LOS JS
+   (ventana flotante, farmacia, confirmar pedido, consultas)
+   ===================================================== */
+
+/* --- VENTANA FLOTANTE (la crea abrirVentana() en js/comun.js) --- */
+.ventana-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.55);
+    animation: aparecer-ventana 0.25s ease-out both;
+}
+
+.ventana-caja {
+    width: 90%;
+    max-width: 420px;
+    padding: 28px 24px;
+    text-align: center;
+    background-color: white;
+    border-top: 6px solid deepskyblue;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform-origin: center;
+    animation: crecer-ventana 0.25s ease-out both;
+}
+
+.ventana-caja h2 {
+    margin: 0 0 12px;
+    color: darkcyan;
+    font-size: 22px;
+}
+
+.ventana-caja p {
+    margin: 0 0 22px;
+    line-height: 1.5;
+}
+
+.ventana-boton {
+    padding: 10px 32px;
+    border: none;
+    border-radius: 20px;
+    background-color: deepskyblue;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ventana-boton:hover {
+    background-color: darkcyan;
+}
+
+@keyframes aparecer-ventana {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes crecer-ventana {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* --- FARMACIA: buscador, filtro y orden --- */
+.pagina-farmacia .barra-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 18px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 25px;
+    padding: 18px 20px;
+    background-color: lightcyan;
+    border: 1px solid deepskyblue;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.pagina-farmacia .filtro-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1 1 220px;
+}
+
+.pagina-farmacia .filtro-campo label {
+    font-weight: bold;
+    font-size: 14px;
+    color: darkcyan;
+}
+
+.pagina-farmacia .filtro-campo input,
+.pagina-farmacia .filtro-campo select {
+    height: 40px;
+    box-sizing: border-box;
+    padding: 9px;
+    border: 1px solid cadetblue;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: white;
+}
+
+.pagina-farmacia .contador-resultados {
+    flex: 1 1 100%;
+    margin: 0;
+    font-size: 13px;
+    color: gray;
+}
+
+/* --- FARMACIA: tarjetas generadas por JS --- */
+.pagina-farmacia .categoria-producto {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: gray;
+}
+
+.pagina-farmacia .producto-card .estado-stock {
+    display: inline-block;
+    align-self: center;
+    margin: 4px 0 10px;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.pagina-farmacia .producto-card .stock-disponible {
+    background-color: honeydew;
+    color: seagreen;
+}
+
+.pagina-farmacia .producto-card .stock-pocas {
+    background-color: lightyellow;
+    color: darkgoldenrod;
+}
+
+.pagina-farmacia .producto-card .stock-agotado {
+    background-color: mistyrose;
+    color: crimson;
+}
+
+/* El botón ahora es <button>, no un enlace */
+.pagina-farmacia button.boton-producto {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.3s ease;
+}
+
+.pagina-farmacia .boton-secundario {
+    margin-top: 8px;
+    padding: 7px 12px;
+    border: 1px solid deepskyblue;
+    border-radius: 20px;
+    background-color: white;
+    color: darkcyan;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagina-farmacia .boton-secundario:hover {
+    background-color: deepskyblue;
+    color: white;
+}
+
+.pagina-farmacia .boton-producto[disabled],
+.pagina-farmacia .boton-secundario[disabled] {
+    background-color: lightgray;
+    border-color: lightgray;
+    color: gray;
+    cursor: not-allowed;
+}
+
+.pagina-farmacia .enlace-receta {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+    color: crimson;
+}
+
+.pagina-farmacia .sin-resultados {
+    grid-column: 1 / -1;
+    padding: 30px 10px;
+    text-align: center;
+    color: gray;
+}
+
+@media (max-width: 900px) {
+    .pagina-farmacia .barra-filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* --- CONFIRMAR PEDIDO: texto del método de pago --- */
+.pagina-confirmar-pedido .info-pago {
+    min-height: 20px;
+    margin: 10px 0 0;
+    font-weight: bold;
+    color: darkcyan;
+}
+
+/* --- CONSULTAS: cola de atención, botones y resaltado --- */
+.pagina-consultas .turno-actual {
+    margin-bottom: 16px;
+    padding: 14px 16px;
+    background-color: lightcyan;
+    border-left: 4px solid deepskyblue;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.pagina-consultas .acciones-consultas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.pagina-consultas .boton-accion-consulta {
+    padding: 9px 16px;
+    border: 1px solid deepskyblue;
+    border-radius: 20px;
+    background-color: white;
+    color: darkcyan;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagina-consultas .boton-accion-consulta:hover {
+    background-color: deepskyblue;
+    color: white;
+}
+
+.pagina-consultas .boton-demo {
+    border-style: dashed;
+}
+
+.pagina-consultas .tarjeta-consulta.resaltada {
+    background-color: lightyellow;
+    box-shadow: 0 0 0 3px gold;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ventana-fondo,
+    .ventana-caja {
+        animation: none;
+    }
+}
