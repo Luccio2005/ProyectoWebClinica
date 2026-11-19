@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Directorio de médicos y especialidades de Clínica Raíz">
+    <meta name="keywords" content="Clínica Raíz, médicos, salud, Arequipa">
+    <meta name="author" content="Clínica Raíz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Médicos - Clínica Raíz</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="pagina-servicio pagina-nueva pagina-medicos">
+    <!-- ENCABEZADO CON NAVBAR (Flexbox) -->
+    <header class="encabezado">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Imagenes/logohospital1.jpg" alt="Logo Clínica Raíz" class="img-responsive logo-img">
+                </a>
+                <b>Clínica Raíz</b>
+            </div>
+            <nav class="navbar" aria-label="Menú principal">
+            <a href="index.html">Inicio</a>
+            <a href="citas.html">Reservar cita</a>
+            <a href="consultas.html">Consulta de salud</a>
+            <a href="farmacia.html">Farmacia</a>
+            <a href="medicos.html" class="nav-link-activo">Médicos</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- CABECERA DE LA PÁGINA -->
+        <section class="cabecera-pagina">
+            <p class="etiqueta-pagina">NUESTRO EQUIPO</p>
+            <h1>Conoce a nuestros médicos</h1>
+            <p>Busca por nombre o especialidad, revisa sus horarios y reserva tu cita.</p>
+        </section>
+
+        <section class="contenedor-pagina">
+
+            <!-- FILTROS -->
+            <div class="card barra-medicos">
+                <div class="campo">
+                    <label for="buscar-medico">Buscar por nombre</label>
+                    <input type="text" id="buscar-medico" placeholder="Ej. Torres">
+                </div>
+                <div class="campo">
+                    <label for="filtro-especialidad">Especialidad</label>
+                    <select id="filtro-especialidad">
+                        <option value="todas">Todas</option>
+                        <option value="Cardiología">Cardiología</option>
+                        <option value="Pediatría">Pediatría</option>
+                        <option value="Dermatología">Dermatología</option>
+                        <option value="Traumatología">Traumatología</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label for="orden-medicos">Ordenar por</label>
+                    <select id="orden-medicos">
+                        <option value="nombre">Nombre (A - Z)</option>
+                        <option value="experiencia">Más experiencia</option>
+                        <option value="calificacion">Mejor calificación</option>
+                    </select>
+                </div>
+                <label class="casilla casilla-hoy">
+                    <input type="checkbox" id="solo-hoy">
+                    Solo los que atienden hoy
+                </label>
+            </div>
+
+            <p class="contador-resultados" id="contador-medicos"></p>
+
+            <!-- TARJETAS (las crea medicos.js) -->
+            <div class="grilla-medicos" id="grilla-medicos"></div>
+
+            <p class="mensaje-vacio oculto" id="sin-medicos">
+                No encontramos médicos con esos filtros.
+            </p>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+        <p>© 2026 Clínica Raíz. Todos los derechos reservados.</p>
+        <p>
+            <a href="preguntas-frecuentes.html">Preguntas frecuentes</a> &nbsp; | &nbsp;
+            <a href="libro-reclamaciones.html">Libro de reclamaciones</a> &nbsp; | &nbsp;
+            <a href="contacto.html">Contacto</a> &nbsp; | &nbsp;
+            <a href="index.html">Inicio</a>
+        </p>
+    </footer>
+
+    <script src="js/comun.js"></script>
+    <script src="js/medicos.js"></script>
+</body>
+</html>

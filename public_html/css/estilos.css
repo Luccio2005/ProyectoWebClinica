@@ -5232,3 +5232,121 @@ body.pagina-autenticacion {
         display: none;
     }
 }
+
+/* =====================================================
+   MÉDICOS (medicos.html)
+   ===================================================== */
+
+.pagina-medicos .barra-medicos {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr auto;
+    align-items: end;
+    gap: 0 18px;
+    padding: 22px 24px 4px;
+}
+
+.pagina-medicos .casilla-hoy {
+    margin-bottom: 30px;
+    white-space: nowrap;
+}
+
+.pagina-medicos .contador-resultados {
+    margin: 18px 0 14px;
+    color: slategray;
+    font-size: 14px;
+}
+
+.pagina-medicos .grilla-medicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 22px;
+}
+
+.pagina-medicos .tarjeta-medico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 18px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pagina-medicos .tarjeta-medico:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px lightgray;
+}
+
+.pagina-medicos .foto-medico {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 110px;
+    border: 4px solid lightcyan;
+    border-radius: 50%;
+    background-color: darkcyan;
+    color: white;
+    font-size: 34px;
+    font-weight: bold;
+    object-fit: cover;
+}
+
+.pagina-medicos .estado-hoy {
+    margin-top: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    color: gray;
+    font-size: 12px;
+}
+
+.pagina-medicos .estado-hoy.atiende {
+    background-color: honeydew;
+    color: seagreen;
+}
+
+.pagina-medicos .tarjeta-medico h3 {
+    margin: 12px 0 4px;
+    color: darkcyan;
+    font-size: 18px;
+}
+
+.pagina-medicos .especialidad-medico,
+.pagina-medicos .horario-medico {
+    margin: 4px 0;
+    color: slategray;
+    font-size: 14px;
+}
+
+.pagina-medicos .estrellas {
+    margin: 6px 0;
+    color: goldenrod;
+    font-size: 15px;
+}
+
+.pagina-medicos .acciones-medico {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 14px;
+}
+
+.pagina-medicos .acciones-medico .boton-nuevo {
+    padding: 9px 18px;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 900px) {
+    .pagina-medicos .barra-medicos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .pagina-medicos .barra-medicos {
+        grid-template-columns: 1fr;
+    }
+}
