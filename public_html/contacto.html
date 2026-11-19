@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Contacto, horario y ubicación de Clínica Raíz">
+    <meta name="keywords" content="Clínica Raíz, contacto, salud, Arequipa">
+    <meta name="author" content="Clínica Raíz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Clínica Raíz</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="pagina-servicio pagina-nueva pagina-contacto">
+    <!-- ENCABEZADO CON NAVBAR (Flexbox) -->
+    <header class="encabezado">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Imagenes/logohospital1.jpg" alt="Logo Clínica Raíz" class="img-responsive logo-img">
+                </a>
+                <b>Clínica Raíz</b>
+            </div>
+            <nav class="navbar" aria-label="Menú principal">
+            <a href="index.html">Inicio</a>
+            <a href="citas.html">Reservar cita</a>
+            <a href="consultas.html">Consulta de salud</a>
+            <a href="farmacia.html">Farmacia</a>
+            <a href="medicos.html">Médicos</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html" class="nav-link-activo">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- CABECERA DE LA PÁGINA -->
+        <section class="cabecera-pagina">
+            <p class="etiqueta-pagina">CONTACTO</p>
+            <h1>Estamos para ayudarte</h1>
+            <p>Escríbenos, revisa nuestro horario o encuéntranos en el mapa.</p>
+        </section>
+
+        <section class="contenedor-pagina contacto-grid">
+
+            <!-- FORMULARIO DE CONTACTO -->
+            <div class="card bloque-contacto">
+                <h2>Escríbenos</h2>
+                <p class="texto-ayuda">Te responderemos al correo o celular que nos dejes.</p>
+
+                <form id="form-contacto" action="#" method="post" novalidate>
+                    <div class="campo">
+                        <label for="contacto-nombre">Nombres y apellidos</label>
+                        <input type="text" id="contacto-nombre" placeholder="Ej. Ana Torres">
+                    </div>
+
+                    <div class="campos-dobles">
+                        <div class="campo">
+                            <label for="contacto-correo">Correo electrónico</label>
+                            <input type="email" id="contacto-correo" placeholder="nombre@correo.com">
+                        </div>
+                        <div class="campo">
+                            <label for="contacto-celular">Celular</label>
+                            <input type="tel" id="contacto-celular" maxlength="9" placeholder="9XXXXXXXX">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="contacto-motivo">Motivo</label>
+                        <select id="contacto-motivo">
+                            <option value="">Selecciona un motivo</option>
+                            <option value="informacion">Información general</option>
+                            <option value="citas">Citas médicas</option>
+                            <option value="farmacia">Farmacia y pedidos</option>
+                            <option value="resultados">Resultados de exámenes</option>
+                            <option value="sugerencia">Sugerencia</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                        <small class="texto-ayuda" id="info-motivo"></small>
+                    </div>
+
+                    <div class="campo">
+                        <label for="contacto-mensaje">Mensaje</label>
+                        <textarea id="contacto-mensaje" maxlength="500" placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+                        <small class="contador" id="contador-contacto">0 / 500</small>
+                    </div>
+
+                    <label class="casilla">
+                        <input type="checkbox" id="contacto-acepto">
+                        Acepto que Clínica Raíz use mis datos para responder este mensaje.
+                    </label>
+
+                    <button type="submit" class="boton-nuevo">Enviar mensaje</button>
+                </form>
+            </div>
+
+            <!-- DATOS, HORARIO Y MAPA -->
+            <div class="columna-datos">
+                <div class="card bloque-contacto">
+                    <h2>Datos de la clínica</h2>
+                    <table class="tabla-datos-contacto">
+                        <tr>
+                            <th>Dirección</th>
+                            <td>Av. Daniel Alcides Carrión 240, Arequipa, Perú</td>
+                        </tr>
+                        <tr>
+                            <th>Teléfono</th>
+                            <td>(01) 0012121</td>
+                        </tr>
+                        <tr>
+                            <th>Correo</th>
+                            <td>contacto@clinicaraiz.com</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="card bloque-contacto">
+                    <h2>Horario de atención</h2>
+                    <p class="estado-clinica" id="estado-clinica"></p>
+                    <table class="tabla-horario">
+                        <thead>
+                            <tr>
+                                <th>Día</th>
+                                <th>Horario</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpo-horario">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card bloque-contacto">
+                    <h2>Ubícanos</h2>
+                    <iframe
+                        src="https://www.google.com/maps?q=Av.%20Daniel%20Alcides%20Carri%C3%B3n%20240%2C%20Arequipa&output=embed"
+                        title="Mapa de ubicación de Clínica Raíz en Arequipa"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen></iframe>
+                    <div class="redes-contacto">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+        <p>© 2026 Clínica Raíz. Todos los derechos reservados.</p>
+        <p>
+            <a href="preguntas-frecuentes.html">Preguntas frecuentes</a> &nbsp; | &nbsp;
+            <a href="libro-reclamaciones.html">Libro de reclamaciones</a> &nbsp; | &nbsp;
+            <a href="contacto.html">Contacto</a> &nbsp; | &nbsp;
+            <a href="index.html">Inicio</a>
+        </p>
+    </footer>
+
+    <script src="js/comun.js"></script>
+    <script src="js/contacto.js"></script>
+</body>
+</html>

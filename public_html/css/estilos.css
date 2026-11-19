@@ -1243,25 +1243,6 @@ body.pagina-autenticacion {
     line-height: 1.7;
 }
 
-.pagina-index .tabla-contacto {
-    width: 100%;
-    margin-top: 35px;
-    border-collapse: separate;
-    border-spacing: 10px;
-}
-
-.pagina-index .tabla-contacto td {
-    width: 33.33%;
-    padding: 20px;
-    color: white;
-    border: 1px solid lightgray;
-    vertical-align: top;
-}
-
-.pagina-index .tabla-contacto strong {
-    color: paleturquoise;
-}
-
 .pagina-index .redes {
     margin-top: 30px;
 }
@@ -1344,8 +1325,7 @@ body.pagina-autenticacion {
     .pagina-index .tabla-especialidades,
     .pagina-index .tabla-equipo,
     .pagina-index .tabla-servicios,
-    .pagina-index .tabla-blog,
-    .pagina-index .tabla-contacto {
+    .pagina-index .tabla-blog {
         border-spacing: 8px;
     }
 
@@ -1353,8 +1333,7 @@ body.pagina-autenticacion {
     .pagina-index .tabla-especialidades td,
     .pagina-index .tabla-equipo td,
     .pagina-index .tabla-servicios td,
-    .pagina-index .tabla-blog td,
-    .pagina-index .tabla-contacto td {
+    .pagina-index .tabla-blog td {
         display: block;
         width: auto;
         margin-bottom: 15px;
@@ -1569,28 +1548,6 @@ body.pagina-autenticacion {
     font-size: 19px;
 }
 
-/* --- MAPA DE UBICACIÓN --- */
-.pagina-index .ubicacion-clinica {
-    margin-top: 35px;
-    padding: 20px;
-    background-color: white;
-    border: 1px solid paleturquoise;
-    border-radius: 12px;
-}
-
-.pagina-index .ubicacion-clinica h3 {
-    color: white;
-    font-size: 22px;
-}
-
-.pagina-index .ubicacion-clinica iframe {
-    display: block;
-    width: 100%;
-    height: 320px;
-    border: 0;
-    border-radius: 10px;
-}
-
 /* --- FOOTER EN EL MISMO COLOR QUE LAS OTRAS PÁGINAS --- */
 .pagina-index .pie {
     background-color: darkcyan;
@@ -1666,14 +1623,6 @@ body.pagina-autenticacion {
 
     .pagina-index .contacto {
         padding: 40px 5%;
-    }
-
-    .pagina-index .ubicacion-clinica {
-        padding: 12px;
-    }
-
-    .pagina-index .ubicacion-clinica iframe {
-        height: 250px;
     }
 }
 
@@ -4870,4 +4819,305 @@ body.pagina-autenticacion {
     body .menu-principal:not(.menu-abierto) {
         display: none;
     }
+}
+
+/* =====================================================
+   PÁGINAS NUEVAS DEL AVANCE 3 - PIEZAS COMUNES
+   body.pagina-nueva: contacto, libro-reclamaciones, medicos,
+   mis-citas, blog, preguntas-frecuentes
+   (el encabezado y .card vienen de .pagina-servicio)
+   ===================================================== */
+
+.pagina-nueva .navbar {
+    gap: 18px;
+}
+
+.pagina-nueva .cabecera-pagina {
+    padding: 55px 20px 45px;
+    text-align: center;
+    background-color: lightcyan;
+    border-bottom: 1px solid lightgray;
+}
+
+.pagina-nueva .etiqueta-pagina {
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.pagina-nueva .cabecera-pagina h1 {
+    margin: 0 0 12px;
+    color: darkcyan;
+    font-size: 38px;
+}
+
+.pagina-nueva .cabecera-pagina p:last-child {
+    margin: 0;
+    color: slategray;
+    line-height: 1.6;
+}
+
+.pagina-nueva .contenedor-pagina {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto 60px;
+}
+
+/* --- Formularios de las páginas nuevas --- */
+.pagina-nueva .campo {
+    margin-bottom: 18px;
+}
+
+.pagina-nueva .campo label {
+    display: block;
+    margin-bottom: 7px;
+    color: darkslategray;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.pagina-nueva .campo input,
+.pagina-nueva .campo select,
+.pagina-nueva .campo textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    color: darkslategray;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pagina-nueva .campo textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.pagina-nueva .campo input:focus,
+.pagina-nueva .campo select:focus,
+.pagina-nueva .campo textarea:focus {
+    outline: none;
+    border-color: darkcyan;
+    box-shadow: 0 0 0 3px lightcyan;
+}
+
+.pagina-nueva .campos-dobles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 18px;
+}
+
+.pagina-nueva .texto-ayuda {
+    display: block;
+    margin: 6px 0 0;
+    color: slategray;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.pagina-nueva .contador {
+    display: block;
+    margin-top: 6px;
+    color: gray;
+    font-size: 12px;
+    text-align: right;
+}
+
+.pagina-nueva .casilla {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 6px 0 22px;
+    color: slategray;
+    font-size: 14px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.pagina-nueva .boton-nuevo {
+    display: inline-block;
+    padding: 13px 28px;
+    border: none;
+    border-radius: 25px;
+    background-color: darkcyan;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.pagina-nueva .boton-nuevo:hover {
+    background-color: cadetblue;
+    transform: translateY(-2px);
+}
+
+.pagina-nueva .boton-secundario-nuevo {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid darkcyan;
+    border-radius: 20px;
+    background-color: white;
+    color: darkcyan;
+    font-size: 13px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagina-nueva .boton-secundario-nuevo:hover {
+    background-color: lightcyan;
+}
+
+/* --- Mensaje cuando una lista está vacía --- */
+.pagina-nueva .mensaje-vacio {
+    padding: 35px 20px;
+    color: slategray;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .pagina-nueva .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .pagina-nueva .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .pagina-nueva .cabecera-pagina h1 {
+        font-size: 30px;
+    }
+
+    .pagina-nueva .campos-dobles {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =====================================================
+   CONTACTO (contacto.html)
+   ===================================================== */
+
+.pagina-contacto .contacto-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: start;
+    gap: 25px;
+}
+
+.pagina-contacto .columna-datos {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.pagina-contacto .bloque-contacto {
+    padding: 26px;
+}
+
+.pagina-contacto .bloque-contacto h2 {
+    margin: 0 0 8px;
+    color: darkcyan;
+    font-size: 21px;
+}
+
+.pagina-contacto .tabla-datos-contacto,
+.pagina-contacto .tabla-horario {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.pagina-contacto .tabla-datos-contacto th,
+.pagina-contacto .tabla-horario th {
+    padding: 9px 8px;
+    color: darkcyan;
+    text-align: left;
+}
+
+.pagina-contacto .tabla-datos-contacto td,
+.pagina-contacto .tabla-horario td {
+    padding: 9px 8px;
+    color: slategray;
+    border-bottom: 1px solid lightcyan;
+}
+
+.pagina-contacto .tabla-horario thead th {
+    background-color: azure;
+}
+
+.pagina-contacto .tabla-horario .fila-hoy td {
+    background-color: lightcyan;
+    color: darkcyan;
+    font-weight: bold;
+}
+
+.pagina-contacto .estado-clinica {
+    display: inline-block;
+    margin: 4px 0 6px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.pagina-contacto .estado-clinica.abierto {
+    background-color: honeydew;
+    color: seagreen;
+}
+
+.pagina-contacto .estado-clinica.cerrado {
+    background-color: mistyrose;
+    color: crimson;
+}
+
+.pagina-contacto iframe {
+    display: block;
+    width: 100%;
+    height: 260px;
+    margin-top: 12px;
+    border: 0;
+    border-radius: 10px;
+}
+
+.pagina-contacto .redes-contacto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.pagina-contacto .redes-contacto a {
+    padding: 8px 16px;
+    border: 1px solid paleturquoise;
+    border-radius: 20px;
+    color: darkcyan;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.pagina-contacto .redes-contacto a:hover {
+    background-color: lightcyan;
+}
+
+@media screen and (max-width: 768px) {
+    .pagina-contacto .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pagina-nueva .campo select {
+    background-color: white;
+}
+
+.pagina-contacto .bloque-contacto > .texto-ayuda {
+    margin-bottom: 18px;
 }
