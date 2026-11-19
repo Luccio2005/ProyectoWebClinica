@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Citas médicas reservadas en Clínica Raíz">
+    <meta name="keywords" content="Clínica Raíz, mis citas, salud, Arequipa">
+    <meta name="author" content="Clínica Raíz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis citas - Clínica Raíz</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="pagina-servicio pagina-nueva pagina-mis-citas">
+    <!-- ENCABEZADO CON NAVBAR (Flexbox) -->
+    <header class="encabezado">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Imagenes/logohospital1.jpg" alt="Logo Clínica Raíz" class="img-responsive logo-img">
+                </a>
+                <b>Clínica Raíz</b>
+            </div>
+            <nav class="navbar" aria-label="Menú principal">
+            <a href="index.html">Inicio</a>
+            <a href="citas.html">Reservar cita</a>
+            <a href="consultas.html">Consulta de salud</a>
+            <a href="farmacia.html">Farmacia</a>
+            <a href="medicos.html">Médicos</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- CABECERA DE LA PÁGINA -->
+        <section class="cabecera-pagina">
+            <p class="etiqueta-pagina">MI CUENTA</p>
+            <h1>Mis citas</h1>
+            <p>Revisa, reprograma o cancela tus citas médicas.</p>
+        </section>
+
+        <section class="contenedor-pagina">
+
+            <!-- SIN SESIÓN -->
+            <div class="card mensaje-vacio oculto" id="sin-sesion">
+                <p>Inicia sesión para ver tus citas.</p>
+                <a href="login.html" class="boton-nuevo">Iniciar sesión</a>
+            </div>
+
+            <div id="zona-citas">
+                <!-- PRÓXIMA CITA -->
+                <div class="card proxima-cita" id="proxima-cita"></div>
+
+                <!-- RESUMEN -->
+                <div class="resumen-citas">
+                    <div class="card dato-cita"><strong id="total-citas">0</strong><span>Citas reservadas</span></div>
+                    <div class="card dato-cita"><strong id="total-programadas">0</strong><span>Programadas</span></div>
+                    <div class="card dato-cita"><strong id="total-atendidas">0</strong><span>Atendidas</span></div>
+                    <div class="card dato-cita"><strong id="total-canceladas">0</strong><span>Canceladas</span></div>
+                </div>
+
+                <!-- FILTROS -->
+                <div class="barra-citas">
+                    <div class="campo">
+                        <label for="filtro-estado-cita">Mostrar</label>
+                        <select id="filtro-estado-cita">
+                            <option value="todas">Todas</option>
+                            <option value="Programada">Programadas</option>
+                            <option value="Atendida">Atendidas</option>
+                            <option value="Cancelada">Canceladas</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="orden-citas">Ordenar por fecha</label>
+                        <select id="orden-citas">
+                            <option value="asc">Más cercana primero</option>
+                            <option value="desc">Más lejana primero</option>
+                        </select>
+                    </div>
+                    <a href="citas.html" class="boton-nuevo">+ Reservar nueva cita</a>
+                </div>
+
+                <!-- TABLA -->
+                <div class="card contenedor-tabla">
+                    <table class="tabla-citas">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Especialidad</th>
+                                <th>Médico</th>
+                                <th>Modalidad</th>
+                                <th>Precio</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpo-citas"></tbody>
+                    </table>
+                    <p class="mensaje-vacio oculto" id="sin-citas">
+                        No tienes citas en esta lista. <a href="citas.html">Reserva una aquí</a>.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+        <p>© 2026 Clínica Raíz. Todos los derechos reservados.</p>
+        <p>
+            <a href="preguntas-frecuentes.html">Preguntas frecuentes</a> &nbsp; | &nbsp;
+            <a href="libro-reclamaciones.html">Libro de reclamaciones</a> &nbsp; | &nbsp;
+            <a href="contacto.html">Contacto</a> &nbsp; | &nbsp;
+            <a href="index.html">Inicio</a>
+        </p>
+    </footer>
+
+    <script src="js/comun.js"></script>
+    <script src="js/mis-citas.js"></script>
+</body>
+</html>

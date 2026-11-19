@@ -5350,3 +5350,171 @@ body.pagina-autenticacion {
         grid-template-columns: 1fr;
     }
 }
+
+/* =====================================================
+   MIS CITAS (mis-citas.html)
+   ===================================================== */
+
+.pagina-mis-citas .proxima-cita {
+    margin-bottom: 22px;
+    padding: 24px 28px;
+    border-left: 6px solid darkcyan;
+    background-color: azure;
+}
+
+.pagina-mis-citas .proxima-cita h2 {
+    margin: 0 0 8px;
+    color: darkcyan;
+    font-size: 22px;
+}
+
+.pagina-mis-citas .proxima-cita p {
+    margin: 4px 0;
+    color: slategray;
+}
+
+.pagina-mis-citas .proxima-cita .faltan {
+    color: cadetblue;
+    font-weight: bold;
+}
+
+.pagina-mis-citas .resumen-citas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.pagina-mis-citas .dato-cita {
+    padding: 18px;
+    text-align: center;
+}
+
+.pagina-mis-citas .dato-cita strong {
+    display: block;
+    color: darkcyan;
+    font-size: 30px;
+}
+
+.pagina-mis-citas .dato-cita span {
+    color: slategray;
+    font-size: 13px;
+}
+
+.pagina-mis-citas .barra-citas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 0 18px;
+}
+
+.pagina-mis-citas .barra-citas .campo {
+    min-width: 200px;
+}
+
+.pagina-mis-citas .barra-citas .boton-nuevo {
+    margin: 0 0 18px auto;
+}
+
+.pagina-mis-citas .contenedor-tabla {
+    padding: 8px;
+    overflow-x: auto;
+}
+
+.pagina-mis-citas .tabla-citas {
+    width: 100%;
+    font-size: 14px;
+}
+
+.pagina-mis-citas .tabla-citas th {
+    padding: 12px 10px;
+    background-color: azure;
+    color: darkcyan;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.pagina-mis-citas .tabla-citas td {
+    padding: 12px 10px;
+    border-bottom: 1px solid lightcyan;
+    color: darkslategray;
+}
+
+.pagina-mis-citas .tabla-citas td:last-child {
+    white-space: nowrap;
+}
+
+.pagina-mis-citas .tabla-citas td:last-child button {
+    margin: 2px 4px 2px 0;
+}
+
+.pagina-mis-citas .estado-cita {
+    font-weight: bold;
+}
+
+.pagina-mis-citas .estado-cita.programada {
+    color: darkcyan;
+}
+
+.pagina-mis-citas .estado-cita.atendida {
+    color: seagreen;
+}
+
+.pagina-mis-citas .estado-cita.cancelada {
+    color: crimson;
+}
+
+.pagina-mis-citas .boton-cancelar {
+    padding: 8px 14px;
+    border: 1px solid crimson;
+    border-radius: 20px;
+    background-color: white;
+    color: crimson;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagina-mis-citas .boton-cancelar:hover {
+    background-color: mistyrose;
+}
+
+.pagina-mis-citas #sin-sesion .boton-nuevo {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .pagina-mis-citas .resumen-citas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* La tabla se convierte en tarjetas, igual que en las páginas de pedidos */
+    .pagina-mis-citas .tabla-citas thead {
+        display: none;
+    }
+
+    .pagina-mis-citas .tabla-citas tr,
+    .pagina-mis-citas .tabla-citas td {
+        display: block;
+    }
+
+    .pagina-mis-citas .tabla-citas tr {
+        margin-bottom: 14px;
+        border: 1px solid lightgray;
+        border-radius: 8px;
+    }
+
+    .pagina-mis-citas .tabla-citas td {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        text-align: right;
+    }
+
+    .pagina-mis-citas .tabla-citas td::before {
+        content: attr(data-label);
+        color: darkcyan;
+        font-weight: bold;
+        text-align: left;
+    }
+}
