@@ -9,7 +9,7 @@ const pedidosEjemplo = [
         fecha: "08/09/2026",
         cliente: "Paciente",
         entrega: "Delivery",
-        direccion: "Av. Daniel Alcides Carreón 240, Arequipa",
+        direccion: "Av. Daniel Alcides Carrión 240, Arequipa",
         referencia: "Frente a la entrada principal",
         metodoPago: "Tarjeta de crédito o débito",
         productos: [
@@ -124,10 +124,12 @@ function calcularEstadisticas() {
 
     if (numeros.length >= 4) {
 
-        numeros[0].textContent = totalPedidos;
-        numeros[1].textContent = recibidos;
-        numeros[2].textContent = entregados;
-        numeros[3].textContent = cancelados;
+        // [n] firstElementChild: se cambia solo el número (<b>) y se conserva el texto (<span>)
+        // Mismo orden que en el HTML: realizados, entregados, recibidos, cancelados
+        numeros[0].firstElementChild.textContent = totalPedidos;
+        numeros[1].firstElementChild.textContent = entregados;
+        numeros[2].firstElementChild.textContent = recibidos;
+        numeros[3].firstElementChild.textContent = cancelados;
     }
 }
 

@@ -73,6 +73,11 @@ function registrarUsuario(evento) {
         return;
     }
 
+    if (password.length < 6) {
+        alert("La contraseña debe tener al menos 6 caracteres.");
+        return;
+    }
+
     if (password !== confirmarPassword) {
         alert("Las contraseñas no coinciden.");
         return;
@@ -115,7 +120,8 @@ function registrarUsuario(evento) {
         dni: dni,
         correo: correo,
         celular: celular,
-        password: password
+        password: password,
+        sesionActiva: false        // la sesión se abre recién en login.html
     };
 
 

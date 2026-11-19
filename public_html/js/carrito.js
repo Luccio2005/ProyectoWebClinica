@@ -195,7 +195,7 @@ function actualizarResumen(
     }
 
     if (filas.length >= 3) {
-        if (envio === 0 && subtotal >= ENVIO_GRATIS_DESDE) {
+        if (envio === 0 && subtotal >= ENVIO_GRATIS_DESDE_CARRITO) {
             filas[2].children[1].textContent = "Gratis";
         } else {
             filas[2].children[1].textContent =

@@ -12,7 +12,11 @@ const medicos = [
     { id: "marisol", nombre: "Dra. Marisol Chávez", especialidad: "cardiologia" },
     { id: "javier", nombre: "Dr. Javier Torres", especialidad: "pediatria" },
     { id: "lucia", nombre: "Dra. Lucía Ramos", especialidad: "dermatologia" },
-    { id: "eduardo", nombre: "Dr. Eduardo Salas", especialidad: "traumatologia" }
+    { id: "eduardo", nombre: "Dr. Eduardo Salas", especialidad: "traumatologia" },
+    { id: "raul", nombre: "Dr. Raúl Mendoza", especialidad: "cardiologia" },
+    { id: "carla", nombre: "Dra. Carla Huamán", especialidad: "pediatria" },
+    { id: "andres", nombre: "Dr. Andrés Paredes", especialidad: "dermatologia" },
+    { id: "rocio", nombre: "Dra. Rocío Quispe", especialidad: "traumatologia" }
 ];
 
 // [l] CONSTANTES

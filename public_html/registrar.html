@@ -30,12 +30,18 @@
                 <p>Regístrate para gestionar tus servicios de salud de manera segura.</p>
             </div>
 
-            <form action="#" method="post">
+            <form action="#" method="post" novalidate>
 
                 <!-- DATOS DE IDENTIFICACIÓN -->
                 <fieldset class="grupo-registro">
                     <legend>01. Datos de identificación</legend>
                     <p class="descripcion-grupo">Estos datos permitirán identificar correctamente tu cuenta.</p>
+
+                    <div class="campo-registro">
+                        <label for="nombre">Nombres y apellidos</label>
+                        <input type="text" id="nombre" name="nombre"
+                               placeholder="Ej. Luis Cruz González" required>
+                    </div>
 
                     <div class="campo-registro">
                         <label for="tipo-documento">Tipo de documento</label>
@@ -142,5 +148,7 @@
         <a href="#">Política de privacidad</a>
     </footer>
 
+    <script src="js/comun.js"></script>
+    <script src="js/registrar.js"></script>
 </body>
 </html>

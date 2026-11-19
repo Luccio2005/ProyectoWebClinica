@@ -4810,6 +4810,18 @@ body.pagina-autenticacion {
     background-color: lightcyan;
 }
 
+/* --- Botones creados con JS que usan las clases de los enlaces --- */
+button.boton-principal,
+button.boton-secundario {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button.boton-secundario {
+    color: cadetblue;
+}
+
 /* --- Clase para ocultar elementos desde JS (classList.add / remove) --- */
 .oculto {
     display: none !important;
@@ -5921,4 +5933,28 @@ body.pagina-autenticacion {
     .pagina-confirmacion .destellos {
         display: none;
     }
+}
+
+
+/* --- MIS PEDIDOS: buscador, filtro y orden que crea mis-pedidos.js --- */
+.pagina-mis-pedidos .controles-pedidos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.pagina-mis-pedidos .controles-pedidos input,
+.pagina-mis-pedidos .controles-pedidos select {
+    padding: 10px 12px;
+    border: 1px solid deepskyblue;
+    border-radius: 6px;
+    background-color: white;
+    color: darkcyan;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.pagina-mis-pedidos .controles-pedidos input {
+    flex: 1 1 220px;
 }

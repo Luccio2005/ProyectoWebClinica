@@ -168,7 +168,7 @@ function mostrarConsultas() {
             respuestaTexto.textContent = c.respuesta;
             let profesional = document.createElement("span");
             profesional.className = "profesional";
-            profesional.textContent = "Personal de salud · Hospital Raíz";
+            profesional.textContent = "Personal de salud · Clínica Raíz";
             respuesta.appendChild(respuestaTitulo);
             respuesta.appendChild(respuestaTexto);
             respuesta.appendChild(profesional);
