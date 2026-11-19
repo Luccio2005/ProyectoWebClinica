@@ -27,7 +27,19 @@ function guardarDatos(clave, valor) {
     localStorage.setItem(clave, JSON.stringify(valor));
 }
 
+// Devuelve el usuario solo si tiene la sesión abierta.
+// (registrar guarda el usuario sin "sesionActiva": eso cuenta como sesión abierta;
+//  al cerrar sesión se marca sesionActiva = false y la cuenta sigue guardada)
 function obtenerUsuario() {
+    let cuenta = leerDatos("usuario", null);
+    if (cuenta === null || cuenta.sesionActiva === false) {
+        return null;
+    }
+    return cuenta;
+}
+
+// Devuelve la cuenta registrada aunque la sesión esté cerrada (la usa login.js)
+function obtenerCuentaRegistrada() {
     return leerDatos("usuario", null);
 }
 
@@ -154,3 +166,146 @@ function cerrarVentana() {
         pendiente();
     }
 }
+
+
+// ---------- [o] MENÚ RESPONSIVE (botón hamburguesa) ----------
+// Igual que el ejemplo de la semana 14: un botón que agrega o quita una
+// clase al menú. En pantallas pequeñas el CSS oculta el menú hasta que
+// el menú tiene la clase "menu-abierto".
+
+const ANCHO_MENU_MOVIL = 700;   // mismo ancho que usa el @media del CSS
+
+function buscarMenuPrincipal() {
+    // Las páginas usan distintos menús según quién las hizo
+    let barra = document.querySelector(".barra");
+    if (barra !== null) {
+        return barra.querySelector("ul");          // en .barra se oculta la lista, no el logo
+    }
+    return document.querySelector(".navbar, .navbar-index, .navbar-confirmacion");
+}
+
+function iniciarMenuResponsive() {
+    let menu = buscarMenuPrincipal();
+    if (menu === null) {
+        return;                                    // login y registro no tienen menú
+    }
+    menu.classList.add("menu-principal");
+
+    let boton = document.createElement("button");
+    boton.type = "button";
+    boton.className = "boton-menu";
+    boton.textContent = "☰";
+    boton.setAttribute("aria-label", "Abrir menú");
+    boton.setAttribute("aria-expanded", "false");
+
+    boton.onclick = function () {
+        if (menu.classList.contains("menu-abierto")) {
+            cerrarMenu(menu, boton);
+        } else {
+            menu.classList.add("menu-abierto");
+            boton.textContent = "✕";
+            boton.setAttribute("aria-label", "Cerrar menú");
+            boton.setAttribute("aria-expanded", "true");
+        }
+    };
+
+    // [n] PROPIEDADES DE NAVEGACIÓN: el botón va justo antes del menú
+    menu.parentElement.insertBefore(boton, menu);
+
+    // Si la ventana vuelve a ser ancha, el menú se cierra solo
+    window.onresize = function () {
+        if (window.innerWidth > ANCHO_MENU_MOVIL) {
+            cerrarMenu(menu, boton);
+        }
+    };
+}
+
+function cerrarMenu(menu, boton) {
+    menu.classList.remove("menu-abierto");
+    boton.textContent = "☰";
+    boton.setAttribute("aria-label", "Abrir menú");
+    boton.setAttribute("aria-expanded", "false");
+}
+
+
+// ---------- SESIÓN EN EL MENÚ ----------
+// Quita los enlaces de cuenta que trae cada HTML y pone los mismos en
+// todas las páginas: "Iniciar sesión", o "Hola, Nombre" + "Cerrar sesión".
+
+function crearEnlaceMenu(texto, destino, clase) {
+    let enlace = document.createElement("a");
+    enlace.href = destino;
+    enlace.textContent = texto;
+    enlace.className = clase;
+    return enlace;
+}
+
+function mostrarSesion() {
+    let menu = buscarMenuPrincipal();
+    if (menu === null) {
+        return;
+    }
+
+    // Enlaces de cuenta escritos a mano en cada página
+    let viejos = menu.querySelectorAll(".btn-cuenta, .btn-cerrar-sesion, .cuenta-nav, .menu-cuenta");
+    viejos.forEach(function (elemento) {
+        elemento.remove();
+    });
+
+    // Cada menú tiene su propia clase para los enlaces
+    let clase = "enlace-cuenta";
+    let claseSalir = "enlace-salir";
+    if (menu.classList.contains("navbar")) {
+        clase = "btn-cuenta enlace-cuenta";        // píldora de las páginas de servicios
+    } else if (menu.classList.contains("navbar-index")) {
+        clase = "enlace-nav enlace-cuenta";
+        claseSalir = "enlace-nav enlace-salir";
+    }
+
+    let cuenta = obtenerUsuario();
+    let nuevos = [];
+    if (cuenta === null) {
+        nuevos.push(crearEnlaceMenu("Iniciar sesión", "login.html", clase));
+    } else {
+        let primerNombre = cuenta.nombre.split(" ")[0];
+        nuevos.push(crearEnlaceMenu("Hola, " + primerNombre, "mis-citas.html", clase));
+        let salir = crearEnlaceMenu("Cerrar sesión", "#", claseSalir);
+        salir.onclick = function (evento) {
+            evento.preventDefault();
+            cerrarSesion();
+        };
+        nuevos.push(salir);
+    }
+
+    // En .barra los enlaces van dentro de <li>
+    for (let i = 0; i < nuevos.length; i++) {
+        if (menu.tagName === "UL") {
+            let item = document.createElement("li");
+            item.appendChild(nuevos[i]);
+            menu.appendChild(item);
+        } else {
+            menu.appendChild(nuevos[i]);
+        }
+    }
+}
+
+function cerrarSesion() {
+    let seguro = confirm("¿Deseas cerrar tu sesión?");
+    if (!seguro) {
+        return;
+    }
+    let cuenta = obtenerCuentaRegistrada();
+    if (cuenta !== null) {
+        cuenta.sesionActiva = false;               // la cuenta no se borra
+        guardarDatos("usuario", cuenta);
+    }
+    abrirVentana("Sesión cerrada", "Vuelve pronto.", function () {
+        window.location.href = "index.html";
+    });
+}
+
+
+// ---------- Se ejecuta en todas las páginas ----------
+iniciarMenuResponsive();
+mostrarSesion();
+actualizarContadorCarrito();

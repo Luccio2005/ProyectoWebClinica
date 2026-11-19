@@ -34,7 +34,7 @@
 
                 <!-- FORMULARIO -->
                 <div class="tarjeta-login">
-                    <form action="#" method="post">
+                    <form action="#" method="post" id="form-login" novalidate>
 
                         <div class="campo-login">
                             <label for="dni">Documento de identidad</label>
@@ -58,18 +58,21 @@
                                 name="password"
                                 placeholder="Ingresa tu contraseña"
                                 required>
+                            <button type="button" class="ver-password" id="ver-password">Mostrar</button>
                         </div>
 
                         <div class="opciones-login">
                             <label class="recordarme">
-                                <input type="checkbox" name="recordarme">
+                                <input type="checkbox" name="recordarme" id="recordarme">
                                 Recordarme
                             </label>
 
-                            <a href="#">¿Olvidaste tu contraseña?</a>
+                            <a href="#" id="olvide-password">¿Olvidaste tu contraseña?</a>
                         </div>
 
-                        <button type="submit" class="boton-login">
+                        <p class="mensaje-login" id="mensaje-login"></p>
+
+                        <button type="submit" class="boton-login" id="boton-login">
                             Iniciar sesión
                         </button>
 
@@ -108,5 +111,7 @@
         <a href="#">Política de privacidad</a>
     </footer>
 
+    <script src="js/comun.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>

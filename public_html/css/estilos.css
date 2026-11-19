@@ -3965,6 +3965,37 @@ body.pagina-autenticacion {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* --- JS: mostrar contraseña, mensaje de intentos y bloqueo --- */
+.pagina-login .campo-login {
+    position: relative;
+}
+
+.pagina-login .ver-password {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: lightcyan;
+    color: darkcyan;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.pagina-login .mensaje-login {
+    min-height: 18px;
+    margin: 0 0 12px;
+    color: crimson;
+    font-size: 13px;
+}
+
+.pagina-login .boton-login:disabled {
+    background-color: gray;
+    transform: none;
+    cursor: not-allowed;
+}
+
 /* --- OPCIONES DEL FORMULARIO --- */
 .pagina-login .opciones-login {
     display: flex;
@@ -4716,5 +4747,38 @@ body.pagina-autenticacion {
     .ventana-fondo,
     .ventana-caja {
         animation: none;
+    }
+}
+/* =====================================================
+   COMPONENTES COMUNES DE JS (los crea js/comun.js)
+   Menú hamburguesa y enlaces de sesión en el menú.
+   ===================================================== */
+
+/* --- BOTÓN HAMBURGUESA: solo se ve en pantallas pequeñas --- */
+.boton-menu {
+    display: none;
+    align-self: center;
+    padding: 4px 12px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background-color: white;
+    color: darkcyan;
+    font-size: 26px;
+    line-height: 1.2;
+    cursor: pointer;
+}
+
+.boton-menu:hover {
+    background-color: lightcyan;
+}
+
+@media (max-width: 700px) {
+    .boton-menu {
+        display: block;
+    }
+
+    /* "body" sube la prioridad para ganarle a los menús de cada página */
+    body .menu-principal:not(.menu-abierto) {
+        display: none;
     }
 }
