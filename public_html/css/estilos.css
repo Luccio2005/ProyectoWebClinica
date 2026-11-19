@@ -4810,6 +4810,11 @@ body.pagina-autenticacion {
     background-color: lightcyan;
 }
 
+/* --- Clase para ocultar elementos desde JS (classList.add / remove) --- */
+.oculto {
+    display: none !important;
+}
+
 @media (max-width: 700px) {
     .boton-menu {
         display: block;
@@ -5120,4 +5125,110 @@ body.pagina-autenticacion {
 
 .pagina-contacto .bloque-contacto > .texto-ayuda {
     margin-bottom: 18px;
+}
+
+/* =====================================================
+   LIBRO DE RECLAMACIONES (libro-reclamaciones.html)
+   ===================================================== */
+
+.pagina-reclamaciones .hoja-datos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 20px 26px;
+    background-color: azure;
+}
+
+.pagina-reclamaciones .hoja-datos span {
+    display: block;
+    margin-bottom: 4px;
+    color: slategray;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.pagina-reclamaciones .hoja-datos strong {
+    color: darkcyan;
+}
+
+.pagina-reclamaciones .form-reclamo,
+.pagina-reclamaciones .constancia {
+    padding: 28px;
+}
+
+.pagina-reclamaciones fieldset {
+    margin: 0 0 22px;
+    padding: 18px 22px 6px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+.pagina-reclamaciones legend {
+    padding: 0 8px;
+    color: darkcyan;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.pagina-reclamaciones .opciones-linea {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 30px;
+}
+
+.pagina-reclamaciones .constancia h2 {
+    margin: 0 0 6px;
+    color: darkcyan;
+}
+
+.pagina-reclamaciones .tabla-constancia {
+    width: 100%;
+    margin: 18px 0 22px;
+    font-size: 14px;
+}
+
+.pagina-reclamaciones .tabla-constancia th,
+.pagina-reclamaciones .tabla-constancia td {
+    padding: 10px;
+    border-bottom: 1px solid lightcyan;
+    text-align: left;
+    vertical-align: top;
+}
+
+.pagina-reclamaciones .tabla-constancia th {
+    width: 32%;
+    color: darkcyan;
+    background-color: azure;
+}
+
+.pagina-reclamaciones .tabla-constancia td {
+    color: darkslategray;
+}
+
+.pagina-reclamaciones .acciones-constancia {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.pagina-reclamaciones .nota-legal {
+    margin: 25px 0 0;
+    color: gray;
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Al imprimir la constancia solo sale lo importante */
+@media print {
+    .pagina-reclamaciones header,
+    .pagina-reclamaciones footer,
+    .pagina-reclamaciones .cabecera-pagina,
+    .pagina-reclamaciones .acciones-constancia,
+    .pagina-reclamaciones .ventana-fondo {
+        display: none;
+    }
 }

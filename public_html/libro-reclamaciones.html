@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Libro de reclamaciones virtual de Clínica Raíz">
+    <meta name="keywords" content="Clínica Raíz, libro de reclamaciones, salud, Arequipa">
+    <meta name="author" content="Clínica Raíz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libro de reclamaciones - Clínica Raíz</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="pagina-servicio pagina-nueva pagina-reclamaciones">
+    <!-- ENCABEZADO CON NAVBAR (Flexbox) -->
+    <header class="encabezado">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Imagenes/logohospital1.jpg" alt="Logo Clínica Raíz" class="img-responsive logo-img">
+                </a>
+                <b>Clínica Raíz</b>
+            </div>
+            <nav class="navbar" aria-label="Menú principal">
+            <a href="index.html">Inicio</a>
+            <a href="citas.html">Reservar cita</a>
+            <a href="consultas.html">Consulta de salud</a>
+            <a href="farmacia.html">Farmacia</a>
+            <a href="medicos.html">Médicos</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- CABECERA DE LA PÁGINA -->
+        <section class="cabecera-pagina">
+            <p class="etiqueta-pagina">LIBRO DE RECLAMACIONES</p>
+            <h1>Libro de reclamaciones virtual</h1>
+            <p>Registra tu reclamo o queja. Te enviaremos la respuesta a tu correo.</p>
+        </section>
+
+        <section class="contenedor-pagina">
+
+            <!-- DATOS DE LA HOJA (los llena el JS) -->
+            <div class="card hoja-datos">
+                <div>
+                    <span>Hoja de reclamación N.º</span>
+                    <strong id="numero-hoja">-</strong>
+                </div>
+                <div>
+                    <span>Fecha</span>
+                    <strong id="fecha-hoja">-</strong>
+                </div>
+                <div>
+                    <span>Proveedor</span>
+                    <strong>Clínica Raíz S.A.C. · RUC 20123456789</strong>
+                </div>
+            </div>
+
+            <form id="form-reclamo" class="card form-reclamo" action="#" method="post" novalidate>
+
+                <!-- 1. CONSUMIDOR -->
+                <fieldset>
+                    <legend>1. Identificación del consumidor</legend>
+                    <div class="campo">
+                        <label for="rec-nombre">Nombres y apellidos</label>
+                        <input type="text" id="rec-nombre">
+                    </div>
+                    <div class="campos-dobles">
+                        <div class="campo">
+                            <label for="rec-tipo-doc">Tipo de documento</label>
+                            <select id="rec-tipo-doc">
+                                <option value="DNI">DNI</option>
+                                <option value="CE">Carné de extranjería</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="rec-documento">Número de documento</label>
+                            <input type="text" id="rec-documento" maxlength="12">
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label for="rec-domicilio">Domicilio</label>
+                        <input type="text" id="rec-domicilio">
+                    </div>
+                    <div class="campos-dobles">
+                        <div class="campo">
+                            <label for="rec-celular">Celular</label>
+                            <input type="tel" id="rec-celular" maxlength="9">
+                        </div>
+                        <div class="campo">
+                            <label for="rec-correo">Correo electrónico</label>
+                            <input type="email" id="rec-correo">
+                        </div>
+                    </div>
+                    <label class="casilla">
+                        <input type="checkbox" id="rec-menor">
+                        Soy menor de edad (lo presenta mi padre, madre o apoderado)
+                    </label>
+                    <div class="campo oculto" id="bloque-apoderado">
+                        <label for="rec-apoderado">Nombre del padre, madre o apoderado</label>
+                        <input type="text" id="rec-apoderado">
+                    </div>
+                </fieldset>
+
+                <!-- 2. BIEN CONTRATADO -->
+                <fieldset>
+                    <legend>2. Identificación del bien contratado</legend>
+                    <div class="opciones-linea">
+                        <label class="casilla">
+                            <input type="radio" name="rec-bien" value="Producto"> Producto (farmacia)
+                        </label>
+                        <label class="casilla">
+                            <input type="radio" name="rec-bien" value="Servicio"> Servicio (cita o consulta)
+                        </label>
+                    </div>
+                    <div class="campo">
+                        <label for="rec-relacion">Relacionado con (opcional)</label>
+                        <select id="rec-relacion">
+                            <option value="">Ninguno</option>
+                        </select>
+                        <small class="texto-ayuda">Aparecen tus pedidos y citas registrados.</small>
+                    </div>
+                    <div class="campos-dobles">
+                        <div class="campo">
+                            <label for="rec-monto">Monto reclamado (S/)</label>
+                            <input type="number" id="rec-monto" min="0" step="0.01" placeholder="0.00">
+                        </div>
+                        <div class="campo">
+                            <label for="rec-descripcion-bien">Descripción</label>
+                            <input type="text" id="rec-descripcion-bien" placeholder="Ej. Vitamina C x 2">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- 3. DETALLE -->
+                <fieldset>
+                    <legend>3. Detalle de la reclamación</legend>
+                    <div class="opciones-linea">
+                        <label class="casilla">
+                            <input type="radio" name="rec-tipo" value="reclamo"> Reclamo
+                        </label>
+                        <label class="casilla">
+                            <input type="radio" name="rec-tipo" value="queja"> Queja
+                        </label>
+                    </div>
+                    <p class="texto-ayuda" id="info-tipo">Elige si es un reclamo o una queja.</p>
+                    <div class="campo">
+                        <label for="rec-detalle">Detalle</label>
+                        <textarea id="rec-detalle" maxlength="1000"></textarea>
+                        <small class="contador" id="contador-detalle">0 / 1000</small>
+                    </div>
+                    <div class="campo">
+                        <label for="rec-pedido">¿Qué solicitas?</label>
+                        <textarea id="rec-pedido" maxlength="500"></textarea>
+                    </div>
+                </fieldset>
+
+                <label class="casilla">
+                    <input type="checkbox" id="rec-acepto">
+                    Declaro que los datos son verdaderos.
+                </label>
+
+                <button type="submit" class="boton-nuevo">Registrar reclamación</button>
+            </form>
+
+            <!-- CONSTANCIA (aparece al registrar) -->
+            <div class="card constancia oculto" id="constancia">
+                <h2>Constancia de tu reclamación</h2>
+                <p class="texto-ayuda" id="texto-plazo"></p>
+                <table class="tabla-constancia" id="tabla-constancia"></table>
+                <div class="acciones-constancia">
+                    <button type="button" class="boton-nuevo" onclick="window.print()">Imprimir constancia</button>
+                    <button type="button" class="boton-secundario-nuevo" onclick="nuevaReclamacion()">Registrar otra</button>
+                </div>
+            </div>
+
+            <p class="nota-legal">
+                Conforme al Código de Protección y Defensa del Consumidor, la clínica
+                responderá en un plazo máximo de 15 días hábiles. La formulación del
+                reclamo no impide acudir a otras vías de solución de controversias.
+            </p>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+        <p>© 2026 Clínica Raíz. Todos los derechos reservados.</p>
+        <p>
+            <a href="preguntas-frecuentes.html">Preguntas frecuentes</a> &nbsp; | &nbsp;
+            <a href="libro-reclamaciones.html">Libro de reclamaciones</a> &nbsp; | &nbsp;
+            <a href="contacto.html">Contacto</a> &nbsp; | &nbsp;
+            <a href="index.html">Inicio</a>
+        </p>
+    </footer>
+
+    <script src="js/comun.js"></script>
+    <script src="js/libro-reclamaciones.js"></script>
+</body>
+</html>
