@@ -104,7 +104,7 @@ function infoMotivo() {
     document.getElementById("info-motivo").textContent = texto;
 }
 
-function contarCaracteres() {
+function contarCaracteresContacto() {
     let mensaje = document.getElementById("contacto-mensaje").value;
     let contador = document.getElementById("contador-contacto");
     contador.textContent = mensaje.length + " / " + LARGO_MAXIMO_MENSAJE;
@@ -159,12 +159,12 @@ function enviarContacto(evento) {
     abrirVentana("¡Mensaje enviado!", "Gracias, " + nombre + ". Tu número de seguimiento es " + numero + ".");
 
     document.getElementById("form-contacto").reset();
-    llenarDatosUsuario();
+    llenarDatosContacto();
     infoMotivo();
-    contarCaracteres();
+    contarCaracteresContacto();
 }
 
-function llenarDatosUsuario() {
+function llenarDatosContacto() {
     let cuenta = obtenerUsuario();
     // Si hay sesión, el formulario aparece con sus datos
     if (cuenta !== null) {
@@ -180,11 +180,11 @@ function llenarDatosUsuario() {
 function iniciarContacto() {
     mostrarHorario();
     mostrarEstado();
-    llenarDatosUsuario();
+    llenarDatosContacto();
 
     document.getElementById("form-contacto").onsubmit = enviarContacto;
     document.getElementById("contacto-motivo").onchange = infoMotivo;
-    document.getElementById("contacto-mensaje").oninput = contarCaracteres;
+    document.getElementById("contacto-mensaje").oninput = contarCaracteresContacto;
 }
 
 iniciarContacto();

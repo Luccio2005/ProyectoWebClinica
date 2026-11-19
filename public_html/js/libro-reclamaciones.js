@@ -133,7 +133,7 @@ function contarDetalle() {
     document.getElementById("contador-detalle").textContent = largo + " / 1000";
 }
 
-function llenarDatosUsuario() {
+function llenarDatosReclamo() {
     let cuenta = obtenerUsuario();
     if (cuenta !== null) {
         document.getElementById("rec-nombre").value = cuenta.nombre;
@@ -270,7 +270,7 @@ function nuevaReclamacion() {
     document.getElementById("form-reclamo").classList.remove("oculto");
     document.getElementById("constancia").classList.add("oculto");
     crearNumeroHoja();
-    llenarDatosUsuario();
+    llenarDatosReclamo();
     explicarTipo();
     mostrarApoderado();
     contarDetalle();
@@ -282,7 +282,7 @@ function nuevaReclamacion() {
 function iniciarReclamaciones() {
     crearNumeroHoja();
     llenarRelaciones();
-    llenarDatosUsuario();
+    llenarDatosReclamo();
 
     document.getElementById("form-reclamo").onsubmit = registrarReclamo;
     document.getElementById("rec-menor").onchange = mostrarApoderado;

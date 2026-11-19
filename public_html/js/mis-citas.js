@@ -71,7 +71,7 @@ function guardarCita(citaCambiada) {
 
 /* ---------- Resumen y próxima cita ---------- */
 
-function mostrarResumen(citas) {
+function mostrarResumenCitas(citas) {
     let programadas = 0;
     let atendidas = 0;
     let canceladas = 0;
@@ -285,7 +285,7 @@ function estaOcupado(medico, fecha, hora, codigoPropio) {
     return false;
 }
 
-function fechaValida(texto) {
+function esFechaValidaCita(texto) {
     // Formato AAAA-MM-DD, fecha futura y que no sea domingo
     if (!/^\d{4}-\d{2}-\d{2}$/.test(texto)) {
         return false;
@@ -299,7 +299,7 @@ function reprogramarCita(boton) {
 
     // [m] PROMPT + WHILE: se repite hasta que la fecha sea válida (o cancele)
     let nuevaFecha = prompt("Nueva fecha para " + cita.codigo + " (AAAA-MM-DD). No se atiende domingos:", cita.fecha);
-    while (nuevaFecha !== null && !fechaValida(nuevaFecha.trim())) {
+    while (nuevaFecha !== null && !esFechaValidaCita(nuevaFecha.trim())) {
         nuevaFecha = prompt("Fecha no válida. Escribe una fecha futura que no sea domingo (AAAA-MM-DD):", cita.fecha);
     }
     if (nuevaFecha === null) {
@@ -340,7 +340,7 @@ function reprogramarCita(boton) {
 function refrescar() {
     let citas = citasDelPaciente();
     mostrarProximaCita(citas);
-    mostrarResumen(citas);
+    mostrarResumenCitas(citas);
     mostrarTabla(citas);
 }
 

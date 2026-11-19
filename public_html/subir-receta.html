@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Subir receta médica - Hospital Raíz">
-    <meta name="keywords" content="Hospital Raíz, receta médica, farmacia, medicamentos">
-    <meta name="author" content="Hospital Raíz">
+    <meta name="description" content="Subir receta médica - Clínica Raíz">
+    <meta name="keywords" content="Clínica Raíz, receta médica, farmacia, medicamentos">
+    <meta name="author" content="Clínica Raíz">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subir receta médica - Hospital Raíz</title>
+    <title>Subir receta médica - Clínica Raíz</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 
@@ -18,9 +18,9 @@
         <div class="nav-container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="Imagenes/logohospital1.jpg" alt="Logo Hospital Raíz" class="img-responsive">
+                    <img src="Imagenes/logohospital1.jpg" alt="Logo Clínica Raíz" class="img-responsive">
                 </a>
-                <b>Clinica Raíz</b>
+                <b>Clínica Raíz</b>
             </div>
 
             <nav class="navbar">
@@ -78,11 +78,11 @@
                 <div class="paciente-inputs-grid">
                     <div class="input-group">
                         <label>Paciente</label>
-                        <input type="text" value="Paciente registrado" readonly>
+                        <input type="text" id="receta-paciente" value="Paciente registrado" readonly>
                     </div>
                     <div class="input-group">
                         <label>Documento</label>
-                        <input type="text" value="********" readonly>
+                        <input type="text" id="receta-documento" value="********" readonly>
                     </div>
                 </div>
 
@@ -92,7 +92,10 @@
             </div>
 
             <!-- FORMULARIO -->
-            <form class="formulario-receta card" action="#" method="post" enctype="multipart/form-data">
+            <form class="formulario-receta card" id="form-receta" action="#" method="post" enctype="multipart/form-data" novalidate>
+                <!-- PRODUCTOS DEL CARRITO QUE NECESITAN RECETA (lo llena el JS) -->
+                <div class="aviso-carrito oculto" id="aviso-carrito"></div>
+
 
                 <!-- BLOQUE 1: ARCHIVO -->
                 <div class="bloque-receta">
@@ -103,7 +106,9 @@
 
                         <label for="receta" class="file-label">Archivo de receta</label>
                         <input type="file" id="receta" name="receta" accept=".jpg,.jpeg,.png,.pdf" required>
-                        <small>Formatos permitidos: JPG, JPEG, PNG y PDF.</small>
+                        <small>Formatos permitidos: JPG, JPEG, PNG y PDF. Máximo 5 MB.</small>
+                        <p class="info-archivo" id="info-archivo"></p>
+                        <div class="vista-previa oculto" id="vista-previa"></div>
                     </div>
                 </div>
 
@@ -118,12 +123,13 @@
                             <div class="input-group">
                                 <label for="fecha-receta">Fecha de emisión</label>
                                 <input type="date" id="fecha-receta" name="fecha-receta" required>
+                                <small class="info-fecha" id="info-fecha"></small>
                             </div>
                             <div class="input-group">
                                 <label for="tipo-receta">Tipo de receta</label>
                                 <select id="tipo-receta" name="tipo-receta" required>
                                     <option value="">Selecciona una opción</option>
-                                    <option value="clinica">Receta del Hospital Raíz</option>
+                                    <option value="clinica">Receta del Clínica Raíz</option>
                                     <option value="externa">Receta de otro establecimiento</option>
                                 </select>
                             </div>
@@ -142,7 +148,7 @@
                             Comentarios <span class="opcional">(opcional)</span>
                         </label>
                         <textarea id="observaciones" name="observaciones" maxlength="500" placeholder="Escribe alguna observación relacionada con tu receta..."></textarea>
-                        <small>Máximo 500 caracteres.</small>
+                        <small id="contador-observaciones">0 / 500 caracteres</small>
                     </div>
                 </div>
 
@@ -156,13 +162,13 @@
                 <!-- CONFIRMACIÓN -->
                 <div class="confirmar-receta">
                     <label class="checkbox-label">
-                        <input type="checkbox" name="confirmacion" required>
+                        <input type="checkbox" name="confirmacion" id="confirmo-receta" required>
                         <span>Confirmo que la receta corresponde a mi atención médica y que la información proporcionada es correcta.</span>
                     </label>
                 </div>
 
                 <!-- BOTÓN -->
-                <button type="submit" class="boton-subir">
+                <button type="submit" class="boton-subir" id="boton-subir" disabled>
                     Enviar receta para revisión
                 </button>
             </form>
@@ -201,5 +207,6 @@
     </footer>
 
     <script src="js/comun.js"></script>
+    <script src="js/subir-receta.js"></script>
 </body>
 </html>

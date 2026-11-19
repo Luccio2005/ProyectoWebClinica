@@ -5846,3 +5846,56 @@ body.pagina-autenticacion {
 .pagina-faq .ayuda-faq a {
     margin: 6px;
 }
+
+/* --- SUBIR RECETA: lo que agrega subir-receta.js --- */
+.pagina-subir-receta .aviso-carrito {
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    border-left: 4px solid darkgoldenrod;
+    border-radius: 6px;
+    background-color: oldlace;
+    color: darkslategray;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.pagina-subir-receta .info-archivo,
+.pagina-subir-receta .info-fecha {
+    display: block;
+    margin: 8px 0 0;
+    font-size: 13px;
+}
+
+.pagina-subir-receta .correcto {
+    color: seagreen;
+}
+
+.pagina-subir-receta .aviso {
+    color: darkgoldenrod;
+}
+
+.pagina-subir-receta .error {
+    color: crimson;
+}
+
+.pagina-subir-receta .vista-previa {
+    margin-top: 12px;
+    padding: 10px;
+    border: 1px dashed paleturquoise;
+    border-radius: 8px;
+    background-color: azure;
+    text-align: center;
+}
+
+.pagina-subir-receta .vista-previa img {
+    max-width: 100%;
+    max-height: 260px;
+    border-radius: 6px;
+}
+
+.pagina-subir-receta .boton-subir:disabled {
+    background-color: gray;
+    transform: none;
+    box-shadow: none;
+    cursor: not-allowed;
+}
