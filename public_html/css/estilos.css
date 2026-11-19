@@ -5518,3 +5518,181 @@ body.pagina-autenticacion {
         text-align: left;
     }
 }
+
+/* =====================================================
+   BLOG (blog.html)
+   ===================================================== */
+
+.pagina-blog .blog-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    align-items: start;
+    gap: 28px;
+}
+
+.pagina-blog .contador-resultados {
+    margin: 0 0 14px;
+    color: slategray;
+    font-size: 14px;
+}
+
+.pagina-blog .articulo {
+    margin-bottom: 20px;
+    padding: 24px 26px;
+    transition: box-shadow 0.3s ease;
+}
+
+.pagina-blog .articulo:hover {
+    box-shadow: 0 6px 16px lightgray;
+}
+
+.pagina-blog .articulo h2 {
+    margin: 12px 0 6px;
+    color: darkcyan;
+    font-size: 22px;
+}
+
+.pagina-blog .datos-articulo {
+    margin: 0 0 12px;
+    color: gray;
+    font-size: 13px;
+}
+
+.pagina-blog .resumen-articulo,
+.pagina-blog .contenido-articulo p {
+    color: slategray;
+    line-height: 1.7;
+}
+
+.pagina-blog .contenido-articulo {
+    margin-bottom: 14px;
+    padding-left: 14px;
+    border-left: 3px solid paleturquoise;
+}
+
+.pagina-blog .etiqueta-categoria {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background-color: lightcyan;
+    color: darkcyan;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.pagina-blog .etiqueta-prevencion {
+    background-color: lightcyan;
+    color: darkcyan;
+}
+
+.pagina-blog .etiqueta-bienestar {
+    background-color: honeydew;
+    color: seagreen;
+}
+
+.pagina-blog .etiqueta-nutricion {
+    background-color: oldlace;
+    color: darkgoldenrod;
+}
+
+.pagina-blog .etiqueta-ninos {
+    background-color: lavenderblush;
+    color: palevioletred;
+}
+
+/* --- Barra lateral --- */
+.pagina-blog .barra-lateral {
+    position: sticky;
+    top: 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.pagina-blog .bloque-lateral {
+    padding: 20px;
+}
+
+.pagina-blog .bloque-lateral h2 {
+    margin: 0 0 12px;
+    color: darkcyan;
+    font-size: 17px;
+}
+
+.pagina-blog .bloque-lateral .campo {
+    margin-bottom: 12px;
+}
+
+.pagina-blog .lista-categorias {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pagina-blog .lista-categorias button {
+    display: block;
+    width: 100%;
+    margin-bottom: 6px;
+    padding: 9px 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: azure;
+    color: darkslategray;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagina-blog .lista-categorias button:hover,
+.pagina-blog .lista-categorias button.activa {
+    background-color: darkcyan;
+    color: white;
+}
+
+.pagina-blog .lista-populares {
+    margin: 0;
+    padding-left: 20px;
+    color: darkcyan;
+}
+
+.pagina-blog .lista-populares li {
+    margin-bottom: 10px;
+}
+
+.pagina-blog .lista-populares a {
+    display: block;
+    color: darkslategray;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.pagina-blog .lista-populares a:hover {
+    color: darkcyan;
+    text-decoration: underline;
+}
+
+.pagina-blog .lista-populares small {
+    color: gray;
+    font-size: 12px;
+}
+
+.pagina-blog .bloque-suscripcion {
+    background-color: azure;
+}
+
+.pagina-blog .bloque-suscripcion .boton-nuevo {
+    width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+    .pagina-blog .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-blog .barra-lateral {
+        position: static;
+    }
+}

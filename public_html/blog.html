@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Blog de salud y bienestar de Clínica Raíz">
+    <meta name="keywords" content="Clínica Raíz, blog, salud, Arequipa">
+    <meta name="author" content="Clínica Raíz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Clínica Raíz</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="pagina-servicio pagina-nueva pagina-blog">
+    <!-- ENCABEZADO CON NAVBAR (Flexbox) -->
+    <header class="encabezado">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Imagenes/logohospital1.jpg" alt="Logo Clínica Raíz" class="img-responsive logo-img">
+                </a>
+                <b>Clínica Raíz</b>
+            </div>
+            <nav class="navbar" aria-label="Menú principal">
+            <a href="index.html">Inicio</a>
+            <a href="citas.html">Reservar cita</a>
+            <a href="consultas.html">Consulta de salud</a>
+            <a href="farmacia.html">Farmacia</a>
+            <a href="medicos.html">Médicos</a>
+            <a href="blog.html" class="nav-link-activo">Blog</a>
+            <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- CABECERA DE LA PÁGINA -->
+        <section class="cabecera-pagina">
+            <p class="etiqueta-pagina">BLOG</p>
+            <h1>Consejos para cuidar tu salud</h1>
+            <p>Artículos escritos por nuestros médicos sobre prevención, bienestar y nutrición.</p>
+        </section>
+
+        <section class="contenedor-pagina blog-grid">
+
+            <!-- ARTÍCULOS (los crea blog.js) -->
+            <div class="columna-articulos">
+                <p class="contador-resultados" id="contador-articulos"></p>
+                <div id="lista-articulos"></div>
+                <p class="mensaje-vacio oculto" id="sin-articulos">No hay artículos con esa búsqueda.</p>
+            </div>
+
+            <!-- BARRA LATERAL -->
+            <aside class="barra-lateral">
+                <div class="card bloque-lateral">
+                    <h2>Buscar</h2>
+                    <div class="campo">
+                        <label for="buscar-articulo">Palabra clave</label>
+                        <input type="text" id="buscar-articulo" placeholder="Ej. vacunas">
+                    </div>
+                </div>
+
+                <div class="card bloque-lateral">
+                    <h2>Categorías</h2>
+                    <ul class="lista-categorias" id="lista-categorias"></ul>
+                </div>
+
+                <div class="card bloque-lateral">
+                    <h2>Más leídos</h2>
+                    <ol class="lista-populares" id="lista-populares"></ol>
+                </div>
+
+                <div class="card bloque-lateral bloque-suscripcion">
+                    <h2>Recibe consejos de salud</h2>
+                    <p class="texto-ayuda">Un correo al mes, sin publicidad.</p>
+                    <form id="form-suscripcion" novalidate>
+                        <div class="campo">
+                            <label for="correo-suscripcion">Correo electrónico</label>
+                            <input type="email" id="correo-suscripcion" placeholder="nombre@correo.com">
+                        </div>
+                        <button type="submit" class="boton-nuevo">Suscribirme</button>
+                    </form>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+        <p>© 2026 Clínica Raíz. Todos los derechos reservados.</p>
+        <p>
+            <a href="preguntas-frecuentes.html">Preguntas frecuentes</a> &nbsp; | &nbsp;
+            <a href="libro-reclamaciones.html">Libro de reclamaciones</a> &nbsp; | &nbsp;
+            <a href="contacto.html">Contacto</a> &nbsp; | &nbsp;
+            <a href="index.html">Inicio</a>
+        </p>
+    </footer>
+
+    <script src="js/comun.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>
