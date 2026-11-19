@@ -5696,3 +5696,153 @@ body.pagina-autenticacion {
         position: static;
     }
 }
+
+/* =====================================================
+   PREGUNTAS FRECUENTES (preguntas-frecuentes.html)
+   ===================================================== */
+
+.pagina-faq .contenedor-faq {
+    max-width: 900px;
+}
+
+.pagina-faq .barra-faq {
+    padding: 22px 24px 8px;
+}
+
+.pagina-faq .filtros-faq {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.pagina-faq .filtro-faq {
+    padding: 8px 16px;
+    border: 1px solid paleturquoise;
+    border-radius: 20px;
+    background-color: white;
+    color: darkcyan;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagina-faq .filtro-faq:hover,
+.pagina-faq .filtro-faq.activo {
+    background-color: darkcyan;
+    color: white;
+}
+
+.pagina-faq .acciones-faq {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 18px 0 12px;
+}
+
+.pagina-faq .acciones-faq .contador-resultados {
+    margin: 0;
+    color: slategray;
+    font-size: 14px;
+}
+
+.pagina-faq .faq-item {
+    margin-bottom: 10px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.pagina-faq .faq-pregunta {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 18px 50px 18px 20px;
+    border: none;
+    background-color: white;
+    color: darkcyan;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagina-faq .faq-pregunta:hover,
+.pagina-faq .faq-pregunta.abierta {
+    background-color: azure;
+}
+
+/* El "+" se convierte en "×" al abrir (transformación con CSS) */
+.pagina-faq .faq-pregunta::after {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    color: darkcyan;
+    font-size: 24px;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.pagina-faq .faq-pregunta.abierta::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.pagina-faq .faq-respuesta {
+    display: none;
+    padding: 4px 20px 16px;
+    border-top: 1px solid lightcyan;
+}
+
+.pagina-faq .faq-respuesta.visible {
+    display: block;
+    animation: aparecer-ventana 0.3s ease-out both;
+}
+
+.pagina-faq .faq-respuesta p {
+    color: slategray;
+    line-height: 1.7;
+}
+
+.pagina-faq .faq-util {
+    font-size: 13px;
+}
+
+.pagina-faq .faq-util button {
+    margin-left: 6px;
+    padding: 4px 12px;
+    border: 1px solid lightgray;
+    border-radius: 14px;
+    background-color: white;
+    color: darkslategray;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.pagina-faq .faq-util button:hover {
+    background-color: lightcyan;
+}
+
+.pagina-faq .ayuda-faq {
+    margin-top: 28px;
+    padding: 26px;
+    text-align: center;
+    background-color: azure;
+}
+
+.pagina-faq .ayuda-faq h2 {
+    margin: 0 0 8px;
+    color: darkcyan;
+}
+
+.pagina-faq .ayuda-faq p {
+    color: slategray;
+}
+
+.pagina-faq .ayuda-faq a {
+    margin: 6px;
+}

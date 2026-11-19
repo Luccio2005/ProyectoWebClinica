@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Preguntas frecuentes sobre citas, farmacia, pagos y cuenta en Clínica Raíz">
+    <meta name="keywords" content="Clínica Raíz, preguntas frecuentes, salud, Arequipa">
+    <meta name="author" content="Clínica Raíz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas frecuentes - Clínica Raíz</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="pagina-servicio pagina-nueva pagina-faq">
+    <!-- ENCABEZADO CON NAVBAR (Flexbox) -->
+    <header class="encabezado">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Imagenes/logohospital1.jpg" alt="Logo Clínica Raíz" class="img-responsive logo-img">
+                </a>
+                <b>Clínica Raíz</b>
+            </div>
+            <nav class="navbar" aria-label="Menú principal">
+            <a href="index.html">Inicio</a>
+            <a href="citas.html">Reservar cita</a>
+            <a href="consultas.html">Consulta de salud</a>
+            <a href="farmacia.html">Farmacia</a>
+            <a href="medicos.html">Médicos</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- CABECERA DE LA PÁGINA -->
+        <section class="cabecera-pagina">
+            <p class="etiqueta-pagina">AYUDA</p>
+            <h1>Preguntas frecuentes</h1>
+            <p>Respuestas rápidas sobre citas, farmacia, pagos y tu cuenta.</p>
+        </section>
+
+        <section class="contenedor-pagina contenedor-faq">
+
+            <!-- BUSCADOR Y CATEGORÍAS -->
+            <div class="card barra-faq">
+                <div class="campo">
+                    <label for="buscar-faq">¿Qué necesitas saber?</label>
+                    <input type="text" id="buscar-faq" placeholder="Ej. delivery, receta, contraseña">
+                </div>
+                <div class="filtros-faq" id="filtros-faq">
+                <button type="button" class="filtro-faq activo" data-categoria="todas">Todas</button>
+                <button type="button" class="filtro-faq" data-categoria="general">General</button>
+                <button type="button" class="filtro-faq" data-categoria="citas">Citas</button>
+                <button type="button" class="filtro-faq" data-categoria="farmacia">Farmacia y pedidos</button>
+                <button type="button" class="filtro-faq" data-categoria="pagos">Pagos</button>
+                <button type="button" class="filtro-faq" data-categoria="cuenta">Mi cuenta</button>
+                </div>
+            </div>
+
+            <div class="acciones-faq">
+                <p class="contador-resultados" id="contador-faq"></p>
+                <div>
+                    <button type="button" class="boton-secundario-nuevo" onclick="abrirTodas(true)">Expandir todo</button>
+                    <button type="button" class="boton-secundario-nuevo" onclick="abrirTodas(false)">Contraer todo</button>
+                </div>
+            </div>
+
+            <!-- PREGUNTAS (acordeón) -->
+            <div class="lista-faq" id="lista-faq">
+                <div class="faq-item" data-categoria="citas">
+                    <button type="button" class="faq-pregunta" aria-expanded="false">¿Cómo reservo una cita?</button>
+                    <div class="faq-respuesta">
+                        <p>Entra a Reservar cita, elige la especialidad, el médico, la modalidad, la fecha y la hora. Al confirmar recibirás un código (por ejemplo CT-0001) que verás en Mis citas.</p>
+                        <p class="faq-util">¿Te fue útil?
+                            <button type="button" class="voto-si">Sí</button>
+                            <button type="button" class="voto-no">No</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" data-categoria="citas">
+                    <button type="button" class="faq-pregunta" aria-expanded="false">¿Puedo cambiar la fecha de mi cita?</button>
+                    <div class="faq-respuesta">
+                        <p>Sí. En Mis citas pulsa Reprogramar: te mostraremos solo los horarios libres de tu médico para el día que elijas.</p>
+                        <p class="faq-util">¿Te fue útil?
+                            <button type="button" class="voto-si">Sí</button>
+                            <button type="button" class="voto-no">No</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" data-categoria="citas">
+                    <button type="button" class="faq-pregunta" aria-expanded="false">¿Hasta cuándo puedo cancelar una cita?</button>
+                    <div class="faq-respuesta">
+                        <p>Puedes cancelarla en cualquier momento desde Mis citas. Si faltan menos de 24 horas te pediremos confirmarlo, para liberar el horario a otro paciente.</p>
+                        <p class="faq-util">¿Te fue útil?
+                            <button type="button" class="voto-si">Sí</button>
+                            <button type="button" class="voto-no">No</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" data-categoria="citas">
+                    <button type="button" class="faq-pregunta" aria-expanded="false">¿Qué diferencia hay entre una cita presencial y una virtual?</button>
+                    <div class="faq-respuesta">
+                        <p>La presencial es en la clínica. La virtual es una videollamada con el médico y cuesta 20% menos; sirve para controles y resultados, no para exámenes físicos.</p>
+                        <p class="faq-util">¿Te fue útil?
+                            <button type="button" class="voto-si">Sí</button>
+                            <button type="button" class="voto-no">No</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" data-categoria="farmacia">
+                    <button type="button" class="faq-pregunta" aria-expanded="false">¿Necesito receta para comprar medicamentos?</button>
+                    <div class="faq-respuesta">
+                        <p>Solo para los productos marcados como Requiere receta. Súbela desde Subir receta antes de completar tu pedido.</p>
+                        <p class="faq-util">¿Te fue útil?
+                            <button type="button" class="voto-si">Sí</button>
+                            <button type="button" class="voto-no">No</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" data-categoria="farmacia">
+                    <button type="button" class="faq-pregunta" aria-expanded="false">¿Cuánto cuesta el delivery?</button>
+                    <div class="faq-respuesta">
+                        <p>El envío cuesta S/ 10.00 y es gratis si tu compra llega a S/ 150.00. Si eliges recojo en la clínica no pagas envío.</p>
+                        <p class="faq-util">¿Te fue útil?
+                            <button type="button" class="voto-si">Sí</button>
+                            <button type="button" class="voto-no">No</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" data-categoria="farmacia">
+                    <button type="button" class="faq-pregunta" aria-expanded="false">¿Dónde veo el estado de mi pedido?</button>
+                    <div class="faq-respuesta">
+                        <p>En Mis pedidos aparece cada compra con su estado: Pedido recibido, Preparando pedido, En camino o Entregado. Desde ahí puedes ver el detalle.</p>
+                        <p class="faq-util">¿Te fue útil?
+                            <button type="button" class="voto-si">Sí</button>
+                            <button type="button" class="voto-no">No</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" data-categoria="pagos">
+                    <button type="button" class="faq-pregunta" aria-expanded="false">¿Qué medios de pago aceptan?</button>
+                    <div class="faq-respuesta">
+                        <p>Pago en la clínica, tarjeta de crédito o débito (con POS al recibir) y Yape. El pago en la clínica solo está disponible si recoges tu pedido.</p>
+                        <p class="faq-util">¿Te fue útil?
+                            <button type="button" class="voto-si">Sí</button>
+                            <button type="button" class="voto-no">No</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" data-categoria="pagos">
+                    <button type="button" class="faq-pregunta" aria-expanded="false">¿Los precios incluyen IGV?</button>
+                    <div class="faq-respuesta">
+                        <p>Sí. Todos los precios ya incluyen el IGV de 18%; en el resumen de compra te mostramos cuánto de tu total corresponde al impuesto.</p>
+                        <p class="faq-util">¿Te fue útil?
+                            <button type="button" class="voto-si">Sí</button>
+                            <button type="button" class="voto-no">No</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" data-categoria="cuenta">
+                    <button type="button" class="faq-pregunta" aria-expanded="false">¿Cómo creo mi cuenta?</button>
+                    <div class="faq-respuesta">
+                        <p>Pulsa Iniciar sesión y luego Crear una cuenta. Necesitas tu DNI, un correo, un celular y una contraseña.</p>
+                        <p class="faq-util">¿Te fue útil?
+                            <button type="button" class="voto-si">Sí</button>
+                            <button type="button" class="voto-no">No</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" data-categoria="cuenta">
+                    <button type="button" class="faq-pregunta" aria-expanded="false">Olvidé mi contraseña, ¿qué hago?</button>
+                    <div class="faq-respuesta">
+                        <p>En la página de inicio de sesión pulsa ¿Olvidaste tu contraseña?, confirma tu DNI y escribe una nueva contraseña.</p>
+                        <p class="faq-util">¿Te fue útil?
+                            <button type="button" class="voto-si">Sí</button>
+                            <button type="button" class="voto-no">No</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" data-categoria="cuenta">
+                    <button type="button" class="faq-pregunta" aria-expanded="false">¿Por qué se bloqueó el inicio de sesión?</button>
+                    <div class="faq-respuesta">
+                        <p>Por tu seguridad, después de 3 intentos fallidos el formulario se bloquea 30 segundos. Luego puedes volver a intentarlo.</p>
+                        <p class="faq-util">¿Te fue útil?
+                            <button type="button" class="voto-si">Sí</button>
+                            <button type="button" class="voto-no">No</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" data-categoria="general">
+                    <button type="button" class="faq-pregunta" aria-expanded="false">¿Cuál es el horario de atención?</button>
+                    <div class="faq-respuesta">
+                        <p>De lunes a viernes de 7:00 a 20:00 y los sábados de 8:00 a 14:00. Los domingos no atendemos, salvo emergencias.</p>
+                        <p class="faq-util">¿Te fue útil?
+                            <button type="button" class="voto-si">Sí</button>
+                            <button type="button" class="voto-no">No</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" data-categoria="general">
+                    <button type="button" class="faq-pregunta" aria-expanded="false">¿Cómo presento un reclamo?</button>
+                    <div class="faq-respuesta">
+                        <p>Desde el Libro de reclamaciones virtual. Te daremos un número de hoja y responderemos en un plazo máximo de 15 días hábiles.</p>
+                        <p class="faq-util">¿Te fue útil?
+                            <button type="button" class="voto-si">Sí</button>
+                            <button type="button" class="voto-no">No</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mensaje-vacio oculto" id="sin-faq">
+                <p>No encontramos esa pregunta.</p>
+                <a href="consultas.html" class="boton-nuevo">Hacer una consulta</a>
+            </div>
+
+            <div class="card ayuda-faq">
+                <h2>¿No encontraste tu respuesta?</h2>
+                <p>Escríbenos o envía una consulta de salud y te responderemos pronto.</p>
+                <a href="contacto.html" class="boton-nuevo">Contáctanos</a>
+                <a href="consultas.html" class="boton-secundario-nuevo">Consulta de salud</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+        <p>© 2026 Clínica Raíz. Todos los derechos reservados.</p>
+        <p>
+            <a href="preguntas-frecuentes.html">Preguntas frecuentes</a> &nbsp; | &nbsp;
+            <a href="libro-reclamaciones.html">Libro de reclamaciones</a> &nbsp; | &nbsp;
+            <a href="contacto.html">Contacto</a> &nbsp; | &nbsp;
+            <a href="index.html">Inicio</a>
+        </p>
+    </footer>
+
+    <script src="js/comun.js"></script>
+    <script src="js/preguntas-frecuentes.js"></script>
+</body>
+</html>
